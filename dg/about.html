@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us — Dengue Guard</title>
+<meta name="description" content="What Dengue Guard is, who it is for and how it was built.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Guard</a>
+  <nav>
+    <a href="index.html#how">How it works</a><a href="about.html" aria-current="page">About us</a><a href="contact.html">Contact</a>
+    <a class="btn" href="app.html">Open dashboard</a>
+  </nav>
+</div></header>
+<main>
+<div class="page-hero"><div class="wrap"><h1>About Dengue Guard</h1><p>A ward-level early-warning tool that gives health teams a few weeks' head start on dengue.</p></div></div>
+<div class="prose"><div class="wrap">
+<h2>Why we built it</h2>
+<p>Dengue cases in Bangladesh rise weeks after the rain, yet response teams usually move only once hospital admissions climb. Dengue Guard was built to close that gap: it forecasts dengue risk for every ward 2–4 weeks ahead, so larvicide, drain clearing and hospital preparation can start while there is still time to make a difference.</p>
+<div class="facts">
+  <div class="card"><b>60</b><span>wards in 5 city corporations</span></div>
+  <div class="card"><b>2–4 wk</b><span>forecast horizon</span></div>
+  <div class="card"><b>2016–2025</b><span>31,320 weekly ward records</span></div>
+</div>
+<h2>What it does</h2>
+<ul>
+<li>Reads weather history (rainfall lags of 0–7 weeks, rolling sums, temperature and humidity) together with ward vulnerability and recent case trends.</li>
+<li>Scores every ward with gradient-boosted tree models and shows an expected case count with an 80% prediction band.</li>
+<li>Ranks wards into Low, Medium, High and Critical tiers, each with a recommended action, and lets you download the forecast as CSV.</li>
+<li>Lets you test what-if weather scenarios and upload your own weekly data.</li>
+</ul>
+<h2>How we approach it</h2>
+<p><b>Honest validation.</b> Data is split strictly by date: train 2016–2022, validate 2023, test 2024–2025. The test years are used once, for the final numbers shown in the dashboard.</p>
+<p><b>Local and private.</b> The model runs entirely in your browser. There are no API calls and no language model at prediction time, so your data stays on your device. See our <a href="privacy.html">Privacy Policy</a>.</p>
+<p><b>Decision support, not diagnosis.</b> Forecasts help decide where to send teams first. They do not diagnose individuals. See the <a href="terms.html">Terms</a>.</p>
+<h2>Built with</h2>
+<p>scikit-learn (offline training), plain JavaScript for in-browser inference, and the bundled Plotly.js library for charts. Technical detail is in the <a href="ARCHITECTURE.md">architecture notes</a>.</p>
+<h2>Get in touch</h2>
+<p>Questions, feedback or want to try it with your own data? Visit the <a href="contact.html">Contact page</a>.</p>
+</div></div>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Dengue Guard · Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+  <span class="foot-links"><a href="app.html">Dashboard</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="README.md">README</a><a href="ARCHITECTURE.md">Architecture</a></span>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,122 @@
+:root{--bg:#0b1220;--bg2:#111a2e;--line:#1e2b45;--tx:#e6edf7;--mu:#9fb3cc;--ac:#22d3a5;
+--low:#22c55e;--med:#facc15;--high:#f97316;--crit:#ef4444}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:0;z-index:5;background:rgba(11,18,32,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;font-size:1.1rem;text-decoration:none;display:flex;gap:8px;align-items:center}
+.nav nav{display:flex;gap:22px;align-items:center}
+.nav nav a{color:var(--mu);text-decoration:none;font-size:.92rem}
+.nav nav a:hover{color:var(--tx)}
+.btn{display:inline-block;background:var(--ac);color:#06241c;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;border:1px solid var(--ac)}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:none;color:var(--tx);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ac)}
+.nav .btn{padding:7px 16px;font-size:.9rem;color:#06241c}
+.nav nav a.btn:hover{color:#06241c}
+.hero{padding:84px 0 64px;background:radial-gradient(900px 400px at 75% 0,#0e3b3b55,transparent),radial-gradient(700px 360px at 10% 10%,#12304f66,transparent)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+.tag{display:inline-block;border:1px solid var(--line);color:var(--ac);border-radius:999px;padding:4px 14px;font-size:.82rem;margin-bottom:18px}
+h1{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.1;letter-spacing:-1.2px;margin:0 0 18px}
+h1 span{color:var(--ac)}
+.lead{color:var(--mu);font-size:1.12rem;max-width:34em;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.note{color:var(--mu);font-size:.85rem;margin-top:14px}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 20px 60px #0006}
+.panel h4{margin:0 0 4px;font-size:.95rem}
+.panel .sub{color:var(--mu);font-size:.8rem;margin-bottom:12px}
+.row{display:grid;grid-template-columns:150px 1fr 36px;gap:10px;align-items:center;padding:6px 0;font-size:.85rem;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.row i{display:block;height:8px;border-radius:4px;background:var(--c)}
+.row b{text-align:right;color:var(--c)}
+.chip{display:inline-block;padding:1px 9px;border-radius:999px;font-size:.72rem;font-weight:700;color:#0b1220;background:var(--c);margin-left:6px}
+.stats{border-block:1px solid var(--line);background:var(--bg2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-block:28px}
+.stat b{display:block;font-size:2rem;line-height:1.1;color:var(--ac);letter-spacing:-.5px}
+.stat span{color:var(--mu);font-size:.88rem}
+section{padding:76px 0}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.6px;line-height:1.2;margin:0 0 10px}
+.sec-sub{color:var(--mu);max-width:42em;margin:0 0 36px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:10px 0 6px;font-size:1.05rem}
+.card p{margin:0;color:var(--mu);font-size:.93rem}
+.num{width:30px;height:30px;border-radius:50%;background:#0f2e22;color:var(--ac);display:grid;place-content:center;font-weight:800;font-size:.9rem}
+.ico{font-size:1.5rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.bars .b{margin:14px 0}
+.bars .l{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:5px;color:var(--mu)}
+.bars .l b{color:var(--tx)}
+.bars .t{height:12px;background:var(--bg);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.bars .t i{display:block;height:100%;background:#4b6384}
+.bars .b.me .t i{background:var(--ac)}
+.fine{color:var(--mu);font-size:.8rem;margin-top:14px}
+.checks{list-style:none;padding:0;margin:18px 0 0}
+.checks li{padding-left:26px;position:relative;margin:9px 0;color:var(--mu)}
+.checks li:before{content:"✓";position:absolute;left:0;color:var(--ac);font-weight:800}
+.checks b{color:var(--tx)}
+.tiers{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.band{background:linear-gradient(120deg,#0f2a43,#0b3b3a 60%,#12304f);border:1px solid #1e3a5f;border-radius:20px;padding:48px 28px;text-align:center}
+.band h2{margin-bottom:10px}
+.band p{color:var(--mu);margin:0 auto 24px;max-width:34em}
+.band .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mu);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--mu)}
+@media(max-width:860px){
+ .hero{padding:48px 0 40px}.hero .wrap,.split{grid-template-columns:1fr;gap:32px}
+ .grid3{grid-template-columns:1fr}.stats .wrap{grid-template-columns:1fr 1fr}
+ .nav nav a:not(.btn){display:none}section{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---- light public-health style, matches dashboard ---- */
+:root{--bg:#f6f8fa;--bg2:#fff;--line:#d9e1e7;--tx:#12212b;--mu:#556877;--ac:#0b6e8a;--low:#4cb37f;--med:#f2c14e;--high:#f0883a;--crit:#e0524f}
+body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+h1,h2,h3,.stat b,.big{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+header.nav{background:rgba(255,255,255,.94)}
+.btn,.nav .btn,.nav nav a.btn:hover{color:#fff}.btn.ghost{background:transparent;color:var(--ac)}
+.hero{background:linear-gradient(135deg,#fff3ee,#e8f3f7)}
+.hero h1 span{color:var(--ac)}
+.panel{box-shadow:0 10px 30px rgba(16,37,47,.1)}
+.chip{color:#12212b}.num{background:#e3f3ee}.bars .t i{background:#9fb3c4}.ico{display:none}
+.card{box-shadow:0 2px 10px rgba(16,37,47,.07);border-radius:18px}
+.big{font-size:2.4rem;font-weight:800;color:var(--ac);line-height:1.1;margin-bottom:6px}
+.band{background:#10252f;border:0}.band,.band h2,.band p{color:#fff}.band .btn{background:#fff;color:#10252f;border-color:#fff}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px;max-width:820px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin:10px 0 0}
+
+/* ---- logo, footer, inner pages ---- */
+.logo{width:30px;height:30px;flex:none}
+.brand{color:var(--tx)}
+footer .wrap{align-items:flex-start}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+.foot-links a{text-decoration:none}.foot-links a:hover{color:var(--ac)}
+.page-hero{padding:56px 0 36px;background:linear-gradient(135deg,#fff3ee,#e8f3f7);border-bottom:1px solid var(--line)}
+.page-hero h1{font-size:clamp(1.9rem,4vw,2.7rem);margin:0 0 8px}
+.page-hero p{margin:0;color:var(--mu);max-width:40em}
+.prose{padding:44px 0 72px}
+.prose .wrap{max-width:820px}
+.prose h2{font-size:1.35rem;margin:34px 0 8px}
+.prose h2:first-child{margin-top:0}
+.prose p,.prose li{color:#33485a}
+.prose ul{padding-left:22px}
+.prose li{margin:6px 0}
+.prose a{color:var(--ac)}
+.updated{color:var(--mu);font-size:.85rem;margin-bottom:24px}
+.callout{background:#fff7e6;border:1px solid #f2d9a0;border-radius:12px;padding:14px 18px;color:#5b4410;margin:18px 0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:22px 0}
+.facts .card{padding:16px 18px}
+.facts b{display:block;font-family:"Iowan Old Style",Georgia,serif;font-size:1.7rem;color:var(--ac)}
+.facts span{color:var(--mu);font-size:.85rem}
+form.contact{display:grid;gap:14px;margin-top:8px}
+form.contact label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+form.contact input,form.contact select,form.contact textarea{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--tx)}
+form.contact textarea{min-height:140px;resize:vertical}
+form.contact input:focus,form.contact select:focus,form.contact textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
+form.contact button{justify-self:start;cursor:pointer;font:inherit;font-weight:700}
+.nav nav a[aria-current=page]{color:var(--tx);font-weight:600}
+@media(max-width:860px){.nav nav a.keep{display:inline}}

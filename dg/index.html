@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dengue Guard — Ward-level dengue early warning</title>
+<meta name="description" content="Predict dengue outbreak risk 2–4 weeks ahead for 60 wards across Bangladesh city corporations. Runs fully offline in your browser.">
+<link rel="icon" href="logo.svg" type="image/svg+xml"><link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Guard</a>
+  <nav>
+    <a href="#why">Why it matters</a><a href="#how">How it works</a><a href="#features">Features</a><a href="#proof">Validation</a><a href="#faq">FAQ</a><a href="about.html">About us</a><a href="contact.html">Contact</a>
+    <a class="btn" href="app.html">Open dashboard</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="tag">Early warning for Bangladesh city corporations</span>
+    <h1>See dengue outbreaks <span>weeks</span> before they peak.</h1>
+    <p class="lead">Dengue Guard forecasts risk for every ward 2–4 weeks ahead, using weather lags, ward vulnerability and gradient-boosted trees — so health teams can act while there is still time to clear breeding sites.</p>
+    <div class="cta"><a class="btn" href="app.html">Open the dashboard →</a><a class="btn ghost" href="#how">How it works</a></div>
+  </div>
+  <div class="panel" aria-label="Example of the ranked ward risk board">
+    <h4>Ranked ward risk · +3 week window</h4>
+    <div class="sub">Illustrative preview — the live board is in the dashboard</div>
+    <div class="row" style="--c:var(--crit)"><span>Ward A<span class="chip">Critical</span></span><i style="width:92%"></i><b>9.4</b></div>
+    <div class="row" style="--c:var(--high)"><span>Ward B<span class="chip">High</span></span><i style="width:68%"></i><b>6.8</b></div>
+    <div class="row" style="--c:var(--high)"><span>Ward C<span class="chip">High</span></span><i style="width:55%"></i><b>5.5</b></div>
+    <div class="row" style="--c:var(--med)"><span>Ward D<span class="chip">Medium</span></span><i style="width:32%"></i><b>3.2</b></div>
+    <div class="row" style="--c:var(--low)"><span>Ward E<span class="chip">Low</span></span><i style="width:10%"></i><b>1.0</b></div>
+    <div class="sub" style="margin:10px 0 0">Expected cases per ward per week, with 80% prediction bands</div>
+  </div>
+</div></div>
+
+<div class="stats"><div class="wrap">
+  <div class="stat"><b>60</b><span>wards across 5 city corporations</span></div>
+  <div class="stat"><b>2–4 wk</b><span>forecast horizon</span></div>
+  <div class="stat"><b>91%</b><span>risk-tier accuracy, held-out 2024–25 (+3w)</span></div>
+  <div class="stat"><b>&lt; 50 ms</b><span>for a full 60-ward forecast</span></div>
+</div></div>
+
+<section id="why"><div class="wrap">
+  <h2>Why early warning matters</h2>
+  <p class="sec-sub">Dengue cases rise weeks after the rain, but spraying and larvicide teams usually move only after hospital admissions climb.</p>
+  <div class="grid3">
+    <div class="card"><div class="big">150,000+</div><h3>hospitalizations a year</h3><p>Recent monsoon and post-monsoon surges in Bangladesh keep Dhaka and Chattogram wards at capacity (hackathon brief).</p></div>
+    <div class="card"><div class="big">2–4 weeks</div><h3>from rain to hospital spike</h3><p>Eggs mature in 7–14 days, then viral incubation and symptoms follow. That delay is the window for action.</p></div>
+    <div class="card"><div class="big">Ward by ward</div><h3>same rain, different risk</h3><p>Drainage, crowding and waste collection decide which ward becomes a hotspot first, so warnings must be local.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>From rainfall to ranked wards</h2>
+  <p class="sec-sub">Eggs to adult mosquitoes takes 7–14 days, then comes viral incubation. Rain several weeks back is a strong signal for today's cases, and the model is built around that delay.</p>
+  <div class="grid3">
+    <div class="card"><div class="num">1</div><h3>Read the weather history</h3><p>Rainfall lags of 0–7 weeks, rolling 2/4/8-week sums, plus temperature and humidity lags — using only data available before the warning date.</p></div>
+    <div class="card"><div class="num">2</div><h3>Score every ward</h3><p>Gradient-boosted trees combine weather with recent case trends and ward vulnerability: density, water-logging and sanitation.</p></div>
+    <div class="card"><div class="num">3</div><h3>Rank and act</h3><p>Wards are sorted into Low, Medium, High and Critical tiers with uncertainty bands, ready to download as CSV for field teams.</p></div>
+  </div>
+  <div class="tiers" style="margin-top:22px">
+    <span class="chip" style="--c:var(--low);margin:0">Low</span><span class="chip" style="--c:var(--med);margin:0">Medium</span>
+    <span class="chip" style="--c:var(--high);margin:0">High</span><span class="chip" style="--c:var(--crit);margin:0">Critical</span>
+    <span style="color:var(--mu);font-size:.85rem;align-self:center;margin-left:6px">Thresholds calibrated on 2023 validation data</span>
+  </div>
+</div></section>
+
+<section id="tiers" style="padding-top:0"><div class="wrap">
+  <h2>What each risk tier asks you to do</h2>
+  <p class="sec-sub">Every ward gets a tier and a recommended action in the dashboard.</p>
+  <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="card"><span class="chip" style="--c:var(--low);margin:0">Low</span><p>Routine surveillance. Keep weekly larvae checks and community awareness running.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--med);margin:0">Medium</span><p>Pre-position larvicide and clear drains in this ward; brief clinics on case definition.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--high);margin:0">High</span><p>Deploy larvicide and fogging teams within 7 days; reserve beds, saline and test kits.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--crit);margin:0">Critical</span><p>Emergency response: door-to-door source reduction now, surge beds and saline, daily case reporting.</p></div>
+  </div>
+</div></section>
+
+<section id="features" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <h2>Built for decision-makers</h2>
+  <p class="sec-sub">Six views in one dashboard, from the citywide risk board to a single ward's drivers.</p>
+  <div class="grid3">
+    <div class="card"><div class="ico">🗺️</div><h3>Risk board &amp; map</h3><p>Ranked ward table, risk treemap and a heatmap by week, filtered by city corporation.</p></div>
+    <div class="card"><div class="ico">🔎</div><h3>Ward deep-dive</h3><p>Cases, rainfall and forecast for one ward, with the main drivers behind its score.</p></div>
+    <div class="card"><div class="ico">🎛️</div><h3>What-if scenarios</h3><p>Scale rainfall, shift temperature or humidity and watch the forecast move instantly.</p></div>
+    <div class="card"><div class="ico">📊</div><h3>Model validation</h3><p>MAE, RMSE, R², confusion matrices and monthly actuals on data the model never saw.</p></div>
+    <div class="card"><div class="ico">📁</div><h3>Bring your own data</h3><p>Upload a weekly CSV with the same columns and the trained model applies at once, with no retraining.</p></div>
+    <div class="card"><div class="ico">🔒</div><h3>Private and offline</h3><p>No API calls, no LLM at inference. Your data never leaves the browser.</p></div>
+  </div>
+</div></section>
+
+<section id="proof"><div class="wrap split">
+  <div>
+    <h2>Tested on data it never saw</h2>
+    <p class="sec-sub" style="margin-bottom:0">Strictly chronological split: train 2016–2022, validate 2023, test 2024–2025. No shuffling, so no future leakage.</p>
+    <ul class="checks">
+      <li><b>Beats both baselines</b> at every horizon (persistence and seasonal ward-month average)</li>
+      <li><b>93.2% coverage</b> on 80% prediction bands at +3 weeks, so the bands err on the cautious side</li>
+      <li><b>MAE 1.02</b> cases per ward-week at +3 weeks</li>
+    </ul>
+  </div>
+  <div class="card bars" aria-label="R squared at plus three weeks, held-out test set">
+    <h3 style="margin-top:0">R² at +3 weeks (held-out test)</h3>
+    <div class="b"><div class="l"><span>Persistence (last week repeats)</span><b>0.14</b></div><div class="t"><i style="width:14%"></i></div></div>
+    <div class="b"><div class="l"><span>Seasonal ward-month average</span><b>0.54</b></div><div class="t"><i style="width:54%"></i></div></div>
+    <div class="b me"><div class="l"><span>Dengue Guard</span><b>0.73</b></div><div class="t"><i style="width:73%"></i></div></div>
+    <p class="fine">Figures from the dashboard's Model validation tab. Full method in the architecture notes.</p>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>What does the forecast tell me?</summary><p>The expected number of dengue cases per ward per week, 2–4 weeks ahead, with an 80% range and a risk tier. It guides where to send teams first. It does not diagnose individuals.</p></details>
+  <details><summary>Which data does it use?</summary><p>The hackathon dataset: 60 wards in 5 city corporations, 31,320 weekly records from 2016 to 2025, covering weather, ward vulnerability and reported cases. You can also upload your own weekly CSV.</p></details>
+  <details><summary>Does my data leave my computer?</summary><p>No. Everything runs in your browser, with no server, no API call and no LLM at prediction time.</p></details>
+  <details><summary>How accurate is it?</summary><p>On the held-out 2024–2025 test years, R² is 0.73 at +3 weeks and 0.61 at +4 weeks, so longer warnings are less certain. The Model validation tab shows every metric.</p></details>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="band">
+    <h2>Explore the forecast for your city</h2>
+    <p>Pick a city corporation, slide the warning date and see which wards need attention first.</p>
+    <div class="cta"><a class="btn" href="app.html">Open the dashboard →</a></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Dengue Guard · Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+  <span class="foot-links"><a href="app.html">Dashboard</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="README.md">README</a><a href="ARCHITECTURE.md">Architecture</a></span>
+</div></footer>
+</body>
+</html>
