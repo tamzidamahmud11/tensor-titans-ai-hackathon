@@ -322,8 +322,7 @@ No LLM (GPT, Gemini, or Claude) is used during prediction.
 | 4 | Interactive dashboard with five sections | ✅ |
 | 5 | System architecture and model documentation | ✅ |
 | 6 | Offline inference and API cost efficiency | ✅ |
-| 7 | Git contribution history from all team members | ⏳ Pending verification |
-| 8 | AI tool disclosure | ✅ |
+| 7 | AI tool disclosure | ✅ |
 | Bonus | Ward-level risk heatmap, prediction intervals, and validation dashboard | ✅ |
 
 ---
