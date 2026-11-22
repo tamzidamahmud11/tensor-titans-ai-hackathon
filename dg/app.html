@@ -42,6 +42,11 @@
       <h3 class="sec">Ward risk in numbers</h3>
       <div class="kpis" id="kpis"></div>
       <div id="alert"></div>
+      <div class="card" id="planner">
+        <h3>Response planner: where should the spraying teams go?</h3>
+        <label class="inline">Teams available this week <input type="number" id="teams" min="1" max="60" value="5" style="width:70px"></label>
+        <div id="planOut" class="small"></div>
+      </div>
       <div class="grid2">
         <div><h3>Ranked ward risk</h3>
           <div class="tblwrap"><table id="tbl"></table></div>
@@ -88,5 +93,6 @@
 <script src="data/metrics.js"></script>
 <script src="engine.js"></script>
 <script src="app.js"></script>
+<script src="chat.js"></script>
 </body>
 </html>
