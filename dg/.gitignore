@@ -4,3 +4,4 @@ __pycache__/
 .venv/
 training_output/
 .DS_Store
+.env

@@ -2,7 +2,7 @@
 
 Ward-level dengue early-warning for Bangladesh city corporations. It forecasts expected weekly cases per ward **2–4 weeks ahead** from lagged weather, recent cases and ward vulnerability, then maps the forecast to a risk tier (Low / Medium / High / Critical).
 
-The system has two parts: an **offline training pipeline** (Python, run once) and an **in-browser inference app** (JavaScript, no server, no API).
+The system has two parts: an **offline training pipeline** (Python, run once) and an **in-browser inference app** (JavaScript, no API for forecasting). An optional help chatbot is the only runtime API (section 5b).
 
 ## 1. Data flow
 
@@ -76,12 +76,30 @@ The model beats a persistence baseline and a seasonal ward-month average at ever
 
 ## 5. Compute and API cost controls
 
-- **Zero API calls and zero LLM calls at runtime.** No tokens, no per-request cost; the app works offline after the first load.
+- **Zero API calls for forecasting, and no LLM in the prediction pipeline.** No tokens, no per-request cost; the app works offline after the first load. The only runtime API is the optional help chatbot (section 5b).
 - **No server compute.** `server.js` is an optional static file server; opening `index.html` also works. It can be hosted on any static host.
 - **Serialized models, fast inference.** 9 tree models (3 horizons × mean/low/high), about 3 MB, cached by the browser. The risk board evaluates only the 3 models for the selected horizon. A 60-ward forecast took about 8 ms when measured in Node 22 (one horizon); the UI target is under 50 ms.
 - **Work done once.** The dataset is parsed and the per-ward arrays are built once at page load; each interaction only re-runs tree inference.
 - **Cheap rendering.** Charts update with `Plotly.react`, which diffs traces instead of rebuilding them.
 - **Training cost is paid once, offline** (~30 s on a laptop CPU for all 9 models plus metrics).
+
+## 5b. Help chatbot (optional runtime API)
+
+The guided tour and the "Open this tab" buttons are plain browser code that clicks the tab buttons, so navigation help costs zero API calls. The chat also sends a one-line summary of the current dashboard state (city, week, window, tier counts) so AI answers match what the user sees.
+
+Flow: browser `chat.js` -> (1) tour / built-in FAQ match, answered locally with no network -> (2) otherwise `POST /api/chat` on `server.js` -> `chat-api.js` -> Gemini API (free tier) -> answer back to the browser.
+
+| Control | How |
+|---|---|
+| Key safety | The key is read from `.env` on the server; the browser never sees it; `.env` is git-ignored |
+| Fewer API calls | Built-in FAQ and tour answer common questions locally; identical questions are served from an in-memory cache (200 entries, 6 h) |
+| Scope guard | Two layers: (1) a keyword filter on the server refuses clearly off-topic questions with no API call; (2) the system prompt restricts answers to the dashboard, its data/model and general dengue prevention |
+| Token budget | Question capped at 300 characters, dashboard context at about 400 characters, answer capped at 250 output tokens, short system prompt |
+| Rate limits | 8 requests per minute per IP on our side, so the free quota is not used up by one visitor |
+| Resilience | 8 s timeout; on any failure (no key, HTTP 429, network error, empty answer) the chat shows an offline message and the dashboard is unaffected |
+| Safety | The system prompt forbids medical advice and inventing numbers |
+
+The forecasting itself still makes zero API calls.
 
 ## 6. Files
 

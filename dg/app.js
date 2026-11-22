@@ -67,6 +67,16 @@
       ? `<div class="box err"><b>${urgent.length} ward(s) need action within the next ${S.h} weeks:</b> ${urgent.slice(0, 8).map(r => `${r.ward_id} (${r.tier})`).join(", ")}${urgent.length > 8 ? " …" : ""}</div>`
       : `<div class="box ok">No High/Critical wards for this week and window.</div>`;
 
+      window.DG_CONTEXT = `City: ${S.city}; warning week: ${origin}; window: +${S.h} weeks; wards by tier: ${TIERS.map(x => x + " " + cnt[x]).join(", ")}.`;
+    // response planner: allocate limited teams to the highest expected-case wards
+    const nTeams = Math.max(1, Math.min(rows.length, parseInt($("teams").value, 10) || 1));
+    const ranked = rows.slice().sort((a, b) => b.pred - a.pred);
+    const picked = ranked.slice(0, nTeams);
+    const share = total > 0 ? 100 * picked.reduce((s, r) => s + r.pred, 0) / total : 0;
+    $("planOut").innerHTML = `<p><b>${nTeams}</b> team(s) sent to the top ${nTeams} ward(s) cover about <b>${share.toFixed(0)}%</b> of expected cases in this selection.</p>`
+      + `<ol>${picked.map(r => `<li>${r.ward_id} (${r.city}): ${r.tier}, ~${f1(r.pred)} cases/wk. Main driver: ${r.driver}</li>`).join("")}</ol>`;
+    $("teams").oninput = () => r1();
+
     // table
     const k = S.sortKey, d = S.sortDir;
     const sorted = rows.slice().sort((a, b) => {

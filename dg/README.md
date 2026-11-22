@@ -1,7 +1,7 @@
 # 🦟 Dengue Guard
 
 **Ward-level dengue early-warning dashboard for Bangladesh city corporations.**  
-Predicts outbreak risk 2–4 weeks ahead using weather lags, ward vulnerability, and gradient-boosted tree models. Everything runs fully offline in your browser — no server, no Python, no internet required after the first load.
+Predicts outbreak risk 2–4 weeks ahead using weather lags, ward vulnerability, and gradient-boosted tree models. Everything runs fully offline in your browser — no server, no Python, no internet required after the first load. (Only the optional help chatbot needs a free API key and internet.)
 
 ---
 
@@ -22,7 +22,7 @@ xdg-open index.html
 
 ### Option B — Local static server with Node.js
 
-**Prerequisites:** Node.js ≥ 16 (https://nodejs.org)
+**Prerequisites:** Node.js ≥ 18 (https://nodejs.org)
 
 ```bash
 # 1. Get the code and enter the project folder (the folder that contains package.json)
@@ -43,6 +43,19 @@ The server opens the browser automatically on Windows / macOS / Linux.
 
 ---
 
+## Optional: enable the AI help chatbot
+
+The dashboard runs without any key (the chatbot then answers from its built-in FAQ and guided tour). To enable the Gemini-powered answers use Option B (needs Node.js >= 18):
+
+```bash
+cp .env.example .env        # Windows: copy .env.example .env
+# edit .env (in the project root, next to package.json) and paste a free key from https://aistudio.google.com/apikey
+npm start
+```
+`.env` is git-ignored; never commit it.
+
+---
+
 ## What It Does
 
 | Feature | Detail |
@@ -54,7 +67,9 @@ The server opens the browser automatically on Windows / macOS / Linux.
 | **Ward coverage** | 60 wards across Dhaka North/South (DNCC/DSCC), Chattogram (CCC), Gazipur (GCC), Narayanganj (NCC) |
 | **Dataset** | 31,320 ward-weeks, 2016–2025 |
 | **Weather drivers** | Temperature range (max/min) + humidity chart, and a rain-to-cases delay chart for high vs low water-logging wards (Ward deep-dive tab) |
-| **Offline inference** | < 50 ms per full 60-ward forecast in the browser — no API calls |
+| **Response planner** | Enter how many spraying teams are available; the app assigns them to the highest expected-case wards and shows the share of expected cases covered (Risk board) |
+| **Help chatbot** | Floating "Ask for help" button with a guided tour that switches tabs for you, "Open this tab" buttons, built-in FAQ answers (no API call), and Gemini only for other on-topic questions (cached, rate limited). Off-topic questions are refused without an API call |
+| **Offline inference** | < 50 ms per full 60-ward forecast in the browser, with no API calls for forecasting |
 
 ---
 
@@ -73,7 +88,10 @@ The server opens the browser automatically on Windows / macOS / Linux.
 ├── app.js              # Dashboard UI (tabs, charts, table, download)
 ├── engine.js           # Feature engineering + GBT tree inference (JS)
 ├── style.css           # Dark-theme responsive layout
-├── server.js           # Optional zero-dependency Node.js static server
+├── server.js           # Zero-dependency Node.js static server + /api/chat route
+├── chat-api.js         # Server-side chatbot proxy (key, cache, rate limit, timeout)
+├── chat.js             # Chat widget in the browser (tour and FAQ first, API second)
+├── .env.example        # Template for the optional Gemini key (copy to .env)
 ├── package.json        # { "start": "node server.js" }
 ├── train.py            # Offline training pipeline (Python): lags -> split -> GBT -> export
 ├── requirements.txt    # Python deps, only needed for train.py
@@ -146,12 +164,13 @@ In compliance with the hackathon disclosure requirement, the following AI tools 
 | Tool | Usage |
 |---|---|
 | **Google Gemini / Antigravity** | Code generation assistance, debugging, documentation drafting |
-| **Claude (Anthropic)** | Reviewing the submission against the rubric, writing `train.py`, and editing README / ARCHITECTURE |
+| **Claude (Anthropic)** | Reviewing the submission against the rubric, writing `train.py`, editing README / ARCHITECTURE; helped write the Response planner, the help chatbot (`chat.js`, `chat-api.js`) and the demo-video script |
+| **Google Gemini API (free tier, `gemini-3.5-flash-lite`)** | Runtime help chatbot only (answers questions about using the dashboard). Called from the Node server, never the browser. Optional: the app works without a key |
 | **scikit-learn** (`HistGradientBoostingRegressor`) | Training the gradient-boosted tree models in Python (offline, pre-training) |
 | **Plotly.js** (bundled, `lib/plotly.min.js`) | Client-side interactive charts |
 
-**No external APIs are called at runtime.** The prediction engine, dataset, and charts all run offline in the browser.  
-No LLM (GPT, Gemini, Claude) is called during inference.
+**Runtime AI and API usage:** the forecasting never calls an API. The prediction engine, dataset, and charts run offline in the browser, and no LLM is used to make predictions.  
+The only runtime API is the optional help chatbot (Gemini free tier), called from the Node server with the key in a git-ignored `.env`. Built-in answers handle common questions with zero API calls, other on-topic questions are cached, rate limited and token capped, off-topic questions are refused locally, and if there is no key or no network the chatbot falls back to the built-in answers.
 
 ---
 
@@ -164,7 +183,7 @@ No LLM (GPT, Gemini, Claude) is called during inference.
 | 3 | Dengue risk prediction engine (ML GBT, dynamic inference, risk tiers; training code in `train.py`) | ✅ |
 | 4 | Interactive web dashboard (5-tab UI, driver breakdown, download) | ✅ |
 | 5 | ARCHITECTURE.md (data flow diagram, validation split, model rationale) | ✅ |
-| 6 | Compute & API cost efficiency (zero API calls, serialized models, fast inference) | ✅ |
+| 6 | Compute & API cost efficiency (zero API calls for forecasting, serialized models, fast inference; optional chatbot is cached, rate limited and token capped) | ✅ |
 | 7 | 3-minute video demo | ⏳ Record & upload |
 | 8 | Git history + AI disclosure | ⏳ AI disclosure done above; push to GitHub with commits from every team member |
 | Bonus | Ward risk heatmap, confidence intervals, MAE/RMSE validation dashboard | ✅ |
