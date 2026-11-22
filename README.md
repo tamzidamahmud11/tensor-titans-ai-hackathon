@@ -1,211 +1,183 @@
-# **🦟 Dengue Guard**
+# 🦟 Dengue Guard
 
-### **Ward-Level Dengue Early Warning & Prediction System for Bangladesh**
+**AI-Powered Ward-Level Dengue Early Warning System for Bangladesh**
 
-Dengue Guard is an AI-powered, ward-level dengue forecasting and early-warning dashboard designed for city corporations in Bangladesh. It predicts dengue cases **2–4 weeks in advance**, identifies high-risk wards, and helps public health authorities make data-driven decisions for dengue prevention and resource allocation.
+Dengue Guard is an intelligent early-warning dashboard designed to predict dengue outbreak risks across different wards of Bangladesh. It uses historical dengue cases, weather patterns, and ward-level vulnerability indicators to forecast potential outbreaks **2–4 weeks in advance**.
 
-By combining historical dengue cases, weather patterns, and ward-level vulnerability indicators, Dengue Guard transforms raw data into actionable public health insights.
+The platform helps public health authorities identify high-risk wards, understand outbreak drivers, and prioritize mosquito-control resources before cases increase.
 
-## **🎯 Project Objectives**
+---
 
-- Predict dengue cases at the ward level 2–4 weeks ahead.
-- Identify dengue-prone areas using intelligent risk classification.
-- Provide early warnings to support preventive actions.
-- Help authorities allocate mosquito-control and response teams efficiently.
-- Visualize dengue trends, weather patterns, and geographical risk.
-- Support data-driven public health planning across Bangladesh.
+## 🎯 Project Objectives
 
-## **✨ Key Features**
+- Predict dengue outbreak risks 2–4 weeks ahead.
+- Identify high-risk wards across Bangladesh.
+- Analyze rainfall, temperature, and humidity patterns.
+- Understand the relationship between weather conditions and dengue outbreaks.
+- Help public health authorities prioritize mosquito-control activities.
+- Support data-driven decisions through interactive visualizations.
 
-| Feature                     | Description                                                                    |
-| --------------------------- | ------------------------------------------------------------------------------ |
-| 🔮 Dengue Forecasting       | Predicts dengue cases 2, 3, and 4 weeks ahead.                                 |
-| 🗺️ Ward-Level Risk Mapping | Visualizes dengue risk across different wards.                                 |
-| 🚦 Risk Classification      | Categorizes wards into Low, Medium, High, and Critical risk levels.            |
-| 🌧️ Weather Analysis        | Analyzes rainfall, temperature, and humidity patterns.                         |
-| 📊 Interactive Dashboard    | Provides charts, statistics, and ward-level insights.                          |
-| 🏙️ Multi-City Coverage     | Supports 60 wards across five city corporations.                               |
-| 🧠 AI/ML Prediction Engine  | Uses Poisson gradient-boosted regression models.                               |
-| 🚑 Response Planner         | Helps prioritize wards for mosquito-control teams.                             |
-| 🔄 What-if Scenarios        | Explores how changes in conditions affect predicted risk.                      |
-| 📁 CSV Import/Export        | Uploads weekly datasets and downloads forecasts.                               |
-| 🤖 AI Help Chatbot          | Provides project guidance using built-in FAQs and optional Gemini integration. |
-| ⚡ Offline Prediction        | Runs forecasting directly in the browser without external API calls.           |
+## ✨ Key Features
 
-## **🏙️ Geographic Coverage**
+### 1. AI-Powered Dengue Risk Prediction
+- Machine learning-based gradient-boosted tree models.
+- Predicts dengue cases for 2, 3, and 4 weeks ahead.
+- Classifies wards into four risk categories:
+  - 🟢 Low
+  - 🟡 Medium
+  - 🟠 High
+  - 🔴 Critical
+
+### 2. Multi-Week Weather Analysis
+- Rainfall lag analysis (0–7 weeks).
+- Temperature and humidity analysis.
+- Rolling rainfall calculations (2, 4, and 8 weeks).
+- Identifies delayed relationships between rainfall and dengue outbreaks.
+
+### 3. Interactive Risk Dashboard
+- Ward-level dengue risk overview.
+- Ranked ward predictions.
+- Interactive risk heatmap and treemap.
+- City corporation filtering.
+- Downloadable forecast reports in CSV format.
+
+### 4. Ward Deep-Dive Analysis
+- Detailed prediction for individual wards.
+- Weather driver analysis.
+- Expected dengue cases.
+- Forecast confidence intervals.
+- Historical trend visualization.
+
+### 5. What-If Scenario Analysis
+- Adjust rainfall conditions.
+- Modify temperature and humidity.
+- Observe how different weather scenarios affect predicted dengue risks.
+
+### 6. Response Planner
+- Enter the number of available mosquito-control teams.
+- Prioritize wards based on expected dengue cases.
+- Estimate the proportion of expected cases covered by the selected teams.
+
+### 7. Model Validation
+- Chronological training, validation, and testing.
+- MAE, RMSE, and R² evaluation.
+- Risk-tier accuracy.
+- Forecast interval coverage.
+
+### 8. AI Help Chatbot
+- Interactive dashboard assistance.
+- Built-in FAQ and guided tour.
+- Optional Google Gemini API integration.
+- API caching and rate limiting.
+
+---
+
+## 🏙️ Geographic Coverage
 
 Dengue Guard currently covers 60 wards across five city corporations:
 
-- Dhaka North City Corporation (DNCC)
-- Dhaka South City Corporation (DSCC)
-- Chattogram City Corporation (CCC)
-- Gazipur City Corporation (GCC)
-- Narayanganj City Corporation (NCC)
+| City Corporation | Abbreviation |
+|---|---|
+| Dhaka North City Corporation | DNCC |
+| Dhaka South City Corporation | DSCC |
+| Chattogram City Corporation | CCC |
+| Gazipur City Corporation | GCC |
+| Narayanganj City Corporation | NCC |
 
-## **🧠 Machine Learning Approach**
+## 📊 Dataset
 
-Dengue Guard uses a **Poisson Gradient Boosting Regression** approach to forecast future dengue cases.
+The project uses weekly ward-level historical data covering **2016–2025**.
 
-### **Input Features**
+- Total records: 31,320 ward-weeks.
+- Number of wards: 60.
+- Weather indicators:
+  - Average temperature.
+  - Rainfall.
+  - Relative humidity.
+- Ward vulnerability indicators:
+  - Population density.
+  - Water-logging risk index.
+  - Sanitation score.
+- Historical dengue case counts.
 
-- Historical dengue case counts
-- Lagged rainfall measurements
-- Temperature variations
-- Relative humidity
-- Population density
-- Water-logging risk index
-- Sanitation score
-- Rolling rainfall averages
+## 🧠 Machine Learning Approach
 
-### **Prediction Horizons**
+Dengue Guard uses **Histogram Gradient Boosting Regressor** models with Poisson loss for expected dengue case prediction.
 
-The system generates three independent forecasting horizons:
+The prediction pipeline includes:
 
-- 2 weeks ahead
-- 3 weeks ahead
-- 4 weeks ahead
+1. Historical weather data processing.
+2. Ward-wise feature engineering.
+3. Multi-week rainfall lag calculations.
+4. Temperature and humidity lag calculations.
+5. Recent dengue case trend analysis.
+6. Ward vulnerability analysis.
+7. Direct forecasting for 2, 3, and 4-week horizons.
+8. Risk classification using calibrated thresholds.
 
-### **Risk Classification**
+### Model Validation
 
-Predicted dengue cases are converted into four risk categories:
+The dataset is divided chronologically to prevent future-data leakage.
 
-| Risk Level  | Interpretation                          |
-| ----------- | --------------------------------------- |
-| 🟢 Low      | Relatively low expected dengue activity |
-| 🟡 Medium   | Moderate dengue activity                |
-| 🟠 High     | Elevated dengue activity                |
-| 🔴 Critical | Very high expected dengue activity      |
+| Dataset | Period | Purpose |
+|---|---|---|
+| Training | 2016–2022 | Model training |
+| Validation | 2023 | Model selection and risk calibration |
+| Testing | 2024–2025 | Final evaluation |
 
-Risk thresholds are calibrated using validation data from 2023.
+**Reported +3-week test performance:**
 
-## **📈 Model Performance**
+- MAE: 1.02
+- RMSE: 2.00
+- R²: 0.732
+- Risk-tier accuracy: 91.0%
+- 80% prediction interval coverage: 93.2%
 
-The model was evaluated using a chronological train-validation-test split.
+These are the project's reported evaluation results.
 
-| Dataset    | Period    | Purpose                                     |
-| ---------- | --------- | ------------------------------------------- |
-| Training   | 2016–2022 | Model training                              |
-| Validation | 2023      | Model tuning and risk-threshold calibration |
-| Testing    | 2024–2025 | Final performance evaluation                |
+---
 
-### **Test Results**
+## 🛠️ Technology Stack
 
-| Forecast Horizon | MAE  | RMSE | R²    | Risk Tier Accuracy |
-| ---------------- | ---- | ---- | ----- | ------------------ |
-| 2 Weeks          | 1.00 | 2.02 | 0.727 | 91.0%              |
-| 3 Weeks          | 1.02 | 2.00 | 0.732 | 91.0%              |
-| 4 Weeks          | 1.23 | 2.41 | 0.610 | 90.1%              |
+| Technology | Purpose |
+|---|---|
+| HTML5 | Webpage structure |
+| CSS3 | Responsive interface |
+| JavaScript | Frontend functionality |
+| Plotly.js | Interactive charts and visualizations |
+| Python | Model training and data processing |
+| Scikit-learn | Machine learning |
+| NumPy & Pandas | Data processing |
+| Joblib | Model serialization |
+| Node.js | Optional local server |
+| Google Gemini API | Optional chatbot assistance |
 
-The system also generates 80% prediction intervals to represent forecast uncertainty.
+## 📁 Project Structure
 
-*Note: These are the project's reported evaluation results. They should be interpreted alongside the held-out test methodology, data quality, and model limitations.*
-
-## **🛠️ Technology Stack**
-
-| Technology        | Purpose                                       |
-| ----------------- | --------------------------------------------- |
-| HTML5             | Website structure                             |
-| CSS3              | User interface and styling                    |
-| JavaScript        | Dashboard functionality and prediction engine |
-| Plotly.js         | Interactive data visualization                |
-| Node.js           | Local server and chatbot API                  |
-| Python            | Model training and data processing            |
-| NumPy & Pandas    | Data processing                               |
-| Scikit-learn      | Machine learning                              |
-| Google Gemini API | Optional AI chatbot integration               |
-
-## **⚙️ Installation & Setup**
-
-### **Prerequisites**
-
-- Node.js 18 or later
-- A modern web browser
-- Python 3.9+ (only required for model retraining)
-
-### **1. Clone the Repository**
-
-```
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-### **2. Navigate to the Project Directory**
-
-```
-cd dengue-guard
-```
-
-### **3. Start the Application**
-
-```
-npm start
-```
-
-No `npm install` is required for the supplied zero-dependency Node.js server.
-
-### **4. Open in Your Browser**
-
-[http://localhost:8080](http://localhost:8080?utm_source=chatgpt.com)
-
-Alternatively, open `index.html` directly in a modern browser to access the website without running the Node.js server.
-
-## **🤖 Optional AI Chatbot Setup**
-
-Dengue Guard includes an optional Gemini-powered chatbot.
-
-To enable AI-generated answers:
-
-1. Get a Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey?utm_source=chatgpt.com).
-2. Create a `.env` file in the project root.
-3. Add the following configuration:
-
-```
-GEMINI_API_KEY=your_api_key_here
-```
-
-4\. Start the application:
-
-```
-npm start
-```
-
-The chatbot includes built-in FAQ responses and a guided tour that work without an API key.
-
-**Security:** The API key is stored on the server and should never be committed to GitHub.
-
-## **📂 Project Structure**
-
-```
-dengue-guard/
+```text
+DengueGuard/
 │
 ├── index.html
 ├── app.html
 ├── about.html
 ├── contact.html
-├── news.html
 │
 ├── app.js
 ├── engine.js
-│
-├── chat.js
-├── chat.css
-├── chat-api.js
-│
 ├── server.js
 │
-├── cookies.js
-├── cookies.css
+├── chat.js
+├── chat-api.js
+├── chat.css
 │
-├── news.js
-├── news.css
-│
-├── site.css
 ├── style.css
+├── site.css
+├── cookies.css
+├── cookies.js
 │
 ├── logo.svg
 ├── hero-banner.jpg
 ├── chatbot-avatar.png
-│
-├── media/
 │
 ├── data/
 │   ├── dataset.js
@@ -215,110 +187,156 @@ dengue-guard/
 ├── lib/
 │   └── plotly.min.js
 │
+├── media/
+│   ├── dengue-prevention-poster.jpg
+│   └── dengue-prevention.mp4
+│
 ├── train.py
 ├── requirements.txt
 ├── package.json
+├── package-lock.json
 │
 ├── ARCHITECTURE.md
 └── README.md
 ```
 
-## **📊 Using Your Own Dataset**
+## 🚀 Installation & Setup
 
-Users can upload their own weekly dengue dataset through the dashboard.
+### Prerequisites
 
-Required CSV columns:
+- Node.js 18 or later (optional, for the local server).
+- Modern web browser.
+- Git (optional).
 
-```
-date,city,ward_id,population_density_sqkm,water_logging_risk_index,sanitation_score,avg_temp_c,rainfall_mm,relative_humidity_pct,dengue_cases
-```
+### Step 1: Clone the Repository
 
-Optional columns:
-
-```
-max_temp_c,min_temp_c
+```bash
+git clone <your-github-repository-url>
 ```
 
-Requirements:
+### Step 2: Navigate to the Project Folder
 
-- Dates must use `YYYY-MM-DD` format.
-- Data should be recorded weekly.
-- Each ward requires at least eight weeks of historical data.
-- The existing trained model can be applied immediately without retraining.
-
-## **🔬 Model Retraining**
-
-Python is not required for normal dashboard usage.
-
-To retrain the forecasting models:
-
+```bash
+cd DengueGuard/dg
 ```
+
+If your repository contains the project files directly, simply enter that project directory.
+
+### Step 3: Run the Application
+
+**Option A: Open directly**
+
+Open `index.html` in your web browser.
+
+**Option B: Run using Node.js**
+
+```bash
+npm start
+```
+
+### Step 4: Open the Dashboard
+
+Visit:
+
+```text
+http://localhost:8080
+```
+
+No `npm install` is required because the application has no external Node.js runtime dependencies.
+
+---
+
+## 🐍 Optional: Model Retraining
+
+The application already includes trained models. Python is not required for normal dashboard operation.
+
+To retrain the models:
+
+```bash
 pip install -r requirements.txt
+```
+
+Run:
+
+```bash
 python train.py
 ```
 
-To update the browser models:
+To update the application's exported model and metrics:
 
-```
+```bash
 python train.py --write-app
 ```
 
-The training process generates updated model artifacts and evaluation metrics.
+---
 
-## **🔐 Privacy & Offline Capabilities**
+## 🔐 API & Performance Optimization
+
+Dengue Guard is designed to minimize computational and API costs.
 
 - Forecasting runs entirely in the browser.
-- No external API is required for dengue predictions.
-- Historical data and trained models are bundled with the application.
-- The optional chatbot communicates with Gemini through the Node.js server.
-- The application does not require an internet connection after the required files have been loaded.
+- No external API calls are required for predictions.
+- Pre-trained models are stored as JSON.
+- Historical data is processed once during initialization.
+- Chart updates use Plotly's efficient rendering.
+- The optional chatbot uses caching and rate limiting.
+- API keys are stored on the server rather than exposed in browser code.
 
-## **⚠️ Limitations**
+The optional chatbot requires Node.js, internet access, and a Gemini API key. Without the key, built-in FAQ responses remain available.
 
-- Forecast accuracy depends on the quality and completeness of historical data.
-- Current geographic coverage is limited to 60 wards across five city corporations.
-- Dengue transmission can be influenced by factors not included in the model.
-- High and Critical risk detection should be interpreted carefully because tier recall is modest.
-- Predictions are estimates, not confirmed case counts or medical diagnoses.
+To configure the chatbot, create a `.env` file in the project root:
 
-Dengue Guard is designed as a **decision-support tool**, not a replacement for epidemiological surveillance or public health professionals.
+```env
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-## **🚀 Future Improvements**
+Never upload your `.env` file or expose your API key publicly.
 
-- Expand coverage to more city corporations and districts.
-- Integrate verified, regularly updated dengue surveillance data.
-- Incorporate satellite imagery and environmental indicators.
-- Improve detection of High and Critical risk wards.
-- Develop automated early-warning notifications.
-- Introduce multilingual support, including Bangla.
-- Add mobile-friendly dashboards for field health workers.
-- Integrate verified geographical boundary maps.
+---
 
-## **👥 Project Team**
+## 🌱 Future Improvements
 
-**Team Name:** Tensor Titans
+- Integration with real-time weather APIs.
+- Live dengue case data integration.
+- Expansion to more city corporations and wards.
+- Advanced ward-level outbreak forecasting.
+- Improved prediction confidence and explainability.
+- Integration with public health monitoring systems.
+- Automated mosquito-control resource allocation.
+- Mobile-friendly public health reporting.
 
-**Project Name:** Dengue Guard
+## 🏆 Hackathon Submission
 
-**Category:** Artificial Intelligence & Machine Learning / Public Health
+**Challenge:** AI for Urban Dengue Outbreak
 
-## **🤝 Contribution**
+**Hackathon:** EDU AI Engineering Hackathon 2026
 
-Contributions, suggestions, and improvements are welcome.
+**Project:** Dengue Guard
 
-1. Fork the repository.
-2. Create a new feature branch.
-3. Commit your changes.
-4. Submit a pull request.
+**Goal:** Build an intelligent, data-driven dengue early-warning system that helps public health authorities identify vulnerable wards and respond before outbreaks peak.
 
-## **📜 License**
+## 🤖 AI Assistants & External APIs Disclosure
 
-This project is developed for hackathon evaluation and demonstration purposes.
+AI assistants and external services used during development:
 
-## **❤️ Our Mission**
+- Google Gemini / Antigravity
+- Claude (Anthropic)
 
-**Predict Early. Prepare Smarter. Protect Communities.**
+External API:
+- Google Gemini API (optional chatbot assistance).
 
-Dengue Guard aims to transform dengue surveillance into proactive, data-driven prevention by helping communities and public health authorities identify risks before outbreaks escalate.
+Other development technologies:
+- Scikit-learn
+- Plotly.js
+- NumPy
+- Pandas
 
-*Building a smarter and safer Bangladesh through Artificial Intelligence.*
+AI assistants were used for development assistance, debugging, code review, and documentation.
+
+## 📄 License
+
+For hackathon evaluation and demonstration purposes only.
+
+---
+
+**Dengue Guard — Predict Early. Prepare Better. Protect Communities.** 🦟
