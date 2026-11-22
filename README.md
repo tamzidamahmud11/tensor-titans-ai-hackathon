@@ -8,6 +8,16 @@ The platform helps public health authorities identify high-risk wards, understan
 
 ---
 
+## 👥 Team Members
+
+| Name | Student ID |
+|---|---|
+| Tamzida Mahmud | 242014912 |
+| Zafnun Hosney Uddin | 242010912 |
+| Zoya Zubairi Fiza | 242011712 |
+
+---
+
 ## 🎯 Project Objectives
 
 - Predict dengue outbreak risks 2–4 weeks ahead.
@@ -20,6 +30,7 @@ The platform helps public health authorities identify high-risk wards, understan
 ## ✨ Key Features
 
 ### 1. AI-Powered Dengue Risk Prediction
+
 - Machine learning-based gradient-boosted tree models.
 - Predicts dengue cases for 2, 3, and 4 weeks ahead.
 - Classifies wards into four risk categories:
@@ -29,12 +40,14 @@ The platform helps public health authorities identify high-risk wards, understan
   - 🔴 Critical
 
 ### 2. Multi-Week Weather Analysis
+
 - Rainfall lag analysis (0–7 weeks).
 - Temperature and humidity analysis.
 - Rolling rainfall calculations (2, 4, and 8 weeks).
 - Identifies delayed relationships between rainfall and dengue outbreaks.
 
 ### 3. Interactive Risk Dashboard
+
 - Ward-level dengue risk overview.
 - Ranked ward predictions.
 - Interactive risk heatmap and treemap.
@@ -42,6 +55,7 @@ The platform helps public health authorities identify high-risk wards, understan
 - Downloadable forecast reports in CSV format.
 
 ### 4. Ward Deep-Dive Analysis
+
 - Detailed prediction for individual wards.
 - Weather driver analysis.
 - Expected dengue cases.
@@ -49,22 +63,26 @@ The platform helps public health authorities identify high-risk wards, understan
 - Historical trend visualization.
 
 ### 5. What-If Scenario Analysis
+
 - Adjust rainfall conditions.
 - Modify temperature and humidity.
 - Observe how different weather scenarios affect predicted dengue risks.
 
 ### 6. Response Planner
+
 - Enter the number of available mosquito-control teams.
 - Prioritize wards based on expected dengue cases.
 - Estimate the proportion of expected cases covered by the selected teams.
 
 ### 7. Model Validation
+
 - Chronological training, validation, and testing.
 - MAE, RMSE, and R² evaluation.
 - Risk-tier accuracy.
 - Forecast interval coverage.
 
 ### 8. AI Help Chatbot
+
 - Interactive dashboard assistance.
 - Built-in FAQ and guided tour.
 - Optional Google Gemini API integration.
@@ -200,6 +218,8 @@ DengueGuard/
 └── README.md
 ```
 
+---
+
 ## 🚀 Installation & Setup
 
 ### Prerequisites
@@ -284,7 +304,9 @@ Dengue Guard is designed to minimize computational and API costs.
 
 The optional chatbot requires Node.js, internet access, and a Gemini API key. Without the key, built-in FAQ responses remain available.
 
-To configure the chatbot, create a `.env` file in the project root:
+### Chatbot API Configuration
+
+Create a `.env` file in the project root:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
@@ -305,6 +327,8 @@ Never upload your `.env` file or expose your API key publicly.
 - Automated mosquito-control resource allocation.
 - Mobile-friendly public health reporting.
 
+---
+
 ## 🏆 Hackathon Submission
 
 **Challenge:** AI for Urban Dengue Outbreak
@@ -313,25 +337,33 @@ Never upload your `.env` file or expose your API key publicly.
 
 **Project:** Dengue Guard
 
+**Team:** Tensor Titans
+
 **Goal:** Build an intelligent, data-driven dengue early-warning system that helps public health authorities identify vulnerable wards and respond before outbreaks peak.
+
+---
 
 ## 🤖 AI Assistants & External APIs Disclosure
 
-AI assistants and external services used during development:
+### AI Assistants Used
 
 - Google Gemini / Antigravity
 - Claude (Anthropic)
 
-External API:
+### External APIs
+
 - Google Gemini API (optional chatbot assistance).
 
-Other development technologies:
+### Other Development Technologies
+
 - Scikit-learn
 - Plotly.js
 - NumPy
 - Pandas
 
 AI assistants were used for development assistance, debugging, code review, and documentation.
+
+---
 
 ## 📄 License
 
@@ -340,3 +372,5 @@ For hackathon evaluation and demonstration purposes only.
 ---
 
 **Dengue Guard — Predict Early. Prepare Better. Protect Communities.** 🦟
+
+**Developed with dedication by Team Tensor Titans.**
