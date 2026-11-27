@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dengue Guard — Ward-level dengue early warning</title>
+<meta name="description" content="Predict dengue outbreak risk 2–4 weeks ahead for 60 wards across Bangladesh city corporations. Runs fully offline in your browser.">
+<link rel="icon" href="logo.svg" type="image/svg+xml"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="chat.css">
+<link rel="stylesheet" href="cookies.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Guard</a>
+  <nav>
+    <a href="#why">Why it matters</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#proof">Validation</a><a href="news.html">News</a><a href="#about">About us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    <a class="btn" href="app.html">Open dashboard</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="tag">Early warning for Bangladesh city corporations</span>
+    <h1>See dengue outbreaks <span>weeks</span> before they peak.</h1>
+    <p class="lead">Dengue Guard forecasts risk for every ward 2–4 weeks ahead, using weather lags, ward vulnerability and gradient-boosted trees — so health teams can act while there is still time to clear breeding sites.</p>
+    <div class="cta"><a class="btn" href="app.html">Open the dashboard →</a><a class="btn ghost" href="#how">How it works</a></div>
+  </div>
+  <div class="panel" aria-label="Example of the ranked ward risk board">
+    <h4>Ranked ward risk · +3 week window</h4>
+    <div class="sub">Illustrative preview — the live board is in the dashboard</div>
+    <div class="row" style="--c:var(--crit)"><span>Ward A<span class="chip">Critical</span></span><i style="width:92%"></i><b>9.4</b></div>
+    <div class="row" style="--c:var(--high)"><span>Ward B<span class="chip">High</span></span><i style="width:68%"></i><b>6.8</b></div>
+    <div class="row" style="--c:var(--high)"><span>Ward C<span class="chip">High</span></span><i style="width:55%"></i><b>5.5</b></div>
+    <div class="row" style="--c:var(--med)"><span>Ward D<span class="chip">Medium</span></span><i style="width:32%"></i><b>3.2</b></div>
+    <div class="row" style="--c:var(--low)"><span>Ward E<span class="chip">Low</span></span><i style="width:10%"></i><b>1.0</b></div>
+    <div class="sub" style="margin:10px 0 0">Expected cases per ward per week, with 80% prediction bands</div>
+  </div>
+</div>
+</div>
+
+<div class="stats"><div class="wrap">
+  <div class="stat"><b>60</b><span>wards across 5 city corporations</span></div>
+  <div class="stat"><b>2–4 wk</b><span>forecast horizon</span></div>
+  <div class="stat"><b>91%</b><span>risk-tier accuracy, held-out 2024–25 (+3w)</span></div>
+  <div class="stat"><b>&lt; 50 ms</b><span>for a full 60-ward forecast</span></div>
+</div></div>
+
+<section id="why"><div class="wrap">
+  <h2>Why early warning matters</h2>
+  <p class="sec-sub">Dengue cases rise weeks after the rain, but spraying and larvicide teams usually move only after hospital admissions climb.</p>
+  <div class="grid3">
+    <div class="card"><div class="big">150,000+</div><h3>hospitalizations a year</h3><p>Recent monsoon and post-monsoon surges in Bangladesh keep Dhaka and Chattogram wards at capacity (hackathon brief).</p></div>
+    <div class="card"><div class="big">2–4 weeks</div><h3>from rain to hospital spike</h3><p>Eggs mature in 7–14 days, then viral incubation and symptoms follow. That delay is the window for action.</p></div>
+    <div class="card"><div class="big">Ward by ward</div><h3>same rain, different risk</h3><p>Drainage, crowding and waste collection decide which ward becomes a hotspot first, so warnings must be local.</p></div>
+  </div>
+</div></section>
+
+<section id="features" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <h2>Built for decision-makers</h2>
+  <p class="sec-sub">Six views in one dashboard, from the citywide risk board to a single ward's drivers.</p>
+  <div class="grid3">
+    <div class="card"><div class="ico">🗺️</div><h3>Risk board &amp; map</h3><p>Ranked ward table, risk treemap and a heatmap by week, filtered by city corporation.</p></div>
+    <div class="card"><div class="ico">🔎</div><h3>Ward deep-dive</h3><p>Cases, rainfall and forecast for one ward, with the main drivers behind its score.</p></div>
+    <div class="card"><div class="ico">🎛️</div><h3>What-if scenarios</h3><p>Scale rainfall, shift temperature or humidity and watch the forecast move instantly.</p></div>
+    <div class="card"><div class="ico">📊</div><h3>Model validation</h3><p>MAE, RMSE, R², confusion matrices and monthly actuals on data the model never saw.</p></div>
+    <div class="card"><div class="ico">📁</div><h3>Bring your own data</h3><p>Upload a weekly CSV with the same columns and the trained model applies at once, with no retraining.</p></div>
+    <div class="card"><div class="ico">🔒</div><h3>Private and offline</h3><p>No API calls, no LLM at inference. Your data never leaves the browser.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>From rainfall to ranked wards</h2>
+  <p class="sec-sub">Eggs to adult mosquitoes takes 7–14 days, then comes viral incubation. Rain several weeks back is a strong signal for today's cases, and the model is built around that delay.</p>
+  <div class="grid3">
+    <div class="card"><div class="num">1</div><h3>Read the weather history</h3><p>Rainfall lags of 0–7 weeks, rolling 2/4/8-week sums, plus temperature and humidity lags — using only data available before the warning date.</p></div>
+    <div class="card"><div class="num">2</div><h3>Score every ward</h3><p>Gradient-boosted trees combine weather with recent case trends and ward vulnerability: density, water-logging and sanitation.</p></div>
+    <div class="card"><div class="num">3</div><h3>Rank and act</h3><p>Wards are sorted into Low, Medium, High and Critical tiers with uncertainty bands, ready to download as CSV for field teams.</p></div>
+  </div>
+  <div class="tiers" style="margin-top:22px">
+    <span class="chip" style="--c:var(--low);margin:0">Low</span><span class="chip" style="--c:var(--med);margin:0">Medium</span>
+    <span class="chip" style="--c:var(--high);margin:0">High</span><span class="chip" style="--c:var(--crit);margin:0">Critical</span>
+    <span style="color:var(--mu);font-size:.85rem;align-self:center;margin-left:6px">Thresholds calibrated on 2023 validation data</span>
+  </div>
+</div></section>
+
+<section id="tiers" style="padding-top:0"><div class="wrap">
+  <h2>What each risk tier asks you to do</h2>
+  <p class="sec-sub">Every ward gets a tier and a recommended action in the dashboard.</p>
+  <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="card"><span class="chip" style="--c:var(--low);margin:0">Low</span><p>Routine surveillance. Keep weekly larvae checks and community awareness running.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--med);margin:0">Medium</span><p>Pre-position larvicide and clear drains in this ward; brief clinics on case definition.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--high);margin:0">High</span><p>Deploy larvicide and fogging teams within 7 days; reserve beds, saline and test kits.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--crit);margin:0">Critical</span><p>Emergency response: door-to-door source reduction now, surge beds and saline, daily case reporting.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="band">
+    <h2>Explore the forecast for your city</h2>
+    <p>Pick a city corporation, slide the warning date and see which wards need attention first.</p>
+    <div class="cta"><a class="btn" href="app.html">Open the dashboard →</a></div>
+  </div>
+</div></section>
+<section id="gameplan" class="gameplan"><div class="wrap">
+  <h2>The prevention game plan</h2>
+  <p class="sec-sub">A 23-second cartoon on what households and ward teams can do once a forecast says risk is rising.</p>
+  <div class="gp">
+    <figure class="gp-video">
+      <video controls preload="metadata" playsinline poster="media/dengue-prevention-poster.jpg" aria-describedby="gp-desc">
+        <source src="media/dengue-prevention.mp4" type="video/mp4">
+        Your browser can't play this video. The three steps are listed beside it.
+      </video>
+      <figcaption id="gp-desc">Animated explainer with on-screen captions and no sound. Illustration made for Dengue Guard.</figcaption>
+    </figure>
+    <ol class="gp-steps">
+      <li><span class="num">1</span><div><b>Empty and scrub containers weekly</b><span>Buckets, tyres, pot saucers and coolers. Scrubbing removes eggs that survive drying.</span></div></li>
+      <li><span class="num">2</span><div><b>Cover tanks, keep drains flowing</b><span>Tight lids and cleared drains leave Aedes nowhere to breed.</span></div></li>
+      <li><span class="num">3</span><div><b>Protect people, test early</b><span>Nets and repellent by day and night. Fever with body ache? Get tested early.</span></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="proof"><div class="wrap split">
+  <div>
+    <h2>Tested on data it never saw</h2>
+    <p class="sec-sub" style="margin-bottom:0">Strictly chronological split: train 2016–2022, validate 2023, test 2024–2025. No shuffling, so no future leakage.</p>
+    <ul class="checks">
+      <li><b>Beats both baselines</b> at every horizon (persistence and seasonal ward-month average)</li>
+      <li><b>93.2% coverage</b> on 80% prediction bands at +3 weeks, so the bands err on the cautious side</li>
+      <li><b>MAE 1.02</b> cases per ward-week at +3 weeks</li>
+    </ul>
+  </div>
+  <div class="card bars" aria-label="R squared at plus three weeks, held-out test set">
+    <h3 style="margin-top:0">R² at +3 weeks (held-out test)</h3>
+    <div class="b"><div class="l"><span>Persistence (last week repeats)</span><b>0.14</b></div><div class="t"><i style="width:14%"></i></div></div>
+    <div class="b"><div class="l"><span>Seasonal ward-month average</span><b>0.54</b></div><div class="t"><i style="width:54%"></i></div></div>
+    <div class="b me"><div class="l"><span>Dengue Guard</span><b>0.73</b></div><div class="t"><i style="width:73%"></i></div></div>
+    <p class="fine">Figures from the dashboard's Model validation tab. Full method in the architecture notes.</p>
+  </div>
+</div></section>
+
+<section id="news" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <h2>Dengue in the news</h2>
+  <p class="sec-sub">Real reporting from Bangladesh's 2025 and 2026 dengue seasons, with photos and one-tap sharing.</p>
+  <div class="cta"><a class="btn" href="news.html">Read the latest stories →</a></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2>About Dengue Guard</h2>
+  <p class="sec-sub">A ward-level early-warning tool that gives health teams a few weeks' head start on dengue. It forecasts risk for 60 wards in 5 city corporations, runs privately in your browser and is built for decision support, not diagnosis.</p>
+  <div class="cta"><a class="btn ghost" href="about.html">Read more about us →</a></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>What does the forecast tell me?</summary><p>The expected number of dengue cases per ward per week, 2–4 weeks ahead, with an 80% range and a risk tier. It guides where to send teams first. It does not diagnose individuals.</p></details>
+  <details><summary>Which data does it use?</summary><p>The hackathon dataset: 60 wards in 5 city corporations, 31,320 weekly records from 2016 to 2025, covering weather, ward vulnerability and reported cases. You can also upload your own weekly CSV.</p></details>
+  <details><summary>Does my data leave my computer?</summary><p>No. Everything runs in your browser, with no server, no API call and no LLM at prediction time.</p></details>
+  <details><summary>How accurate is it?</summary><p>On the held-out 2024–2025 test years, R² is 0.73 at +3 weeks and 0.61 at +4 weeks, so longer warnings are less certain. The Model validation tab shows every metric.</p></details>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap">
+  <h2>Contact</h2>
+  <p class="sec-sub">Questions, feedback or want to try Dengue Guard with your own ward data? We would like to hear from you.</p>
+  <div class="cta"><a class="btn" href="contact.html">Get in touch →</a><a class="btn ghost" href="mailto:team@dengueguard.example">team@dengueguard.example</a></div>
+</div></section>
+<section id="references" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <h2>References</h2>
+  <p class="sec-sub">News reports on Bangladesh's 2025 and 2026 dengue seasons. Read summaries and share them on the <a href="news.html" style="color:var(--ac)">News page</a>.</p>
+  <ol class="ref-list">
+    <li>Prothom Alo. “100 ‘hotspots’ in North, 29 wards at high risk in South” <i>Prothom Alo English edition</i>, 20 Sep 2026. <a href="https://en.prothomalo.com/bangladesh/uiwruqtl4p" target="_blank" rel="noopener noreferrer">https://en.prothomalo.com/bangladesh/uiwruqtl4p</a> (accessed 22 Nov 2026)</li>
+    <li>Khaleej Times. “Bangladesh dengue outbreak surges; 4 dead, 1,558 hospitalised in last 24 hours” <i>Khaleej Times (photo: AFP)</i>, 7 Sep 2026. <a href="https://www.khaleejtimes.com/world/asia/bangladesh-dengue-outbreak-surges-september-2026" target="_blank" rel="noopener noreferrer">https://www.khaleejtimes.com/world/asia/bangladesh-dengue-outbreak-surges-september-2026</a> (accessed 22 Nov 2026)</li>
+    <li>Reuters. “Bangladesh sees worst single-day surge in dengue deaths” <i>Dawn (Reuters)</i>, 22 Sep 2025. <a href="https://www.dawn.com/news/1943788/bangladesh-sees-worst-single-day-surge-in-dengue-deaths" target="_blank" rel="noopener noreferrer">https://www.dawn.com/news/1943788/bangladesh-sees-worst-single-day-surge-in-dengue-deaths</a> (accessed 22 Nov 2026)</li>
+    <li>The Daily Star. “Dengue in 2025: July the deadliest month so far” <i>The Daily Star</i>, 25 Jul 2025. <a href="https://www.thedailystar.net/node/3947961" target="_blank" rel="noopener noreferrer">https://www.thedailystar.net/node/3947961</a> (accessed 22 Nov 2026)</li>
+    <li>The Financial Express. “Dengue hospitalisations top 45,000 in 2025” <i>The Financial Express (Bangladesh)</i>, 27 Sep 2025. <a href="https://thefinancialexpress.com.bd/national/dengue-hospitalisations-top-45000-in-2025" target="_blank" rel="noopener noreferrer">https://thefinancialexpress.com.bd/national/dengue-hospitalisations-top-45000-in-2025</a> (accessed 22 Nov 2026)</li>
+    <li>Faisal Mahmud. “Bangladesh may be headed into another deadly dengue season – unprepared” <i>Scroll.in</i>, 16 May 2026. <a href="https://scroll.in/article/1092877/bangladesh-may-be-headed-into-another-deadly-dengue-season-unprepared" target="_blank" rel="noopener noreferrer">https://scroll.in/article/1092877/bangladesh-may-be-headed-into-another-deadly-dengue-season-unprepared</a> (accessed 22 Nov 2026)</li>
+    <li>News On AIR. “Bangladesh: 11 dengue deaths reported in a single day; overall 400 fatalities in a year” <i>News On AIR (All India Radio)</i>, 27 Oct 2026. <a href="https://newsonair.gov.in/bangladesh-11-dengue-deaths-reported-in-a-single-day-overall-400-fatalities-in-a-year/" target="_blank" rel="noopener noreferrer">https://newsonair.gov.in/bangladesh-11-dengue-deaths-reported-in-a-single-day-overall-400-fatalities-in-a-year/</a> (accessed 22 Nov 2026)</li>
+  </ol>
+</div></section>
+
+<section id="privacy" class="legal"><div class="wrap">
+  <h2>Privacy Policy</h2>
+  <p class="sec-sub">Short version: Dengue Guard runs in your browser and does not collect or send your data.</p>
+  <div class="lc">
+<p class="updated">Last updated: 22 November 2026</p>
+<h3>Summary</h3>
+<p>Dengue Guard is an offline, in-browser tool. We do not run a server that receives your data, we do not use analytics or advertising trackers, and the only cookie we set is a small first-party one that remembers your cookie choice.</p>
+<h3>Data you use in the dashboard</h3>
+<ul>
+<li><b>Built-in dataset.</b> The bundled weekly ward dataset (2016–2025) is loaded from the files shipped with the app.</li>
+<li><b>Your own CSV.</b> If you upload a weekly CSV, it is read and processed by your browser only. It is not uploaded anywhere and is gone when you close or reload the page.</li>
+<li><b>Downloads.</b> The CSV forecast you download is created on your device.</li>
+</ul>
+<h3>What we do not do</h3>
+<ul>
+<li>No cookies or local storage other than the one that remembers your cookie choice, and no fingerprinting.</li>
+<li>No third-party analytics, ads or social-media pixels. Share buttons are plain links, not embedded widgets.</li>
+<li>No API calls and no language model at prediction time.</li>
+<li>No sale or sharing of data, because we do not collect it.</li>
+</ul>
+<h3>Cookies and your choices</h3>
+<p>When you first visit, a notice asks whether you allow optional cookies. You can change your mind at any time with <a href="#" data-cookie-settings>Cookie settings</a> in the footer.</p>
+<ul>
+<li><b>dg_consent</b> (strictly necessary, first-party, kept for 180 days): stores your cookie choice. A copy is kept in your browser's local storage as a fallback.</li>
+<li><b>Preferences and analytics</b>: Dengue Guard does not currently set any. If we add them, they will stay off unless you allow them.</li>
+</ul>
+<h3>Contact form and email</h3>
+<p>The contact form only opens your email app with a pre-filled message. If you send it, we receive the name, email address and message you chose to include, and we use them only to reply. Please do not include patient names or other personal health information.</p>
+<h3>Hosting and third parties</h3>
+<p>All code, data and charts (Plotly.js) are bundled with the app and load without external requests, with one exception: the News page shows photos loaded from the news publishers’ own servers, which can see your IP address when the images load. Share buttons on that page only open Facebook, X, WhatsApp, LinkedIn or your email app if you click them. If you host Dengue Guard on a web server, that server’s operator may keep ordinary access logs (such as IP address and time of visit), which are outside the app’s control.</p>
+<h3>Your data uploads and responsibility</h3>
+<p>Only upload data you are allowed to use. Weekly ward-level counts are expected; do not upload data that identifies individual patients.</p>
+<h3>Changes</h3>
+<p>If this policy changes, we will update the date above.</p>
+<h3>Contact</h3>
+<p>Privacy questions: <a href="mailto:team@dengueguard.example">team@dengueguard.example</a> or the <a href="#contact">Contact section</a>.</p>
+  </div>
+</div></section>
+
+<section id="terms" class="legal"><div class="wrap">
+  <h2>Terms of Use</h2>
+  <p class="sec-sub">Please read these terms before using Dengue Guard.</p>
+  <div class="lc">
+<p class="updated">Last updated: 22 November 2026</p>
+<div class="callout"><b>Dengue Guard is a decision-support tool, not medical advice.</b> Do not use it to diagnose or treat any person.</div>
+<h3>Acceptance</h3>
+<p>By opening or using Dengue Guard you agree to these terms. If you do not agree, please do not use it.</p>
+<h3>Purpose and intended use</h3>
+<p>Dengue Guard was developed for hackathon evaluation and public-health planning support. Forecasts are statistical estimates of weekly dengue cases per ward and are meant to help decide where to look or act first.</p>
+<h3>Limits of the forecasts</h3>
+<ul>
+<li>Forecasts can be wrong. Accuracy falls for longer horizons, and results on your own data may differ from the reported test results.</li>
+<li>The model learns from past data and may miss new situations, such as a new virus serotype, changes in reporting or unusual weather.</li>
+<li>Risk tiers and recommended actions are general guidance. Local health authorities should make the final decisions.</li>
+</ul>
+<h3>Your responsibilities</h3>
+<ul>
+<li>Use the tool lawfully and only with data you are permitted to use.</li>
+<li>Do not upload data that identifies individual patients.</li>
+<li>Check important decisions against other sources and professional judgment.</li>
+</ul>
+<h3>No warranty</h3>
+<p>The tool is provided “as is” and “as available”, without warranties of any kind, express or implied, including accuracy, reliability, fitness for a particular purpose or non-infringement.</p>
+<h3>Limitation of liability</h3>
+<p>To the fullest extent permitted by law, the creators of Dengue Guard are not liable for any loss, damage or harm arising from the use of, or inability to use, the tool or its forecasts.</p>
+<h3>Intellectual property and licenses</h3>
+<p>The source code and data are provided for hackathon evaluation purposes only, as stated in the README. Plotly.js is bundled under its own MIT license. The Dengue Guard name and logo may not be used to suggest endorsement without permission.</p>
+<h3>Changes</h3>
+<p>We may update these terms. Continued use after the date above means you accept the updated terms.</p>
+<h3>Contact</h3>
+<p>Questions about these terms: <a href="mailto:team@dengueguard.example">team@dengueguard.example</a> or the <a href="#contact">Contact section</a>. See also our <a href="#references">References</a><a href="#privacy">Privacy Policy</a>.</p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Dengue Guard · Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+  <span class="foot-links"><a href="app.html">Dashboard</a><a href="news.html">News</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms</a><a href="#" data-cookie-settings>Cookie settings</a><a href="README.md">README</a><a href="ARCHITECTURE.md">Architecture</a></span>
+</div></footer>
+<script src="chat.js"></script>
+<script src="cookies.js"></script>
+</body>
+</html>

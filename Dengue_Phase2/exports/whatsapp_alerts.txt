@@ -1,0 +1,929 @@
+🔴 *DENGUE DISPATCH — DSCC_Ward_04 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *20.5*/wk (80% range 0.0–28.5); planning for 26.5
+
+*Supplies (allocated / required)*
+• Saline bags: *103* / 103 ✅
+• Diagnostic kits: *67* / 67 ✅
+• Hospital beds: need *7*, local 7 ✅
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 4), est. 6.7 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — crews 1/4
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — DNCC_Ward_12 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *19.0*/wk (80% range 0.0–26.1); planning for 24.3
+
+*Supplies (allocated / required)*
+• Saline bags: *95* / 95 ✅
+• Diagnostic kits: *61* / 61 ✅
+• Hospital beds: need *6*, local 6 ✅
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 4), est. 8.1 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — crews 1/4
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — CCC_Ward_03 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *18.8*/wk (80% range 0.0–24.3); planning for 22.9
+
+*Supplies (allocated / required)*
+• Saline bags: *89* / 89 ✅
+• Diagnostic kits: *58* / 58 ✅
+• Hospital beds: need *6*, local 6 ✅
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 4), est. 4.9 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — crews 1/4
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — CCC_Ward_01 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *19.3*/wk (80% range 0.0–25.4); planning for 23.8
+
+*Supplies (allocated / required)*
+• Saline bags: *93* / 93 ✅
+• Diagnostic kits: *60* / 60 ✅
+• Hospital beds: need *6*, local 6 ✅
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 4), est. 7.0 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — crews 1/4
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — DNCC_Ward_18 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *18.9*/wk (80% range 0.0–24.8); planning for 23.3
+
+*Supplies (allocated / required)*
+• Saline bags: *91* / 91 ✅
+• Diagnostic kits: *59* / 59 ✅
+• Hospital beds: need *6*, local 5 → overflow 1
+  ↪ transfer *1* patient(s) to DNCC_Ward_04
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 4), est. 9.9 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — crews 1/4
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — DSCC_Ward_06 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *20.0*/wk (80% range 0.0–26.3); planning for 24.8
+
+*Supplies (allocated / required)*
+• Saline bags: *96* / 96 ✅
+• Diagnostic kits: *62* / 62 ✅
+• Hospital beds: need *6*, local 6 ✅
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 3), est. 8.2 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — crews 1/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — DSCC_Ward_10 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *18.5*/wk (80% range 0.0–26.0); planning for 24.1
+
+*Supplies (allocated / required)*
+• Saline bags: *94* / 94 ✅
+• Diagnostic kits: *61* / 61 ✅
+• Hospital beds: need *6*, local 5 → overflow 1
+  ↪ transfer *1* patient(s) to DSCC_Ward_07
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 3), est. 8.1 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — crews 1/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — DSCC_Ward_19 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *18.3*/wk (80% range 0.0–24.8); planning for 23.2
+
+*Supplies (allocated / required)*
+• Saline bags: *90* / 90 ✅
+• Diagnostic kits: *58* / 58 ✅
+• Hospital beds: need *6*, local 5 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka South* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 3), est. 8.3 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — 1 bed(s) unplaced; crews 1/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — DSCC_Ward_12 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *20.2*/wk (80% range 0.0–24.1); planning for 23.1
+
+*Supplies (allocated / required)*
+• Saline bags: *90* / 90 ✅
+• Diagnostic kits: *58* / 58 ✅
+• Hospital beds: need *6*, local 5 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka South* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 3), est. 12.5 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — 1 bed(s) unplaced; crews 1/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — GCC_Ward_02 (Gazipur)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *18.4*/wk (80% range 0.0–25.9); planning for 24.0
+
+*Supplies (allocated / required)*
+• Saline bags: *89* / 94 ⚠️ short 5
+• Diagnostic kits: *58* / 61 ⚠️ short 3
+• Hospital beds: need *6*, local 4 → overflow 2
+  ⛔ *2 bed(s) unplaced in Gazipur* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 3)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 5; kits short 3; 2 bed(s) unplaced; crews 0/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🔴 *DENGUE DISPATCH — NCC_Ward_05 (Narayanganj)*
+Target week: 30 Jun (+3 wk) · Risk: *Critical*
+Predicted cases: *19.6*/wk (80% range 0.0–23.0); planning for 22.2
+
+*Supplies (allocated / required)*
+• Saline bags: *74* / 86 ⚠️ short 12
+• Diagnostic kits: *48* / 56 ⚠️ short 8
+• Hospital beds: need *6*, local 3 → overflow 3
+  ↪ transfer *1* patient(s) to NCC_Ward_04
+  ⛔ *2 bed(s) unplaced in Narayanganj* — request referral / field ward
+
+*Vector control*: 2 spraying crew(s) assigned (suggested 3), est. 13.3 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 12; kits short 8; 2 bed(s) unplaced; crews 2/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — GCC_Ward_01 (Gazipur)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *16.0*/wk (80% range 0.0–19.5); planning for 17.7
+
+*Supplies (allocated / required)*
+• Saline bags: *57* / 69 ⚠️ short 12
+• Diagnostic kits: *37* / 45 ⚠️ short 8
+• Hospital beds: need *5*, local 5 ✅
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 3), est. 4.3 cases prevented over 2–4 wk
+Status: 🚨 *DEFICIT* — saline short 12; kits short 8; crews 1/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — NCC_Ward_01 (Narayanganj)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *15.4*/wk (80% range 0.0–19.6); planning for 17.5
+
+*Supplies (allocated / required)*
+• Saline bags: *54* / 68 ⚠️ short 14
+• Diagnostic kits: *35* / 44 ⚠️ short 9
+• Hospital beds: need *5*, local 6 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 3)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 14; kits short 9; crews 0/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DNCC_Ward_05 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *13.9*/wk (80% range 0.0–18.6); planning for 16.3
+
+*Supplies (allocated / required)*
+• Saline bags: *50* / 63 ⚠️ short 13
+• Diagnostic kits: *32* / 41 ⚠️ short 9
+• Hospital beds: need *4*, local 6 ✅
+  ↩ receive *1* patient(s) from DNCC_Ward_10
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 3)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 13; kits short 9; crews 0/3
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — GCC_Ward_03 (Gazipur)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *17.8*/wk (80% range 0.0–23.4); planning for 20.6
+
+*Supplies (allocated / required)*
+• Saline bags: *56* / 80 ⚠️ short 24
+• Diagnostic kits: *37* / 52 ⚠️ short 15
+• Hospital beds: need *5*, local 4 → overflow 1
+  ⛔ *1 bed(s) unplaced in Gazipur* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 6.5 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 24; kits short 15; 1 bed(s) unplaced; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — GCC_Ward_05 (Gazipur)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *16.7*/wk (80% range 0.0–22.0); planning for 19.3
+
+*Supplies (allocated / required)*
+• Saline bags: *51* / 75 ⚠️ short 24
+• Diagnostic kits: *34* / 49 ⚠️ short 15
+• Hospital beds: need *5*, local 4 → overflow 1
+  ⛔ *1 bed(s) unplaced in Gazipur* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 4.9 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 24; kits short 15; 1 bed(s) unplaced; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DSCC_Ward_08 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *14.9*/wk (80% range 0.0–19.3); planning for 17.1
+
+*Supplies (allocated / required)*
+• Saline bags: *46* / 67 ⚠️ short 21
+• Diagnostic kits: *29* / 43 ⚠️ short 14
+• Hospital beds: need *4*, local 5 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 2)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 21; kits short 14; crews 0/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DNCC_Ward_19 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *17.9*/wk (80% range 0.0–24.7); planning for 21.3
+
+*Supplies (allocated / required)*
+• Saline bags: *55* / 83 ⚠️ short 28
+• Diagnostic kits: *36* / 54 ⚠️ short 18
+• Hospital beds: need *5*, local 4 → overflow 1
+  ↪ transfer *1* patient(s) to DNCC_Ward_16
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 6.5 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 28; kits short 18; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DSCC_Ward_13 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *13.1*/wk (80% range 0.0–18.1); planning for 15.6
+
+*Supplies (allocated / required)*
+• Saline bags: *38* / 61 ⚠️ short 23
+• Diagnostic kits: *25* / 40 ⚠️ short 15
+• Hospital beds: need *4*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 2)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 23; kits short 15; crews 0/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DNCC_Ward_10 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *17.0*/wk (80% range 0.0–22.2); planning for 19.6
+
+*Supplies (allocated / required)*
+• Saline bags: *48* / 77 ⚠️ short 29
+• Diagnostic kits: *31* / 50 ⚠️ short 19
+• Hospital beds: need *5*, local 4 → overflow 1
+  ↪ transfer *1* patient(s) to DNCC_Ward_05
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 5.0 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 29; kits short 19; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — CCC_Ward_04 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *14.8*/wk (80% range 0.0–18.9); planning for 16.8
+
+*Supplies (allocated / required)*
+• Saline bags: *41* / 66 ⚠️ short 25
+• Diagnostic kits: *27* / 43 ⚠️ short 16
+• Hospital beds: need *4*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 2)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 25; kits short 16; crews 0/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DNCC_Ward_09 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *15.0*/wk (80% range 0.0–20.0); planning for 17.5
+
+*Supplies (allocated / required)*
+• Saline bags: *41* / 68 ⚠️ short 27
+• Diagnostic kits: *26* / 44 ⚠️ short 18
+• Hospital beds: need *5*, local 4 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka North* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 6.7 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 27; kits short 18; 1 bed(s) unplaced; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DNCC_Ward_01 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *13.5*/wk (80% range 0.0–20.4); planning for 16.9
+
+*Supplies (allocated / required)*
+• Saline bags: *37* / 66 ⚠️ short 29
+• Diagnostic kits: *24* / 43 ⚠️ short 19
+• Hospital beds: need *4*, local 3 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka North* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 2)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 29; kits short 19; 1 bed(s) unplaced; crews 0/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — CCC_Ward_07 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *17.0*/wk (80% range 0.0–21.8); planning for 19.4
+
+*Supplies (allocated / required)*
+• Saline bags: *42* / 76 ⚠️ short 34
+• Diagnostic kits: *27* / 49 ⚠️ short 22
+• Hospital beds: need *5*, local 3 → overflow 2
+  ⛔ *2 bed(s) unplaced in Chattogram* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 8.3 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 34; kits short 22; 2 bed(s) unplaced; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DSCC_Ward_20 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *14.8*/wk (80% range 0.0–19.5); planning for 17.2
+
+*Supplies (allocated / required)*
+• Saline bags: *31* / 67 ⚠️ short 36
+• Diagnostic kits: *20* / 43 ⚠️ short 23
+• Hospital beds: need *4*, local 3 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka South* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 7.4 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 36; kits short 23; 1 bed(s) unplaced; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — GCC_Ward_04 (Gazipur)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *12.7*/wk (80% range 0.0–18.5); planning for 14.1
+
+*Supplies (allocated / required)*
+• Saline bags: *25* / 55 ⚠️ short 30
+• Diagnostic kits: *16* / 36 ⚠️ short 20
+• Hospital beds: need *4*, local 5 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 30; kits short 20
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_04 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.9*/wk (80% range 0.0–14.4); planning for 11.0
+
+*Supplies (allocated / required)*
+• Saline bags: *19* / 43 ⚠️ short 24
+• Diagnostic kits: *12* / 28 ⚠️ short 16
+• Hospital beds: need *3*, local 5 ✅
+  ↩ receive *1* patient(s) from DNCC_Ward_18
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 24; kits short 16
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DSCC_Ward_03 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *17.0*/wk (80% range 0.0–20.6); planning for 18.8
+
+*Supplies (allocated / required)*
+• Saline bags: *32* / 73 ⚠️ short 41
+• Diagnostic kits: *21* / 47 ⚠️ short 26
+• Hospital beds: need *5*, local 2 → overflow 3
+  ⛔ *3 bed(s) unplaced in Dhaka South* — request referral / field ward
+
+*Vector control*: 1 spraying crew(s) assigned (suggested 2), est. 8.3 cases prevented over 2–4 wk
+Status: 🚨 *CRITICAL DEFICIT* — saline short 41; kits short 26; 3 bed(s) unplaced; crews 1/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_16 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *12.4*/wk (80% range 0.0–16.5); planning for 13.4
+
+*Supplies (allocated / required)*
+• Saline bags: *22* / 52 ⚠️ short 30
+• Diagnostic kits: *15* / 34 ⚠️ short 19
+• Hospital beds: need *3*, local 5 ✅
+  ↩ receive *1* patient(s) from DNCC_Ward_19
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 30; kits short 19
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — NCC_Ward_04 (Narayanganj)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.6*/wk (80% range 0.0–14.8); planning for 10.9
+
+*Supplies (allocated / required)*
+• Saline bags: *18* / 43 ⚠️ short 25
+• Diagnostic kits: *12* / 28 ⚠️ short 16
+• Hospital beds: need *3*, local 5 ✅
+  ↩ receive *1* patient(s) from NCC_Ward_05
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 25; kits short 16
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_11 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *11.6*/wk (80% range 0.0–17.7); planning for 13.1
+
+*Supplies (allocated / required)*
+• Saline bags: *21* / 51 ⚠️ short 30
+• Diagnostic kits: *14* / 33 ⚠️ short 19
+• Hospital beds: need *3*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 30; kits short 19
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_02 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *12.3*/wk (80% range 0.0–18.2); planning for 13.8
+
+*Supplies (allocated / required)*
+• Saline bags: *22* / 54 ⚠️ short 32
+• Diagnostic kits: *14* / 35 ⚠️ short 21
+• Hospital beds: need *4*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 32; kits short 21
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_17 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.7*/wk (80% range 0.0–15.8); planning for 11.2
+
+*Supplies (allocated / required)*
+• Saline bags: *17* / 44 ⚠️ short 27
+• Diagnostic kits: *11* / 29 ⚠️ short 18
+• Hospital beds: need *3*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 27; kits short 18
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟠 *DENGUE DISPATCH — DNCC_Ward_15 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *High*
+Predicted cases: *16.6*/wk (80% range 0.0–22.7); planning for 19.7
+
+*Supplies (allocated / required)*
+• Saline bags: *30* / 77 ⚠️ short 47
+• Diagnostic kits: *19* / 50 ⚠️ short 31
+• Hospital beds: need *5*, local 2 → overflow 3
+  ⛔ *3 bed(s) unplaced in Dhaka North* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 2)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 47; kits short 31; 3 bed(s) unplaced; crews 0/2
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — CCC_Ward_10 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.5*/wk (80% range 0.0–16.3); planning for 11.9
+
+*Supplies (allocated / required)*
+• Saline bags: *18* / 47 ⚠️ short 29
+• Diagnostic kits: *11* / 30 ⚠️ short 19
+• Hospital beds: need *3*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 29; kits short 19
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_14 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.9*/wk (80% range 0.0–13.8); planning for 10.9
+
+*Supplies (allocated / required)*
+• Saline bags: *16* / 43 ⚠️ short 27
+• Diagnostic kits: *10* / 28 ⚠️ short 18
+• Hospital beds: need *3*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 27; kits short 18
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_07 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.4*/wk (80% range 0.0–15.9); planning for 11.7
+
+*Supplies (allocated / required)*
+• Saline bags: *17* / 46 ⚠️ short 29
+• Diagnostic kits: *11* / 30 ⚠️ short 19
+• Hospital beds: need *3*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 29; kits short 19
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_01 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.9*/wk (80% range 0.0–15.8); planning for 12.1
+
+*Supplies (allocated / required)*
+• Saline bags: *16* / 47 ⚠️ short 31
+• Diagnostic kits: *11* / 31 ⚠️ short 20
+• Hospital beds: need *3*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 31; kits short 20
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_07 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *8.7*/wk (80% range 0.0–11.8); planning for 9.5
+
+*Supplies (allocated / required)*
+• Saline bags: *12* / 37 ⚠️ short 25
+• Diagnostic kits: *8* / 24 ⚠️ short 16
+• Hospital beds: need *2*, local 4 ✅
+  ↩ receive *1* patient(s) from DSCC_Ward_10
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 25; kits short 16
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_02 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.8*/wk (80% range 0.0–13.8); planning for 11.6
+
+*Supplies (allocated / required)*
+• Saline bags: *15* / 45 ⚠️ short 30
+• Diagnostic kits: *10* / 29 ⚠️ short 19
+• Hospital beds: need *3*, local 4 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 30; kits short 19
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — CCC_Ward_06 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *12.2*/wk (80% range 0.0–17.8); planning for 13.6
+
+*Supplies (allocated / required)*
+• Saline bags: *17* / 53 ⚠️ short 36
+• Diagnostic kits: *11* / 34 ⚠️ short 23
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 36; kits short 23
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_15 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.2*/wk (80% range 0.0–16.4); planning for 11.8
+
+*Supplies (allocated / required)*
+• Saline bags: *15* / 46 ⚠️ short 31
+• Diagnostic kits: *10* / 30 ⚠️ short 20
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 31; kits short 20
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_09 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.5*/wk (80% range 0.0–14.9); planning for 11.6
+
+*Supplies (allocated / required)*
+• Saline bags: *15* / 46 ⚠️ short 31
+• Diagnostic kits: *10* / 30 ⚠️ short 20
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 31; kits short 20
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_13 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *8.9*/wk (80% range 0.0–12.2); planning for 9.7
+
+*Supplies (allocated / required)*
+• Saline bags: *12* / 38 ⚠️ short 26
+• Diagnostic kits: *8* / 25 ⚠️ short 17
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 26; kits short 17
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — CCC_Ward_09 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *8.7*/wk (80% range 0.0–11.6); planning for 9.4
+
+*Supplies (allocated / required)*
+• Saline bags: *12* / 37 ⚠️ short 25
+• Diagnostic kits: *7* / 24 ⚠️ short 17
+• Hospital beds: need *2*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 25; kits short 17
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — CCC_Ward_08 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *11.7*/wk (80% range 0.0–17.1); planning for 13.1
+
+*Supplies (allocated / required)*
+• Saline bags: *16* / 51 ⚠️ short 35
+• Diagnostic kits: *10* / 33 ⚠️ short 23
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 35; kits short 23
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_16 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.8*/wk (80% range 0.0–16.0); planning for 12.1
+
+*Supplies (allocated / required)*
+• Saline bags: *14* / 47 ⚠️ short 33
+• Diagnostic kits: *9* / 31 ⚠️ short 22
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 33; kits short 22
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_17 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.1*/wk (80% range 0.0–13.3); planning for 10.2
+
+*Supplies (allocated / required)*
+• Saline bags: *12* / 40 ⚠️ short 28
+• Diagnostic kits: *8* / 26 ⚠️ short 18
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 28; kits short 18
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_20 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.2*/wk (80% range 0.0–13.4); planning for 10.2
+
+*Supplies (allocated / required)*
+• Saline bags: *11* / 40 ⚠️ short 29
+• Diagnostic kits: *7* / 26 ⚠️ short 19
+• Hospital beds: need *3*, local 3 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 29; kits short 19
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_06 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.7*/wk (80% range 0.0–13.9); planning for 10.7
+
+*Supplies (allocated / required)*
+• Saline bags: *12* / 42 ⚠️ short 30
+• Diagnostic kits: *8* / 27 ⚠️ short 19
+• Hospital beds: need *3*, local 2 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka North* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 30; kits short 19; 1 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_18 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *12.8*/wk (80% range 0.0–20.7); planning for 14.7
+
+*Supplies (allocated / required)*
+• Saline bags: *16* / 58 ⚠️ short 42
+• Diagnostic kits: *10* / 37 ⚠️ short 27
+• Hospital beds: need *4*, local 2 → overflow 2
+  ⛔ *2 bed(s) unplaced in Dhaka South* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 42; kits short 27; 2 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_08 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.8*/wk (80% range 0.0–15.6); planning for 12.0
+
+*Supplies (allocated / required)*
+• Saline bags: *13* / 47 ⚠️ short 34
+• Diagnostic kits: *8* / 30 ⚠️ short 22
+• Hospital beds: need *3*, local 2 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka North* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 34; kits short 22; 1 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — CCC_Ward_05 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.1*/wk (80% range 0.0–13.1); planning for 10.1
+
+*Supplies (allocated / required)*
+• Saline bags: *11* / 40 ⚠️ short 29
+• Diagnostic kits: *7* / 26 ⚠️ short 19
+• Hospital beds: need *3*, local 2 → overflow 1
+  ⛔ *1 bed(s) unplaced in Chattogram* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 29; kits short 19; 1 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_11 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *12.9*/wk (80% range 0.0–19.4); planning for 14.5
+
+*Supplies (allocated / required)*
+• Saline bags: *15* / 57 ⚠️ short 42
+• Diagnostic kits: *10* / 37 ⚠️ short 27
+• Hospital beds: need *4*, local 2 → overflow 2
+  ⛔ *2 bed(s) unplaced in Dhaka South* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 42; kits short 27; 2 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — CCC_Ward_02 (Chattogram)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.5*/wk (80% range 0.0–14.7); planning for 10.8
+
+*Supplies (allocated / required)*
+• Saline bags: *11* / 42 ⚠️ short 31
+• Diagnostic kits: *7* / 28 ⚠️ short 21
+• Hospital beds: need *3*, local 2 → overflow 1
+  ⛔ *1 bed(s) unplaced in Chattogram* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 31; kits short 21; 1 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_14 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *7.5*/wk (80% range 0.0–12.7); planning for 8.8
+
+*Supplies (allocated / required)*
+• Saline bags: *9* / 35 ⚠️ short 26
+• Diagnostic kits: *6* / 22 ⚠️ short 16
+• Hospital beds: need *2*, local 2 ✅
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 26; kits short 16
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DNCC_Ward_03 (Dhaka North)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *13.0*/wk (80% range 0.0–18.0); planning for 14.2
+
+*Supplies (allocated / required)*
+• Saline bags: *14* / 56 ⚠️ short 42
+• Diagnostic kits: *9* / 36 ⚠️ short 27
+• Hospital beds: need *4*, local 2 → overflow 2
+  ⛔ *2 bed(s) unplaced in Dhaka North* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 42; kits short 27; 2 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — NCC_Ward_02 (Narayanganj)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *9.8*/wk (80% range 0.0–14.9); planning for 11.0
+
+*Supplies (allocated / required)*
+• Saline bags: *10* / 43 ⚠️ short 33
+• Diagnostic kits: *7* / 28 ⚠️ short 21
+• Hospital beds: need *3*, local 2 → overflow 1
+  ⛔ *1 bed(s) unplaced in Narayanganj* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 33; kits short 21; 1 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — NCC_Ward_03 (Narayanganj)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *10.8*/wk (80% range 0.0–16.0); planning for 12.1
+
+*Supplies (allocated / required)*
+• Saline bags: *11* / 48 ⚠️ short 37
+• Diagnostic kits: *7* / 31 ⚠️ short 24
+• Hospital beds: need *3*, local 2 → overflow 1
+  ⛔ *1 bed(s) unplaced in Narayanganj* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 37; kits short 24; 1 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_
+
+----------
+
+🟡 *DENGUE DISPATCH — DSCC_Ward_05 (Dhaka South)*
+Target week: 30 Jun (+3 wk) · Risk: *Medium*
+Predicted cases: *11.9*/wk (80% range 0.0–17.2); planning for 13.2
+
+*Supplies (allocated / required)*
+• Saline bags: *12* / 52 ⚠️ short 40
+• Diagnostic kits: *8* / 34 ⚠️ short 26
+• Hospital beds: need *3*, local 2 → overflow 1
+  ⛔ *1 bed(s) unplaced in Dhaka South* — request referral / field ward
+
+*Vector control*: 0 spraying crew(s) assigned (suggested 1)
+Status: 🚨 *CRITICAL DEFICIT* — saline short 40; kits short 26; 1 bed(s) unplaced
+_Stock level 60% · generated offline by Dengue Protirodh_

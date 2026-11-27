@@ -1,0 +1,20 @@
+/* ---- chatbot widget ---- */
+.dgc{position:fixed;right:18px;bottom:18px;z-index:50;font:14px/1.45 system-ui,sans-serif}
+.dgc-fab{display:flex;align-items:center;gap:10px;background:#0f766e;color:#fff;border:0;border-radius:999px;padding:5px 20px 5px 5px;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.dgc-panel{position:absolute;right:0;bottom:70px;width:340px;max-width:92vw;height:440px;background:#fff;color:#12212b;border:1px solid #c5d0d8;border-radius:14px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.28)}
+.dgc-panel[hidden]{display:none}
+.dgc-head{background:#0f766e;color:#fff;padding:10px 14px;font-weight:600;display:flex;justify-content:space-between}
+.dgc-x{background:none;border:0;color:#fff;font-size:20px;cursor:pointer;line-height:1}
+.dgc-log{flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:8px;background:#f4f7f9}
+.dgc-m{padding:8px 10px;border-radius:10px;max-width:88%;white-space:pre-wrap}
+.dgc-m.bot{background:#fff;border:1px solid #dfe6eb;align-self:flex-start}
+.dgc-m.me{background:#0f766e;color:#fff;align-self:flex-end}
+.dgc-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 10px;background:#f4f7f9;border-top:1px solid #dfe6eb}
+.dgc-chips button{background:#fff;color:#0f766e;border:1px solid #0f766e;border-radius:999px;padding:3px 9px;font-size:12px;cursor:pointer}
+.dgc-form{display:flex;gap:6px;padding:8px;border-top:1px solid #dfe6eb;background:#fff}
+.dgc-form input{flex:1;border:1px solid #c5d0d8;border-radius:8px;padding:8px;font:inherit;color:#12212b;background:#fff;margin:0;width:auto}
+.dgc-form button{background:#0f766e;color:#fff;border:0;border-radius:8px;padding:8px 12px;cursor:pointer}
+.dgc-act{display:block;margin-top:6px;background:#0f766e;color:#fff;border:0;border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer}.dgc-act:disabled{opacity:.5;cursor:default}
+.dgc-av{width:52px;height:52px;flex:none;border-radius:50%;background:#fff;object-fit:cover;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.dgc-fab:hover{filter:brightness(1.08)}.dgc-fab:focus-visible{outline:3px solid #5fd0e8;outline-offset:2px}
+@media(max-width:480px){.dgc-fab-t{font-size:.9rem}}

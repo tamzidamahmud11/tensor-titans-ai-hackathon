@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dengue Guard</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="chat.css">
+<link rel="stylesheet" href="cookies.css">
+</head>
+<body>
+<div id="loading"><div class="spin"></div><p>Loading Dengue Guard…</p></div>
+<div id="app" hidden>
+  <aside id="side">
+    <h2 style="display:flex;align-items:center;gap:8px"><img src="logo.svg" alt="" width="30" height="30">Dengue Guard</h2>
+    <p class="small"><a href="index.html" style="color:var(--ac);text-decoration:none">← Back to home</a></p>
+    <p class="small">2-4 week ward-level early warning</p>
+    <div class="wsearch" id="wsearchBox">
+      <label for="wsearch">Search ward</label>
+      <input type="search" id="wsearch" placeholder="Ward, city or risk tier…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="wsearchDd" aria-autocomplete="list">
+      <ul id="wsearchDd" role="listbox" hidden></ul>
+    </div>
+    <label>Use my own weekly data (CSV, same columns)
+      <input type="file" id="upload" accept=".csv"></label>
+    <div id="uploadMsg" class="small"></div>
+    <label>City corporation <select id="city"></select></label>
+    <label>Warning issued on (week of): <b id="originLbl"></b>
+      <input type="range" id="origin" min="0" max="0" value="0"></label>
+    <label>Warning window
+      <div class="seg" id="hSeg"></div></label>
+    <p class="small" id="targetLbl"></p>
+    <div class="info" id="heldOut"></div>
+    <p class="small" id="dataLbl"></p>
+  </aside>
+  <main>
+    <div class="hero"><h1>Dengue Guard: ward early-warning dashboard</h1>
+      <p id="heroSub"></p><div id="tierbar" class="tierbar"></div><div id="tierlbl" class="small"></div></div>
+    <nav class="tabs" id="tabs">
+      <button data-t="t1" class="on">Risk board</button>
+      <button data-t="t2">Ward deep-dive</button>
+      <button data-t="t3">What-if scenarios</button>
+      <button data-t="t4">Model validation</button>
+      <button data-t="t5">How it works</button>
+      <button data-t="t6">Architecture</button>
+    </nav>
+
+    <section id="t1" class="pane">
+      <h3 class="sec">Ward risk in numbers</h3>
+      <div class="kpis" id="kpis"></div>
+      <div id="alert"></div>
+      <div class="card" id="planner">
+        <h3>Response planner: where should the spraying teams go?</h3>
+        <label class="inline">Teams available this week <input type="number" id="teams" min="1" max="60" value="5" style="width:70px"></label>
+        <div id="planOut" class="small"></div>
+      </div>
+      <div class="grid2">
+        <div><h3>Ranked ward risk</h3>
+          <div class="tblwrap"><table id="tbl"></table></div>
+          <button id="dl" class="btn">⬇️ Download this forecast (CSV)</button></div>
+        <div><h3>Risk map (size = population density)</h3><div id="treemap" class="plot" style="height:520px"></div></div>
+      </div>
+      <h3 id="hmTitle"></h3><div id="heatmap" class="plot"></div><p class="small" id="hmCap"></p>
+    </section>
+
+    <section id="t2" class="pane" hidden>
+      <label class="inline">Ward <select id="w2"></select></label>
+      <div class="grid3" id="cards2"></div>
+      <div id="p2a" class="plot" style="height:400px"></div>
+      <div class="grid2"><div id="p2b" class="plot" style="height:340px"></div>
+        <div><div id="p2c" class="plot" style="height:340px"></div>
+        <p class="small">Eggs → adult mosquitoes takes 7-14 days, then viral incubation and symptoms: rain 2-6 weeks back drives today's warning.</p></div></div>
+      <div class="grid2e"><div id="p2d" class="plot" style="height:340px"></div><div id="p2e" class="plot" style="height:340px"></div></div>
+    </section>
+
+    <section id="t3" class="pane" hidden>
+      <p><b>Stress-test a ward:</b> change recent weather and see how the 2-4 week forecast moves (runs in your browser, instant).</p>
+      <label class="inline">Ward <select id="w3"></select></label>
+      <div class="grid4">
+        <label>Rainfall × <b id="mV">1.5</b><input type="range" id="mult" min="0" max="3" step="0.1" value="1.5"></label>
+        <label>Applies to
+          <select id="win"><option value="all">all 8 past weeks</option><option value="recent">last 4 weeks</option><option value="older">5-8 weeks ago</option></select></label>
+        <label>Temperature Δ °C <b id="tV">0</b><input type="range" id="dT" min="-5" max="5" step="0.5" value="0"></label>
+        <label>Humidity Δ pts <b id="hV">0</b><input type="range" id="dH" min="-20" max="20" step="1" value="0"></label>
+      </div>
+      <div id="p3" class="plot" style="height:360px"></div>
+      <div class="grid3" id="m3"></div>
+    </section>
+
+    <section id="t4" class="pane" hidden><div id="val"></div></section>
+
+    <section id="t5" class="pane" hidden><div id="how" class="card"></div></section>
+
+    <section id="t6" class="pane" hidden><div id="archx" class="card"></div></section>
+  </main>
+</div>
+<script src="lib/plotly.min.js"></script>
+<script src="data/model.js"></script>
+<script src="data/dataset.js"></script>
+<script src="data/metrics.js"></script>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+<script src="chat.js"></script>
+<script src="cookies.js"></script>
+</body>
+</html>
