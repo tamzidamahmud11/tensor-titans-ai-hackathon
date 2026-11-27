@@ -7,7 +7,7 @@ Dengue Protirodh forecasts dengue cases **2–4 weeks ahead** across 60 urban wa
 
 ---
 
-## 👥 Team Tensor Titans
+## 👥 Team TensorTitans
 
 | Name | Role | Student ID |
 |---|---|---|
