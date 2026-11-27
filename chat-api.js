@@ -10,7 +10,7 @@ const CACHE_MAX = 200, CACHE_TTL_MS = 6 * 3600e3;
 const cache = new Map(), hits = new Map();
 
 const SYSTEM = `You are the help assistant inside "Dengue Guard", a ward-level dengue early-warning dashboard for Bangladesh city corporations.
-Help health officers and visitors use the dashboard and understand the forecasts. Be brief (max 4 sentences), plain English.
+Help health officers and visitors use the dashboard and understand the forecasts. Be brief (max 4 sentences). Reply in the user's language (English or Bangla).
 Facts about the app:
 - Tabs: Risk board (tier counts, Response planner, ranked wards, treemap, heatmap, CSV download), Ward deep-dive (one ward's forecast, 80% range, weather drivers), What-if scenarios (change rainfall, temperature, humidity and see the forecast move), Model validation (test errors), How it works, Architecture.
 - Sidebar: choose city corporation, the week the warning is issued, and the window (+2, +3 or +4 weeks ahead). A CSV with the required columns can be uploaded.
@@ -19,14 +19,9 @@ Facts about the app:
 - Test results (2024-2025, +3 weeks): MAE about 1.0 cases per ward-week, 80% interval coverage about 94%.
 - Coverage: 60 wards in Dhaka North (DNCC), Dhaka South (DSCC), Chattogram (CCC), Gazipur (GCC) and Narayanganj (NCC); weekly data 2016-2025 with weather (temperature, rainfall, humidity), ward vulnerability (population density, water-logging risk, sanitation score) and dengue cases.
 - General dengue background you MAY answer: spread by Aedes mosquitoes that breed in stagnant water; prevention such as emptying containers, covering water storage, clearing drains, larvicide and community clean-up; warning signs mean seeing a doctor. Keep it short and non-clinical.
-Scope: only answer about this dashboard, its data and model, and dengue risk and prevention in general. For anything else (other software, politics, homework, jokes, coding help, etc.) reply only: "I can only help with Dengue Guard and dengue risk. Try asking how to read the risk board."
-Rules: this is decision support, not a diagnosis. Never give medical treatment advice; for symptoms tell people to see a doctor or hospital. If asked something unrelated to dengue or this app, politely say you can only help with those. Use the live dashboard context if provided; never invent numbers.`;
+Scope: you are a friendly, helpful general assistant. Answer any question the user asks (general knowledge, everyday help, small talk), and gladly help with this dashboard and dengue. Keep answers short and kind.
+Rules: for this app, it is decision support, not a diagnosis. Never give a personal medical diagnosis or treatment plan; for symptoms such as high fever, severe pain or bleeding, tell people to see a doctor or hospital. Use the live dashboard context if provided; never invent dashboard numbers.`;
 
-// Cheap scope filter: off-topic questions are refused locally, so they cost no API call.
-const ON_TOPIC = /dengue|mosquito|aedes|larva|spray|fever|outbreak|rain|humid|temperat|weather|ward|dhaka|chattogram|chittagong|gazipur|narayanganj|dncc|dscc|corporation|city|risk|tier|critical|forecast|predict|model|accura|error|dashboard|tab\b|chart|map|heatmap|treemap|table|slider|scenario|csv|upload|download|data|week|lag|planner|team|sanitation|drain|water|densit|vulnerab|hospital|case|sidebar|website|\bsite\b|\bapp\b|tour|validation|driver|confidence|interval|threshold|season/i;
-const SMALLTALK = /^(hi|hello|hey|thanks|thank you|ok|okay|good (morning|afternoon|evening))\b/i;
-const REFUSAL = "I can only help with Dengue Guard and dengue risk. Try asking how to read the risk board, what the tiers mean, or how rain affects cases.";
-function inScope(q) { return ON_TOPIC.test(q) || SMALLTALK.test(q) || q.split(/\s+/).length <= 2; }
 
 function ip(req) { return (req.socket && req.socket.remoteAddress) || "x"; }
 function limited(k) {
@@ -65,7 +60,6 @@ exports.handle = function (req, res) {
     let q = "", ctx = "";
     try { const j = JSON.parse(raw); q = String(j.q || "").trim().slice(0, MAX_Q); ctx = String(j.ctx || "").slice(0, 400); } catch (e) { return send(res, 400, { ok: false, reason: "bad_request" }); }
     if (!q) return send(res, 400, { ok: false, reason: "empty" });
-    if (!inScope(q)) return send(res, 200, { ok: true, answer: REFUSAL, offtopic: true });
     if (limited(ip(req))) return send(res, 200, { ok: false, reason: "rate_limited" });
     const ck = q.toLowerCase().replace(/\s+/g, " ") + "|" + ctx;
     const c = cache.get(ck);

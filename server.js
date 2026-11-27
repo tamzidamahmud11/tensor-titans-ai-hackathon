@@ -1,4 +1,4 @@
-﻿// Optional zero-dependency static server (needs only Node.js). Not required: you can also just open index.html.
+// Optional zero-dependency static server (needs only Node.js). Not required: you can also just open index.html.
 const http = require("http"), fs = require("fs"), path = require("path"), { exec } = require("child_process");
 const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8",
   ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".ico": "image/x-icon", ".webp": "image/webp", ".txt": "text/plain; charset=utf-8", ".md": "text/plain; charset=utf-8" };
@@ -24,5 +24,5 @@ http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": types[path.extname(p)] || "application/octet-stream" }); res.end(d); });
 }).listen(port, () => {
   const url = `http://localhost:${port}`; console.log("Dengue Guard running at " + url);
-  exec((process.platform === "win32" ? "start " : process.platform === "darwin" ? "open " : "xdg-open ") + url);
+  if (!process.env.PORT && !process.env.RENDER) exec((process.platform === "win32" ? "start " : process.platform === "darwin" ? "open " : "xdg-open ") + url);
 });
