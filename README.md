@@ -1,10 +1,9 @@
-# 🦟 Dengue Guard
+# 🦟 Dengue Protirodh
 
 **An AI-powered, ward-level dengue early-warning and public-health operations platform for Bangladesh.**
 
-Dengue Guard forecasts dengue cases **2–4 weeks ahead** across 60 urban wards, translates forecasts into practical resource plans, simulates vector-control interventions, and prepares ward-specific dispatch notices for public-health teams.
+Dengue Protirodh forecasts dengue cases **2–4 weeks ahead** across 60 urban wards, translates forecasts into practical resource plans, simulates vector-control interventions, and prepares ward-specific dispatch notices for public-health teams.
 
-> **BLUEPINE**
 
 ---
 
@@ -20,7 +19,7 @@ Dengue Guard forecasts dengue cases **2–4 weeks ahead** across 60 urban wards,
 
 ## 🎯 Project Overview
 
-Dengue Guard is designed to help ward commissioners and health-centre managers make earlier, data-informed decisions. Instead of only showing predicted dengue risk, the platform connects forecasts to operational actions: supply allocation, hospital-bed planning, spraying-team deployment, and public-health dispatch.
+Dengue Protirodh is designed to help ward commissioners and health-centre managers make earlier, data-informed decisions. Instead of only showing predicted dengue risk, the platform connects forecasts to operational actions: supply allocation, hospital-bed planning, spraying-team deployment, and public-health dispatch.
 
 The project covers **60 wards** across five city corporations:
 
