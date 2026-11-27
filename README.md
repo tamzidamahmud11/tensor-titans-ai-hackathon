@@ -329,11 +329,7 @@ The project is organized around the five Phase 2 functional requirements:
 | Multi-channel dispatch notifications | Dispatch |
 | Offline resilience and deterministic fallback | Local JavaScript engines, service worker, and offline tests |
 
-The Phase 2 brief also calls for a continuous Phase 1 repository history, a deployed live URL, sample exports, updated architecture documentation and AI disclosure, plus an uncut seven-minute system walkthrough. Add the team's final deployed URL and walkthrough link below when available.
-
 **Live Website:** https://tensor-titans-ai-hackathon-1.onrender.com/
-
-**System Walkthrough Video:** `Add your video URL here`
 
 ---
 
