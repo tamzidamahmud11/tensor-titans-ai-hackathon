@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dengue Protirodh — Ward-level dengue early warning</title>
+<meta name="description" content="Predict dengue outbreak risk 2–4 weeks ahead for 60 wards across Bangladesh city corporations. Runs fully offline in your browser.">
+<link rel="icon" href="logo.svg" type="image/svg+xml"><link rel="stylesheet" href="site.css?v=2"><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="chat.css?v=2">
+<link rel="stylesheet" href="cookies.css?v=3">
+</head>
+<body class="has-left-sidebar" data-cookie-popup>
+<div id="dg-loader" role="status" aria-live="polite"><div class="dg-spinner" aria-hidden="true"></div><span class="dg-loader-text">Loading...</span></div>
+<script>window.addEventListener("load",function(){var l=document.getElementById("dg-loader");if(l){l.classList.add("hide");setTimeout(function(){l.remove();},260);}});</script>
+<header class="nav"><div class="wrap">
+  <button class="sidebar-toggle" type="button" aria-label="Toggle menu" aria-expanded="true">&#9776;</button>
+  <a class="brand" href="#top"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Protirodh</a>
+  <nav>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="#about" data-i18n="nav_about">About us</a>
+    <a href="news.html" data-i18n="nav_news">News</a>
+    <a href="blogs.html" data-i18n="nav_blogs">Blogs</a>
+    <a href="events.html" data-i18n="nav_events">Events</a>
+    <a href="community.html" data-i18n="nav_community">Community</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+    <a class="btn" href="app.html" data-i18n="nav_dashboard">Dashboard</a>
+  </nav>
+</div></header>
+
+<aside class="left-sidebar" aria-label="Page sections and resources">
+  <div class="left-sidebar-title">Menu</div>
+  <ul>
+    <li><a href="#why" data-i18n="nav_why">Why it matters</a></li>
+    <li><a href="#features" data-i18n="nav_features">Features</a></li>
+    <li><a href="#how" data-i18n="nav_how">How it works</a></li>
+    <li><a href="#prevention" data-i18n="nav_prevention">Prevention</a></li>
+    <li><a href="#proof" data-i18n="nav_validation">Validation</a></li>
+    <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+    <li><a href="#subscribe" data-bn="সাবস্ক্রাইব">Subscribe</a></li>
+    <li><a href="#references" data-bn="তথ্যসূত্র">References</a></li>
+    <li><a href="#social-media" data-bn="গিটহাব রেপো">GitHub Repo</a></li>
+    <li><a href="videos.html" data-i18n="nav_videos">Videos</a></li>
+    <li><a href="webinars.html" data-i18n="nav_webinars">Webinars</a></li>
+    <li><a href="multimedia.html" data-i18n="nav_multimedia">Multimedia</a></li>
+    <li><a href="story.html" data-bn="গল্প জমা দিন">Story submission</a></li>
+  </ul>
+</aside>
+
+<main id="top">
+<div class="hero">
+  <canvas id="hero-overview-canvas" class="hero-bg-video" aria-hidden="true"></canvas>
+  <div class="hero-bg-overlay" aria-hidden="true"></div>
+  <div class="wrap">
+  <div>
+    <span class="tag" data-bn="বাংলাদেশ সিটি কর্পোরেশনের জন্য আগাম সতর্কবার্তা">Early warning for Bangladesh city corporations</span>
+    <h1 data-bn="ডেঙ্গুর প্রাদুর্ভাব তীব্র হওয়ার <span>আগেই</span> পূর্বাভাস দেখুন।">See dengue outbreaks <span>weeks</span> before they peak.</h1>
+    <p class="lead" data-bn="ডেঙ্গু প্রতিরোধ আবহাওয়ার বিলম্ব, ওয়ার্ডের ঝুঁকি এবং গ্র্যাডিয়েন্ট-বুস্টেড ট্রি মডেল ব্যবহার করে ২-৪ সপ্তাহ আগেই প্রতিটি ওয়ার্ডের ঝুঁকি পূর্বাভাস দেয় — যাতে হাসপাতাল ভর্তি বাড়ার আগেই লার্ভা নিধন শুরু করা যায়।">Dengue Protirodh forecasts risk for every ward 2–4 weeks ahead, using weather lags, ward vulnerability and gradient-boosted trees — so health teams can act while there is still time to clear breeding sites.</p>
+    <div class="cta"><a class="btn" href="app.html">Get started →</a></div>
+  </div>
+  <div class="panel" aria-label="Example of the ranked ward risk board">
+    <h4 data-bn="ওয়ার্ড ঝুঁকি র‍্যাংকিং · +৩ সপ্তাহ">Ranked ward risk · +3 week window</h4>
+    <div class="sub" data-bn="চিত্রমূলক পূর্বদর্শন — লাইভ বোর্ড ড্যাশবোর্ডে">Illustrative preview — the live board is in the dashboard</div>
+    <div class="row" style="--c:var(--crit)"><span>Ward A<span class="chip">Critical</span></span><i style="width:92%"></i><b>9.4</b></div>
+    <div class="row" style="--c:var(--high)"><span>Ward B<span class="chip">High</span></span><i style="width:68%"></i><b>6.8</b></div>
+    <div class="row" style="--c:var(--high)"><span>Ward C<span class="chip">High</span></span><i style="width:55%"></i><b>5.5</b></div>
+    <div class="row" style="--c:var(--med)"><span>Ward D<span class="chip">Medium</span></span><i style="width:32%"></i><b>3.2</b></div>
+    <div class="row" style="--c:var(--low)"><span>Ward E<span class="chip">Low</span></span><i style="width:10%"></i><b>1.0</b></div>
+    <div class="sub" style="margin:10px 0 0" data-bn="প্রতি ওয়ার্ডে সাপ্তাহিক প্রত্যাশিত কেস, ৮০% পূর্বাভাস ব্যান্ডসহ">Expected cases per ward per week, with 80% prediction bands</div>
+  </div>
+</div>
+</div>
+
+<div class="stats"><div class="wrap">
+  <div class="stat"><b>60</b><span data-bn="৫টি সিটি কর্পোরেশনে ওয়ার্ড">wards across 5 city corporations</span></div>
+  <div class="stat"><b>2–4 wk</b><span data-bn="পূর্বাভাসের সীমা">forecast horizon</span></div>
+  <div class="stat"><b>91%</b><span data-bn="ঝুঁকি-স্তর নির্ভুলতা, পরীক্ষার ডেটা ২০২৪-২৫ (+৩সপ্তাহ)">risk-tier accuracy, held-out 2024–25 (+3w)</span></div>
+  <div class="stat"><b>&lt; 50 ms</b><span data-bn="৬০টি ওয়ার্ডের সম্পূর্ণ পূর্বাভাসের জন্য">for a full 60-ward forecast</span></div>
+</div></div>
+
+<section id="why"><div class="wrap">
+  <h2 data-bn="কেন আগাম সতর্কতা জরুরি">Why early warning matters</h2>
+  <p class="sec-sub" data-bn="বৃষ্টির পর কয়েক সপ্তাহ পরে ডেঙ্গু কেস বাড়ে, কিন্তু স্প্রে ও লার্ভাসাইড দল সাধারণত হাসপাতাল ভর্তি বাড়ার পরেই নড়াচড়া করে। এই ২-৪ সপ্তাহের ফাঁক পূরণ করলে জীবন বাঁচে।">Dengue cases rise weeks after the rain, but spraying and larvicide teams usually move only after hospital admissions climb. Bridging this 2–4 week window saves lives.</p>
+  <div class="grid3">
+    <div class="card why-card" style="--c:#ef4444"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span><div class="big">150,000+</div><h3 data-bn="পিক মৌসুমে হাসপাতালে ভর্তি">hospitalizations in peak seasons</h3><ul class="why-list"><li><span class="bi" style="--bc:#3b82f6"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16.5A4.5 4.5 0 0 0 17.5 8h-1A6 6 0 1 0 4 14.5"/><path d="M8 19v2M12 18v3M16 19v2"/></svg></span>Monsoon surges hit Dhaka, Chattogram and Khulna<img class="why-pic" src="media/why/monsoon-flooding.jpg" alt="A rickshaw puller wades through a flooded city street during monsoon rains" loading="lazy" width="900" height="600"></li><li><span class="bi" style="--bc:#ef4444"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14"/><path d="M2 20h20M12 8.5v5M9.5 11h5"/></svg></span>Hospitals stretched past capacity<img class="why-pic" src="media/why/hospital-overcrowded.jpg" alt="Dengue patients on mattresses in a crowded hospital ward corridor" loading="lazy" width="900" height="600"></li></ul></div>
+    <div class="card why-card" style="--c:#f59e0b"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/></svg></span><div class="big">2–4 weeks</div><h3 data-bn="বৃষ্টি থেকে হাসপাতালে ভর্তির ঢেউ">from rain to hospital spike</h3><ul class="why-list"><li><span class="bi" style="--bc:#f59e0b"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.3 0 6 5.2 6 9.5A6 6 0 0 1 6 12.5C6 8.2 8.7 3 12 3z"/></svg></span>Eggs mature in 7–14 days<img class="why-pic" src="media/why/aedes-larvae.jpg" alt="Aedes mosquito larvae hanging from the water surface" loading="lazy" width="900" height="600"></li><li><span class="bi" style="--bc:#ec4899"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>Virus then incubates in mosquitoes and people<img class="why-pic" src="media/why/aedes-mosquito.jpg" alt="Close-up of an adult Aedes mosquito" loading="lazy" width="900" height="600"></li><li><span class="bi" style="--bc:#14b8a6"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="7"/><path d="M12 9.5V13l2.5 1.5M9 3h6"/></svg></span>That delay is our window to act<img class="why-pic" src="media/why/mosquito-alert-app.jpg" alt="A hand holding a phone showing a mosquito alert app in Bangla" loading="lazy" width="900" height="600"></li></ul></div>
+    <div class="card why-card" style="--c:#8b5cf6"><span class="ico"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div class="big" data-bn="ওয়ার্ড ভিত্তিক">Ward by ward</div><h3 data-bn="একই বৃষ্টি, ভিন্ন ঝুঁকি">same rain, different risk</h3><ul class="why-list"><li><span class="bi" style="--bc:#10b981"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></span>Drainage and waste clearance<img class="why-pic" src="media/why/drain-cleaning.jpg" alt="Workers and an excavator clearing a clogged drain" loading="lazy" width="900" height="600"></li><li><span class="bi" style="--bc:#6366f1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.3"/><path d="M17 14c2.5 0 4 2 4 5"/></svg></span>Population density<img class="why-pic" src="media/why/dense-neighbourhood.jpg" alt="Aerial view of a very densely built neighbourhood" loading="lazy" width="900" height="600"></li><li><span class="bi" style="--bc:#06b6d4"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>Water-logging<img class="why-pic" src="media/why/waterlogged-street.jpg" alt="People walking through a waterlogged street in the rain" loading="lazy" width="900" height="600"></li></ul></div>
+  </div>
+</div></section>
+
+<section id="features" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <h2 data-bn="সিদ্ধান্তগ্রহণকারী ও মাঠ প্রতিক্রিয়াকারীদের জন্য">Built for decision-makers &amp; field responders</h2>
+  <p class="sec-sub" data-bn="অফলাইন পূর্বানুমান মডেলিং এবং মাঠ কমিউনিটি কার্যক্রম একত্রিত করা একটি সমন্বিত জনস্বাস্থ্য ইকোসিস্টেম।">An integrated public-health ecosystem combining offline predictive modeling with field community action.</p>
+  <div class="grid3">
+    <div class="card"><div class="ico">🗺️</div><h3 data-bn="র‍্যাংকড রিস্ক বোর্ড এবং জিআইএস ম্যাপ">Ranked Risk Board &amp; GIS Map</h3><p data-bn="ওয়ার্ড-ভিত্তিক ট্রাইয়াজ টেবিল, ঝুঁকি ট্রিম্যাপ এবং সিটি কর্পোরেশন অনুযায়ী ফিল্টার করা ইন্টারেক্টিভ সাপ্তাহিক হিটম্যাপ।">Ward-by-ward triage table, risk treemap, and interactive weekly heatmaps filtered by City Corporation.</p></div>
+    <div class="card"><div class="ico">🔎</div><h3 data-bn="ওয়ার্ড গভীর বিশ্লেষণ এবং চালক">Ward Deep-Dive &amp; Drivers</h3><p data-bn="লক্ষ্যযুক্ত হস্তক্ষেপের জন্য ঐতিহাসিক প্রবণতা, বৃষ্টিপাত সহসম্পর্ক কার্ভ এবং উপাদান অবদান বিশ্লেষণ।">Historical trends, rainfall correlation curves, and factor contribution breakdowns for targeted intervention.</p></div>
+    <div class="card"><div class="ico">🎛️</div><h3 data-bn="কী-যদি জলবায়ু পরিস্থিতি">What-If Climate Scenarios</h3><p data-bn="হাসপাতালের সক্ষমতা পরীক্ষার জন্য অস্বাভাবিক বৃষ্টিপাত (+১৫০%), তাপপ্রবাহ বা আর্দ্রতার পরিবর্তন সিমুলেট করুন।">Simulate abnormal rainfall spikes (+150%), heatwaves, or humidity shifts to stress-test hospital capacity.</p></div>
+    <div class="card"><div class="ico">📊</div><h3 data-bn="স্বচ্ছ যাচাইকরণ">Transparent Validation</h3><p data-bn="২০২৪-২৫ পরীক্ষার ডেটায় কঠোর কালানুক্রমিক যাচাই: ৯১% স্তর নির্ভুলতা এবং ৮০% পূর্বাভাস ব্যবধান।">Strict chronological validation on held-out 2024–25 data with 91% tier accuracy and 80% prediction intervals.</p></div>
+    <div class="card"><div class="ico">🧹</div><h3 data-bn="কমিউনিটি কার্যক্রম এবং ইভেন্ট">Community Action &amp; Events</h3><p data-bn="উৎস হ্রাস, ড্রেন পরিষ্কার, বিনামূল্যে প্লেটলেট ক্যাম্প এবং পাড়া পরিষ্কারে স্বেচ্ছাসেবীদের একত্রিত করুন।">Rally volunteers for source reduction, drain clearing, free platelet camps, and neighborhood sweeps.</p></div>
+    <div class="card"><div class="ico">🔒</div><h3 data-bn="ব্যক্তিগত এবং অফলাইন এজ ইনফারেন্স">Private &amp; Offline Edge Inference</h3><p data-bn="ক্লাউড নির্ভরতা, বাহ্যিক ট্র্যাকার বা ডেটা ফাঁস ছাড়াই ব্রাউজার মেমরিতে ১০০% স্থানীয়ভাবে চলে (&lt;৫০ms)।">Runs 100% locally in browser memory (&lt;50ms) without cloud dependencies, external trackers, or data leakage.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2 data-bn="বৃষ্টিপাত থেকে র‍্যাংক করা ওয়ার্ড পর্যন্ত">From rainfall to ranked wards</h2>
+  <p class="sec-sub" data-bn="মশার ডিম ফোটতে ৭-১৪ দিন সময় লাগে, তারপর ডেঙ্গু ভাইরাসের ইনকিউবেশন পিরিয়ড আসে। ৭ সপ্তাহ পর্যন্ত বৃষ্টিপাতের বিলম্ব মডেল করে, ডেঙ্গু প্রতিরোধ ৫টি সিটি কর্পোরেশনের ৬০টি ওয়ার্ডের জন্য উপসর্গ দেখা দেওয়ার আগেই ২, ৩ বা ৪ সপ্তাহ আগে সাপ্তাহিক কেস পূর্বাভাস দেয়।">Mosquito eggs take 7–14 days to hatch and emerge, followed by the incubation period of the dengue virus. By modeling rainfall delays up to 7 weeks back, Dengue Protirodh forecasts weekly cases 2, 3 or 4 weeks ahead for 60 wards across 5 city corporations, before symptoms appear.</p>
+  <ol class="flow" aria-label="From weather data to early action">
+    <li style="--c:#3b82f6"><span class="ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a3.5 3.5 0 0 1 0 6.5"/><path d="M8 18l-1 3M12 18l-1 3M16 18l-1 3"/></svg></span><b>Weather data</b><span class="fl">Rain, heat, humidity, cases</span></li>
+    <li style="--c:#8b5cf6"><span class="ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>Lag features</b><span class="fl">Past weeks of rain and heat</span></li>
+    <li style="--c:#14b8a6"><span class="ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="12" cy="12" r="1.5"/><path d="M12 7v3.5M11 13l-4 3.5M13 13l4 3.5"/></svg></span><b>AI forecast</b><span class="fl">Predicts cases 2–4 weeks ahead</span></li>
+    <li style="--c:#f97316"><span class="ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="14" width="3.5" height="6" rx="1"/><rect x="10.25" y="9" width="3.5" height="11" rx="1"/><rect x="16.5" y="4" width="3.5" height="16" rx="1"/></svg></span><b>Risk tiers</b><span class="fl">Every ward ranked Low to Critical</span></li>
+    <li style="--c:#22c55e"><span class="ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><b>Early action</b><span class="fl">Teams clear breeding sites early</span></li>
+  </ol>
+  <div class="grid3">
+    <div class="card"><div class="num">1</div><h3 data-bn="আবহাওয়ার ইতিহাস পড়া">Read weather history</h3><p data-bn="০-৭ সপ্তাহের বৃষ্টিপাত বিলম্ব, রোলিং ২/৪/৮-সপ্তাহ সমষ্টি, তাপমাত্রা ও আর্দ্রতার বিলম্ব এবং শেষ ৪ সপ্তাহের কেস থেকে প্রতিটি ওয়ার্ডের বৈশিষ্ট্য তৈরি করা হয়। শুধুমাত্র সতর্কতার সপ্তাহে জানা তথ্য ব্যবহার করা হয়।">Builds features for each ward from rainfall lags of 0–7 weeks, rolling 2/4/8-week sums, temperature and humidity lags, and the last 4 weeks of cases. Only data known at the warning week is used.</p></div>
+    <div class="card"><div class="num">2</div><h3 data-bn="প্রতিটি ওয়ার্ড স্কোর করা">Score every ward</h3><p data-bn="গ্র্যাডিয়েন্ট-বুস্টেড ডিসিশন ট্রি আবহাওয়া এবং ওয়ার্ডের ঝুঁকি (জনঘনত্ব, জলাবদ্ধতা, স্যানিটেশন) একত্রিত করে সাপ্তাহিক প্রত্যাশিত কেস পূর্বাভাস দেয়, ৮০% পূর্বাভাস ব্যান্ডসহ।">Gradient-boosted decision trees combine weather with ward vulnerability (population density, water-logging, sanitation) to forecast expected weekly cases, with an 80% prediction band.</p></div>
+    <div class="card"><div class="num">3</div><h3 data-bn="র‍্যাংক করা, ট্রাইয়াজ করা এবং একত্রিত করা">Rank, triage and mobilize</h3><p data-bn="ওয়ার্ডগুলোকে র‍্যাংক করে নিম্ন, মাঝারি, উচ্চ বা সংকটজনক স্তরে রাখা হয়, প্রতিটিতে প্রস্তাবিত প্রতিক্রিয়া পরিকল্পনা এবং মাঠ দলের জন্য CSV এক্সপোর্ট থাকে।">Wards are ranked and placed in Low, Medium, High or Critical tiers, each with a recommended response plan and a CSV export for field teams.</p></div>
+  </div>
+  <div class="tiers" style="margin-top:22px">
+    <span class="chip" style="--c:var(--low);margin:0">Low</span><span class="chip" style="--c:var(--med);margin:0">Medium</span>
+    <span class="chip" style="--c:var(--high);margin:0">High</span><span class="chip" style="--c:var(--crit);margin:0">Critical</span>
+    <span style="color:var(--mu);font-size:.85rem;align-self:center;margin-left:6px" data-bn="থ্রেশহোল্ড ২০২৩ যাচাই ডেটায় ক্যালিব্রেট করা, ২০২৪-২০২৫ এ পরীক্ষিত">Thresholds calibrated on 2023 validation data, tested on 2024–2025</span>
+  </div>
+</div></section>
+
+<section id="tiers" style="padding-top:0"><div class="wrap">
+  <h2 data-bn="প্রতিটি ঝুঁকির স্তর আপনাকে কী করতে বলে">What each risk tier asks you to do</h2>
+  <p class="sec-sub" data-bn="ড্যাশবোর্ডে প্রতিটি ওয়ার্ড একটি স্তর এবং প্রস্তাবিত পদক্ষেপ পায়।">Every ward gets a tier and a recommended action in the dashboard.</p>
+  <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="card"><span class="chip" style="--c:var(--low);margin:0">Low</span><p data-bn="নিয়মিত নজরদারি। সাপ্তাহিক লার্ভা পরীক্ষা ও কমিউনিটি সচেতনতা অব্যাহত রাখুন।">Routine surveillance. Keep weekly larvae checks and community awareness running.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--med);margin:0">Medium</span><p data-bn="এই ওয়ার্ডে লার্ভাসাইড প্রস্তুত রাখুন এবং ড্রেন পরিষ্কার করুন; ক্লিনিকগুলোকে কেসের সংজ্ঞা দিন।">Pre-position larvicide and clear drains in this ward; brief clinics on case definition.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--high);margin:0">High</span><p data-bn="৭ দিনের মধ্যে লার্ভাসাইড ও ফগিং দল মোতায়েন করুন; বেড, স্যালাইন ও টেস্ট কিট সংরক্ষণ করুন।">Deploy larvicide and fogging teams within 7 days; reserve beds, saline and test kits.</p></div>
+    <div class="card"><span class="chip" style="--c:var(--crit);margin:0">Critical</span><p data-bn="জরুরি প্রতিক্রিয়া: এখনই বাড়ি বাড়ি গিয়ে উৎস হ্রাস, অতিরিক্ত বেড ও স্যালাইন, প্রতিদিন কেস রিপোর্টিং।">Emergency response: door-to-door source reduction now, surge beds and saline, daily case reporting.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="band">
+    <h2 data-bn="আপনার শহরের পূর্বাভাস অন্বেষণ করুন">Explore the forecast for your city</h2>
+    <p data-bn="একটি সিটি কর্পোরেশন বেছে নিন, সতর্কতার তারিখ স্লাইড করুন এবং কোন ওয়ার্ডের প্রথমে মনোযোগ প্রয়োজন তা দেখুন।">Pick a city corporation, slide the warning date and see which wards need attention first.</p>
+    <div class="cta"><a class="btn" href="app.html">Get started →</a></div>
+  </div>
+</div></section>
+<section id="prevention" class="gameplan"><div class="wrap">
+  <h2 data-bn="প্রতিরোধ">Prevention</h2>
+  <p class="sec-sub" data-bn="প্রতিরোধের গেমপ্ল্যান: পূর্বাভাস ঝুঁকি বাড়ছে বললে পরিবার ও ওয়ার্ড দল কী করতে পারে।">The prevention game plan: It is about what households and ward teams can do once a forecast says risk is rising.</p>
+  <div class="gp">
+    <figure class="gp-video">
+      <video controls preload="metadata" playsinline poster="media/dengue-prevention-poster.jpg">
+        <source src="media/dengue-prevention.mp4" type="video/mp4">
+        Your browser can't play this video. The three steps are listed beside it.
+      </video>
+    </figure>
+    <ol class="gp-steps">
+      <li><span class="num">1</span><div><b data-bn="সাপ্তাহিক পাত্র খালি করুন এবং ঘষুন">Empty and scrub containers weekly</b><span data-bn="বালতি, টায়ার, ফুলদানির নিচের পাত্র ও কুলার। ঘষলে শুকানোর পরেও টিকে থাকা ডিম দূর হয়।">Buckets, tyres, pot saucers and coolers. Scrubbing removes eggs that survive drying.</span></div></li>
+      <li><span class="num">2</span><div><b data-bn="ট্যাংক ঢাকুন, ড্রেন সচল রাখুন">Cover tanks, keep drains flowing</b><span data-bn="আঁটো ঢাকনা এবং পরিষ্কার ড্রেন এডিস মশাকে প্রজননের জায়গা দেয় না।">Tight lids and cleared drains leave Aedes nowhere to breed.</span></div></li>
+      <li><span class="num">3</span><div><b data-bn="মানুষকে রক্ষা করুন, আগেই পরীক্ষা করুন">Protect people, test early</b><span data-bn="দিনে ও রাতে মশারি এবং রিপেলেন্ট। জ্বরের সাথে শরীর ব্যথা? আগেই পরীক্ষা করুন।">Nets and repellent by day and night. Fever with body ache? Get tested early.</span></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="proof"><div class="wrap split">
+  <div>
+    <h2 data-bn="যে ডেটা কখনো দেখেনি তাতে পরীক্ষিত">Tested on data it never saw</h2>
+    <p class="sec-sub" style="margin-bottom:0" data-bn="কঠোর কালানুক্রমিক বিভাজন: প্রশিক্ষণ ২০১৬-২০২২, যাচাই ২০২৩, পরীক্ষা ২০২৪-২০২৫। কোনো শাফলিং নেই, তাই ভবিষ্যতের তথ্য ফাঁস নেই।">Strictly chronological split: train 2016–2022, validate 2023, test 2024–2025. No shuffling, so no future leakage.</p>
+    <ul class="ilist checks">
+      <li><span class="bi" style="--bc:#f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg></span><b>Beats both baselines</b> at every horizon (persistence and seasonal ward-month average)</li>
+      <li><span class="bi" style="--bc:#10b981"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><b>93.2% coverage</b> on 80% prediction bands at +3 weeks, so the bands err on the cautious side</li>
+      <li><span class="bi" style="--bc:#6366f1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><b>MAE 1.02</b> cases per ward-week at +3 weeks</li>
+    </ul>
+  </div>
+  <div class="card bars" aria-label="R squared at plus three weeks, held-out test set">
+    <h3 style="margin-top:0">R² at +3 weeks (held-out test)</h3>
+    <div class="b"><div class="l"><span data-bn="পার্সিসটেন্স (গত সপ্তাহ পুনরাবৃত্তি)">Persistence (last week repeats)</span><b>0.14</b></div><div class="t"><i style="width:14%"></i></div></div>
+    <div class="b"><div class="l"><span data-bn="মৌসুমী ওয়ার্ড-মাস গড়">Seasonal ward-month average</span><b>0.54</b></div><div class="t"><i style="width:54%"></i></div></div>
+    <div class="b me"><div class="l"><span>Dengue Protirodh</span><b>0.73</b></div><div class="t"><i style="width:73%"></i></div></div>
+    <p class="fine" data-bn="ড্যাশবোর্ডের মডেল যাচাই ট্যাব থেকে পরিসংখ্যান। পূর্ণ পদ্ধতি আর্কিটেকচার নোটে।">Figures from the dashboard's Model validation tab. Full method in the architecture notes.</p>
+  </div>
+</div></section>
+
+<section id="blogs" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <h2 data-bn="অন্তর্দৃষ্টি এবং গবেষণা ব্লগ">Insights &amp; Research Blogs</h2>
+  <p class="sec-sub" data-bn="বাংলাদেশে ডেঙ্গু প্রশমনে গভীর নিবন্ধ, ভেক্টর জীববিজ্ঞান বিশ্লেষণ এবং ক্লিনিক্যাল ভিডিও গাইড।">Deep-dive articles, vector biology breakdowns, and clinical video guides on dengue mitigation in Bangladesh.</p>
+  <div class="cta"><a class="btn" href="blogs.html">Read all blogs &amp; watch videos →</a></div>
+</div></section>
+
+<section id="events" style="border-bottom:1px solid var(--line)"><div class="wrap">
+  <h2 data-bn="কমিউনিটি ইভেন্ট এবং অ্যাকশন ড্রাইভ">Community events &amp; action drives</h2>
+  <p class="sec-sub" data-bn="মাঠে সক্রিয়করণ: পাড়া পরিষ্কার, জ্বর স্ক্রিনিং ক্লিনিক, স্কুল কর্মশালা এবং লার্ভা নির্মূল অভিযানে স্বেচ্ছাসেবক হন।">Mobilizing boots on the ground: volunteer for neighborhood cleanups, fever screening clinics, school workshops and larvae elimination sweeps across Bangladesh.</p>
+  <div class="grid3" style="margin-bottom:24px">
+    <div class="card">
+      <span class="chip" style="margin-left:0;margin-bottom:8px">DNCC</span>
+      <h3 data-bn="ওয়ার্ড ১১ এবং মিরপুর উৎস হ্রাস">Ward 11 &amp; Mirpur Source Reduction</h3>
+      <p data-bn="DNCC স্বাস্থ্য পরিদর্শকদের সাথে বাড়ি বাড়ি ছাদ পরিদর্শন, ফুলদানি খালি করা এবং ড্রেন সচল করা।">Door-to-door rooftop inspections, flowerpot emptying and drain unblocking with DNCC health inspectors.</p>
+    </div>
+    <div class="card">
+      <span class="chip" style="margin-left:0;margin-bottom:8px">DSCC</span>
+      <h3 data-bn="বিনামূল্যে প্লেটলেট এবং অ্যান্টিজেন স্ক্রিনিং">Free Platelet &amp; Antigen Screening</h3>
+      <p data-bn="লালবাগ থানা স্বাস্থ্য কমপ্লেক্সে জ্বর ট্রাইয়াজ, পুরান ঢাকার বাসিন্দাদের জন্য অন-সাইট CBC এবং NS1 অ্যান্টিজেন পরীক্ষা।">Lalbagh Thana Health Complex fever triage, on-site CBC and NS1 antigen tests for Old Dhaka residents.</p>
+    </div>
+    <div class="card">
+      <span class="chip" style="margin-left:0;margin-bottom:8px">CCC</span>
+      <h3 data-bn="চট্টগ্রাম বন্দর এবং খাল পরিষ্কার">Chattogram Port &amp; Canal Cleanup</h3>
+      <p data-bn="আগ্রাবাদ বাণিজ্যিক করিডোরে শিল্প টায়ার নিষ্পত্তি এবং কালভার্ট পলি অপসারণ অভিযান।">Consolidated industrial tire disposal and culvert de-silting campaign in Agrabad commercial corridor.</p>
+    </div>
+  </div>
+  <div class="cta"><a class="btn" href="events.html">Browse all events &amp; RSVP →</a> <a class="btn ghost" href="events.html#organize" data-bn="আপনার ওয়ার্ডে একটি ইভেন্ট আয়োজন করুন">Organize an event in your ward</a></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2 data-bn="ডেঙ্গু প্রতিরোধ সম্পর্কে">About Dengue Protirodh</h2>
+  <p class="sec-sub" data-bn="একটি ওয়ার্ড-স্তরের আগাম সতর্কতা টুল যা স্বাস্থ্য দলগুলোকে ডেঙ্গুর আগে কয়েক সপ্তাহের প্রস্তুতির সুযোগ দেয়। ৫টি সিটি কর্পোরেশনের ৬০টি ওয়ার্ডের ঝুঁকি পূর্বাভাস দেয়, ব্রাউজারে ব্যক্তিগতভাবে চলে এবং সিদ্ধান্ত সহায়তার জন্য তৈরি।">A ward-level early-warning tool that gives health teams a few weeks' head start on dengue. It forecasts risk for 60 wards in 5 city corporations, runs privately in your browser and is built for decision support, not diagnosis.</p>
+
+  <h3 style="margin:28px 0 16px;font-size:1.35rem" data-bn="উন্নত করেছেন">Developed by</h3>
+  <div class="grid3" style="margin-bottom:28px">
+    <div class="card" style="display:flex;flex-direction:column;gap:6px">
+      <h3 style="margin:0;font-size:1.15rem">Tamzida Mahmud</h3>
+      <span style="color:var(--mu);font-size:0.88rem" data-bn="CSE শিক্ষার্থী · ইস্ট ডেল্টা বিশ্ববিদ্যালয়">CSE Student · East Delta University</span>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;gap:6px">
+      <h3 style="margin:0;font-size:1.15rem">Zafnun Hosney Uddin</h3>
+      <span style="color:var(--mu);font-size:0.88rem" data-bn="CSE শিক্ষার্থী · ইস্ট ডেল্টা বিশ্ববিদ্যালয়">CSE Student · East Delta University</span>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;gap:6px">
+      <h3 style="margin:0;font-size:1.15rem">Zoya Zubairi Fiza</h3>
+      <span style="color:var(--mu);font-size:0.88rem" data-bn="CSE শিক্ষার্থী · ইস্ট ডেল্টা বিশ্ববিদ্যালয়">CSE Student · East Delta University</span>
+    </div>
+  </div>
+
+  <div class="cta"><a class="btn ghost" href="about.html">Read more about us →</a></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2 data-bn="প্রশ্নোত্তর">Questions</h2>
+  <details><summary data-bn="পূর্বাভাস আমাকে কী বলে?">What does the forecast tell me?</summary><p data-bn="২-৪ সপ্তাহ আগে ৮০% পরিসর এবং ঝুঁকির স্তরসহ প্রতি ওয়ার্ডে সাপ্তাহিক প্রত্যাশিত ডেঙ্গু কেসের সংখ্যা। এটি কোথায় প্রথমে দল পাঠাবেন তা নির্দেশ করে। এটি ব্যক্তিগত রোগ নির্ণয় করে না।">The expected number of dengue cases per ward per week, 2–4 weeks ahead, with an 80% range and a risk tier. It guides where to send teams first. It does not diagnose individuals.</p></details>
+  <details><summary data-bn="এটি কোন ডেটা ব্যবহার করে?">Which data does it use?</summary><p data-bn="হ্যাকাথন ডেটাসেট: ৫টি সিটি কর্পোরেশনে ৬০টি ওয়ার্ড, ২০১৬ থেকে ২০২৫ পর্যন্ত ৩১,৩২০টি সাপ্তাহিক রেকর্ড, আবহাওয়া, ওয়ার্ডের ঝুঁকি ও রিপোর্টেড কেস অন্তর্ভুক্ত। আপনি আপনার নিজের সাপ্তাহিক CSV আপলোড করতেও পারেন।">The hackathon dataset: 60 wards in 5 city corporations, 31,320 weekly records from 2016 to 2025, covering weather, ward vulnerability and reported cases. You can also upload your own weekly CSV.</p></details>
+  <details><summary data-bn="আমার ডেটা কি আমার কম্পিউটার ছেড়ে যায়?">Does my data leave my computer?</summary><p data-bn="না। সবকিছু আপনার ব্রাউজারে চলে, কোনো সার্ভার, API কল বা পূর্বাভাস সময়ে LLM ছাড়া।">No. Everything runs in your browser, with no server, no API call and no LLM at prediction time.</p></details>
+  <details><summary data-bn="এটি কতটা নির্ভুল?">How accurate is it?</summary><p>On the held-out 2024–2025 test years, R² is 0.73 at +3 weeks and 0.61 at +4 weeks, so longer warnings are less certain. The Model validation tab shows every metric.</p></details>
+  <details><summary>Can I test "what-if" weather scenarios?</summary><p data-bn="হ্যাঁ। ড্যাশবোর্ডের কী-যদি সিমুলেটরে, বেসলাইনের তুলনায় প্রত্যাশিত ওয়ার্ড ঝুঁকি এবং কেস কীভাবে পরিবর্তন হয় তা দেখতে বৃষ্টিপাত, তাপমাত্রা এবং আর্দ্রতার স্লাইডার সামঞ্জস্য করুন।">Yes. In the dashboard's What-If Simulator, you can adjust rainfall, temperature, and humidity sliders to see how projected ward risk and expected cases change compared to the baseline.</p></details>
+  <details><summary data-bn="আমি কীভাবে ডেঙ্গুর গল্প শেয়ার করতে বা কমিউনিটি ড্রাইভে যোগ দিতে পারি?">How can I share a dengue story or join community drives?</summary><p>You can submit your own dengue experience or prevention story on the <a href="story.html" style="color:var(--ac)">Story submission page</a>, or join neighborhood cleanups and screening clinics listed in <a href="#events" style="color:var(--ac)">Community events</a>.</p></details>
+</div></section>
+
+<section class="stay" id="subscribe" aria-labelledby="stay-h"><div class="wrap"><div class="band stay-band">
+  <h2 id="stay-h" data-bn="সর্বশেষ তথ্যের সাথে থাকুন">Stay in the Know</h2>
+  <p data-bn="ইমেইলে ডেঙ্গু সতর্কবার্তা, নতুন ফিচার এবং প্রতিরোধ নির্দেশিকা পান। মাঝে মাঝে বার্তা, যেকোনো সময় আনসাবস্ক্রাইব করতে পারবেন।">Get dengue risk updates, new features and prevention tips from Dengue Protirodh by email. Occasional messages only, and you can unsubscribe at any time.</p>
+  <form class="subform" novalidate>
+    <div class="subrow">
+      <label class="sr" for="sub-email">Email address</label>
+      <input id="sub-email" name="email" type="email" maxlength="254" placeholder="you@example.com" autocomplete="email" required>
+      <button class="btn" type="submit" data-bn="সাবস্ক্রাইব করুন">Subscribe</button>
+    </div>
+    <label class="hp" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+    <label class="chk"><input type="checkbox" name="consent"> <span>I agree to receive emails from Dengue Protirodh. See the <a href="#privacy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a>.</span></label>
+    <p class="submsg" role="status" aria-live="polite" hidden></p>
+  </form>
+</div></div></section>
+<section id="contact" style="padding-top:0"><div class="wrap">
+  <h2 data-bn="যোগাযোগ">Contact</h2>
+  <p class="sec-sub" data-bn="প্রশ্ন, মতামত বা নিজের ওয়ার্ড ডেটা দিয়ে ডেঙ্গু প্রতিরোধ ব্যবহার করতে চান? আমরা আপনার কথা শুনতে চাই।">Questions, feedback or want to try Dengue Protirodh with your own ward data? We would like to hear from you.</p>
+  <div class="cta"><a class="btn" href="contact.html">Get in touch →</a><a class="btn ghost" href="mailto:team@dengueguard.example">team@dengueguard.example</a><a class="btn ghost" href="tel:+8801819264057">+880 1819-264057</a></div>
+</div></section>
+<section id="references" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <details class="refs-toggle">
+  <summary data-bn="তথ্যসূত্র">References</summary>
+  <p class="sec-sub">News reports on Bangladesh's 2025 and 2026 dengue seasons and recent updates on vaccines and care, and the videos featured on this site. Read summaries and share them on the <a href="news.html" style="color:var(--ac)">News page</a>.</p>
+  <h3 class="ref-sub" data-bn="সংবাদ নিবন্ধ">News articles</h3>
+  <ol class="ref-list">
+    <li>The Daily Star. “Dengue in 2025: July the deadliest month so far” <i>The Daily Star</i>, 25 Jul 2025. <a href="https://www.thedailystar.net/node/3947961" target="_blank" rel="noopener noreferrer">https://www.thedailystar.net/node/3947961</a> (accessed 22 Nov 2026)</li>
+    <li>Khaleej Times. “Bangladesh dengue outbreak surges; 4 dead, 1,558 hospitalised in last 24 hours” <i>Khaleej Times (photo: AFP)</i>, 7 Sep 2026. <a href="https://www.khaleejtimes.com/world/asia/bangladesh-dengue-outbreak-surges-september-2026" target="_blank" rel="noopener noreferrer">https://www.khaleejtimes.com/world/asia/bangladesh-dengue-outbreak-surges-september-2026</a> (accessed 22 Nov 2026)</li>
+    <li>Reuters. “Bangladesh sees worst single-day surge in dengue deaths” <i>Dawn (Reuters)</i>, 22 Sep 2025. <a href="https://www.dawn.com/news/1943788/bangladesh-sees-worst-single-day-surge-in-dengue-deaths" target="_blank" rel="noopener noreferrer">https://www.dawn.com/news/1943788/bangladesh-sees-worst-single-day-surge-in-dengue-deaths</a> (accessed 22 Nov 2026)</li>
+    <li>The Financial Express. “Dengue hospitalisations top 45,000 in 2025” <i>The Financial Express (Bangladesh)</i>, 27 Sep 2025. <a href="https://thefinancialexpress.com.bd/national/dengue-hospitalisations-top-45000-in-2025" target="_blank" rel="noopener noreferrer">https://thefinancialexpress.com.bd/national/dengue-hospitalisations-top-45000-in-2025</a> (accessed 22 Nov 2026)</li>
+    <li>Faisal Mahmud. “Bangladesh may be headed into another deadly dengue season – unprepared” <i>Scroll.in</i>, 16 May 2026. <a href="https://scroll.in/article/1092877/bangladesh-may-be-headed-into-another-deadly-dengue-season-unprepared" target="_blank" rel="noopener noreferrer">https://scroll.in/article/1092877/bangladesh-may-be-headed-into-another-deadly-dengue-season-unprepared</a> (accessed 22 Nov 2026)</li>
+    <li>News On AIR. “Bangladesh: 11 dengue deaths reported in a single day; overall 400 fatalities in a year” <i>News On AIR (All India Radio)</i>, 27 Oct 2026. <a href="https://newsonair.gov.in/bangladesh-11-dengue-deaths-reported-in-a-single-day-overall-400-fatalities-in-a-year/" target="_blank" rel="noopener noreferrer">https://newsonair.gov.in/bangladesh-11-dengue-deaths-reported-in-a-single-day-overall-400-fatalities-in-a-year/</a> (accessed 22 Nov 2026)</li>
+    <li>Prothom Alo. “100 ‘hotspots’ in North, 29 wards at high risk in South” <i>Prothom Alo English edition</i>, 20 Sep 2026. <a href="https://en.prothomalo.com/bangladesh/uiwruqtl4p" target="_blank" rel="noopener noreferrer">https://en.prothomalo.com/bangladesh/uiwruqtl4p</a> (accessed 22 Nov 2026)</li>
+    <li>Reuters. “Bangladesh considers dengue vaccine trials as outbreak worsens” <i>TimesLive (Reuters)</i>, 6 Oct 2026. <a href="https://www.timeslive.co.za/news/world/2026-10-06-bangladesh-considers-dengue-vaccine-trials-as-outbreak-worsens/" target="_blank" rel="noopener noreferrer">https://www.timeslive.co.za/news/world/2026-10-06-bangladesh-considers-dengue-vaccine-trials-as-outbreak-worsens/</a> (accessed 25 Nov 2026)</li>
+    <li>The Daily Star. “Govt to consult experts on dengue vaccine trials: State minister” <i>The Daily Star</i>, 13 Oct 2026. <a href="https://www.thedailystar.net/news/healthcare/disease/news/govt-consult-experts-dengue-vaccine-trials-state-minister-4297691" target="_blank" rel="noopener noreferrer">https://www.thedailystar.net/news/healthcare/disease/news/govt-consult-experts-dengue-vaccine-trials-state-minister-4297691</a> (accessed 25 Nov 2026)</li>
+    <li>Gulf Today. “Dengue fever claims 418 lives in Bangladesh amid warnings of continued outbreak” <i>Gulf Today (citing Reuters)</i>, 1 Nov 2026. <a href="https://www.gulftoday.ae/news/2026/11/01/dengue-fever-claims-418-lives-in-bangladesh-amid-warnings-of-continued-outbreak" target="_blank" rel="noopener noreferrer">https://www.gulftoday.ae/news/2026/11/01/dengue-fever-claims-418-lives-in-bangladesh-amid-warnings-of-continued-outbreak</a> (accessed 25 Nov 2026)</li>
+    <li>Xinhua. “Bangladesh&#x27;s dengue death toll tops 500” <i>Xinhua</i>, 16 Nov 2026. <a href="https://english.news.cn/asiapacific/20261116/13c4df00767245a1bc989b45e3ee7534/c.html" target="_blank" rel="noopener noreferrer">https://english.news.cn/asiapacific/20261116/13c4df00767245a1bc989b45e3ee7534/c.html</a> (accessed 25 Nov 2026)</li>
+    <li>FE Report. “Govt hospitals offering all dengue tests for free” <i>The Financial Express (Bangladesh)</i>, 18 Nov 2026. <a href="https://thefinancialexpress.com.bd/health/govt-hospitals-offering-all-dengue-tests-for-free" target="_blank" rel="noopener noreferrer">https://thefinancialexpress.com.bd/health/govt-hospitals-offering-all-dengue-tests-for-free</a> (accessed 25 Nov 2026)</li>
+    <li>Business Standard. “Takeda gets DCGI nod for QDENGA, India&#x27;s first dengue vaccine” <i>Business Standard (India)</i>, 20 Jul 2026. <a href="https://www.business-standard.com/companies/news/takeda-gets-dcgi-nod-for-indias-first-dengue-vaccine-qdenga-126072000569_1.html" target="_blank" rel="noopener noreferrer">https://www.business-standard.com/companies/news/takeda-gets-dcgi-nod-for-indias-first-dengue-vaccine-qdenga-126072000569_1.html</a> (accessed 25 Nov 2026)</li>
+    <li>TBS Report. “Dengue: Death toll at 526 as 2 more die” <i>The Business Standard (Bangladesh)</i>, 25 Nov 2026. <a href="https://www.tbsnews.net/bangladesh/dengue-death-toll-526-2-more-die-1613641" target="_blank" rel="noopener noreferrer">https://www.tbsnews.net/bangladesh/dengue-death-toll-526-2-more-die-1613641</a> (accessed 25 Nov 2026)</li>
+  </ol>
+  <h3 class="ref-sub" id="video-references" data-bn="ভিডিও">Videos</h3>
+  <p class="fine" style="margin-top:0">Videos featured on our <a href="videos.html" style="color:var(--ac)">Videos page</a>. Each belongs to its publisher; they are general information, not medical advice.</p>
+  <ol class="ref-list" start="15">
+    <li>WHO South-East Asia. “Dengue symptoms and care” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=p3kZjyTxisk" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=p3kZjyTxisk</a> (accessed 25 Nov 2026)</li>
+    <li>UCLH, London. “Signs and symptoms of dengue fever” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=P-_hqG9HKj8" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=P-_hqG9HKj8</a> (accessed 25 Nov 2026)</li>
+    <li>“Dengue timeline: from day 0 to recovery” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=_mo-vJDBm8Y" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=_mo-vJDBm8Y</a> (accessed 25 Nov 2026)</li>
+    <li>WHO South-East Asia. “Reducing mosquito breeding sites” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=TbMCxl8YXTk" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=TbMCxl8YXTk</a> (accessed 25 Nov 2026)</li>
+    <li>“Dengue: what you can do in your neighbourhood” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=Fixp7OAYFfA" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=Fixp7OAYFfA</a> (accessed 25 Nov 2026)</li>
+    <li>“Stop dengue with B-L-O-C-K” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=FlnuB7tkUe4" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=FlnuB7tkUe4</a> (accessed 25 Nov 2026)</li>
+    <li>“Mosquito breeding sites at home” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=ws-xG2c1MnQ" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=ws-xG2c1MnQ</a> (accessed 25 Nov 2026)</li>
+    <li>“Bangladesh reels under rising dengue cases” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=DDs0mPokNPc" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=DDs0mPokNPc</a> (accessed 25 Nov 2026)</li>
+    <li>Associated Press. “Dengue outbreak kills hundreds in Bangladesh” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=2JShyaZ29uo" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=2JShyaZ29uo</a> (accessed 25 Nov 2026)</li>
+    <li>“Dengue surge overwhelms Khulna hospitals” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=RlKbPbBwwBI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=RlKbPbBwwBI</a> (accessed 25 Nov 2026)</li>
+    <li>FRANCE 24. “Bangladesh faces a deadly dengue surge” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=kVClV02Th0Q" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=kVClV02Th0Q</a> (accessed 25 Nov 2026)</li>
+    <li>Protidiner Bangladesh. “ডেঙ্গু: ২৪ ঘণ্টায় ৪ জনের মৃত্যু, হাসপাতালে ভর্তি ১৫১২” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=LsR9YH9CQUI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=LsR9YH9CQUI</a> (accessed 25 Nov 2026)</li>
+    <li>“A dengue survivor’s true story” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=wX4710MynWg" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=wX4710MynWg</a> (accessed 25 Nov 2026)</li>
+    <li>Medicover Hospitals. “Patient story: dengue and typhoid” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=Ep1A2RNrDDQ" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=Ep1A2RNrDDQ</a> (accessed 25 Nov 2026)</li>
+    <li>“Baby recovers from severe dengue” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=YiRNBX65Ebo" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=YiRNBX65Ebo</a> (accessed 25 Nov 2026)</li>
+    <li>Grecian Hospital. “Amrik Singh’s dengue recovery” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=qB1aV0YgdhE" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=qB1aV0YgdhE</a> (accessed 25 Nov 2026)</li>
+    <li>Park Grecian Hospital. “Overcoming dengue: a journey to recovery” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=RNz_nF-3hKY" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=RNz_nF-3hKY</a> (accessed 25 Nov 2026)</li>
+    <li>Medicover Hospitals. “Patient recovers from dengue in 3 days” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=2RWhrKuMjJ0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=2RWhrKuMjJ0</a> (accessed 25 Nov 2026)</li>
+    <li>“Inside Singapore’s mosquito factory” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=GGiCO_4EqoU" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=GGiCO_4EqoU</a> (accessed 25 Nov 2026)</li>
+    <li>“Inside Singapore’s Wolbachia breeding facility” [Video] <i>YouTube</i>. <a href="https://www.youtube.com/watch?v=j2hCDqBU_Qs" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=j2hCDqBU_Qs</a> (accessed 25 Nov 2026)</li>
+  </ol>
+  </details>
+</div></section>
+
+<section id="privacy" class="legal"><div class="wrap">
+  <details class="refs-toggle">
+  <summary data-bn="গোপনীয়তা নীতি">Privacy Policy</summary>
+  <p class="sec-sub">Dengue Protirodh is engineered as a privacy-by-design, offline-first tool. Your data, calculations, and uploads never leave your device.</p>
+  <div class="lc">
+<p class="updated">Last updated: 25 November 2026</p>
+<h3>Summary &amp; Core Privacy Principles</h3>
+<p>Dengue Protirodh computes all predictive models locally inside your browser memory. We operate with zero third-party telemetry, no commercial advertising trackers, and no remote machine learning inference servers.</p>
+<h3>Data Processing &amp; Edge Inference</h3>
+<ul class="ilist">
+<li><span class="bi" style="--bc:#6366f1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><b>Bundled Epidemiological Records:</b> The historical dataset of 31,320 records across 60 wards is packaged locally with static application files.</li>
+<li><span class="bi" style="--bc:#3b82f6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5M12 17v-6M9.5 13.5L12 11l2.5 2.5"/></svg></span><b>User CSV Uploads:</b> When you upload custom weekly surveillance data, it is parsed locally by browser memory APIs. It is never transmitted across the network, logged on external servers, or persisted beyond your active browser session.</li>
+<li><span class="bi" style="--bc:#14b8a6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14"/></svg></span><b>Predictions &amp; Report Downloads:</b> All CSV exports, risk summaries, and scenario stress-tests are assembled and generated directly on your client hardware.</li>
+</ul>
+<h3>What We Do Not Do</h3>
+<ul class="ilist">
+<li><span class="bi" style="--bc:#ef4444"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 6.2A9.6 9.6 0 0 1 12 6c5 0 8.5 4.5 9.5 6a15 15 0 0 1-3 3.4M6.5 7.5C4.4 9 3 11 2.5 12c1 1.6 4.5 6 9.5 6 1.5 0 2.9-.4 4-1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></span>No unauthorized cookies, no canvas fingerprinting, and no hidden tracking scripts.</li>
+<li><span class="bi" style="--bc:#f97316"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>No third-party analytics pixels, ads, or data-broker integrations. Social links are direct HTML anchors.</li>
+<li><span class="bi" style="--bc:#0ea5e9"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M9 5.2A6 6 0 0 1 17.5 9h.5a4 4 0 0 1 3 6.6M18 18H7a4.5 4.5 0 0 1-1.5-8.7"/></svg></span>No cloud LLM inference or server-side data processing during prediction operations.</li>
+<li><span class="bi" style="--bc:#10b981"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>Zero sharing or sale of user interactions. If you choose to RSVP for an event or register for a webinar, your records are saved locally on your device in standard web storage.</li>
+</ul>
+<h3>Storage &amp; Preferences</h3>
+<p>Dengue Protirodh uses local storage strictly for functional application preferences:</p>
+<ul class="ilist">
+<li><span class="bi" style="--bc:#f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg></span><b>dg_theme:</b> Remembers your chosen Dark or Light interface appearance.</li>
+<li><span class="bi" style="--bc:#3b82f6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span><b>dg_lang:</b> Stores your preferred display language (English or Bengali).</li>
+<li><span class="bi" style="--bc:#8b5cf6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span><b>dg_consent:</b> Records your cookie banner preference (strictly first-party, stored for 180 days).</li>
+<li><span class="bi" style="--bc:#ec4899"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg></span><b>Community &amp; Webinar Registrations:</b> Keeps track of event RSVPs and forum contributions locally so you can manage your participation.</li>
+</ul>
+<h3>Third-Party Content Loading</h3>
+<p>All core computational code, styling, and charts (Plotly.js) load offline from local files without external requests. If you view optional news photographs or click Play on embedded YouTube educational videos, those specific media assets load directly from their respective source publishers with privacy-enhanced controls.</p>
+<h3>Contact &amp; Data Rights</h3>
+<p>For privacy inquiries or data requests, contact our team at <a href="mailto:team@dengueguard.example">team@dengueguard.example</a>.</p>
+  </div>
+  </details>
+</div></section>
+
+<section id="terms" class="legal"><div class="wrap">
+  <details class="refs-toggle">
+  <summary data-bn="ব্যবহারের শর্তাবলী">Terms of Use</summary>
+  <p class="sec-sub">Please review the terms of service governing the use of Dengue Protirodh.</p>
+  <div class="lc">
+<p class="updated">Last updated: 25 November 2026</p>
+<div class="callout"><b>Important Medical Disclaimer:</b> Dengue Protirodh is an epidemiological decision-support and vector surveillance planning tool. It is <b>not a clinical diagnostic device</b> and does not substitute for individual medical advice, professional triage, or hospital treatment.</div>
+<h3>1. Acceptance of Terms</h3>
+<p>By accessing, deploying, or utilizing Dengue Protirodh, you agree to comply with and be bound by these Terms of Use. If you do not accept these terms, you should discontinue use immediately.</p>
+<h3>2. Scope of Service &amp; Purpose</h3>
+<p>Dengue Protirodh is designed for municipal authorities, city corporations (DNCC, DSCC, CCC, KCC, GCC, RCC), public-health researchers, and community organizations to optimize resource allocation (larviciding, door-to-door inspections, fogging, and clinic bed reservations) 2 to 4 weeks prior to dengue hospitalization surges.</p>
+<h3>3. Predictive Model Limitations</h3>
+<ul class="ilist">
+<li><span class="bi" style="--bc:#6366f1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></svg></span>Forecasts represent statistical probabilities derived from historical weather patterns, lag features, and ward vulnerability indexes. They are predictive estimates, not guarantees of infection counts.</li>
+<li><span class="bi" style="--bc:#f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 14.5A4.5 4.5 0 0 0 16.5 6h-1A6 6 0 1 0 6 14.3"/><path d="M12.5 11l-3 4.5h4l-2 4"/></svg></span>Extreme weather anomalies, sudden unseasonal flash floods, or drastic unreported chemical spraying may alter real-world transmission dynamics compared to model predictions.</li>
+<li><span class="bi" style="--bc:#14b8a6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg></span>Longer forecast horizons (+4 weeks) inherently exhibit wider variance bands than shorter windows (+2 weeks). Users should always consult the 80% prediction interval.</li>
+</ul>
+<h3>4. Community Features &amp; User Contributions</h3>
+<p>Users who list local events, publish community tips, or organize cleanup drives agree to submit truthful, safe, and lawful information. Do not disclose private medical records, patient names, or sensitive personal phone numbers in public community discussions.</p>
+<h3>5. Intellectual Property &amp; Open Access</h3>
+<p>Dengue Protirodh was created for hackathon evaluation and public-health benefit. All codebase elements, open documentation, and scientific architectures are provided under open academic standards for non-commercial educational and public safety deployment.</p>
+<ul class="ilist">
+<li><span class="bi" style="--bc:#8b5cf6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 8v4l3 2"/></svg></span>The model learns from past data and may miss new situations, such as a new virus serotype, changes in reporting or unusual weather.</li>
+<li><span class="bi" style="--bc:#3b82f6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg></span>Risk tiers and recommended actions are general guidance. Local health authorities should make the final decisions.</li>
+</ul>
+<h3>Your responsibilities</h3>
+<ul class="ilist">
+<li><span class="bi" style="--bc:#6366f1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="M5 7l-3 7a3.5 3.5 0 0 0 6 0L5 7zM19 7l-3 7a3.5 3.5 0 0 0 6 0l-3-7z"/></svg></span>Use the tool lawfully and only with data you are permitted to use.</li>
+<li><span class="bi" style="--bc:#ef4444"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6 1.4 0 2.6.3 3.6 1M16 15l5 5M21 15l-5 5"/></svg></span>Do not upload data that identifies individual patients.</li>
+<li><span class="bi" style="--bc:#14b8a6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span>Check important decisions against other sources and professional judgment.</li>
+</ul>
+<h3>No warranty</h3>
+<p>The tool is provided “as is” and “as available”, without warranties of any kind, express or implied, including accuracy, reliability, fitness for a particular purpose or non-infringement.</p>
+<h3>Limitation of liability</h3>
+<p>To the fullest extent permitted by law, the creators of Dengue Protirodh are not liable for any loss, damage or harm arising from the use of, or inability to use, the tool or its forecasts.</p>
+<h3>Intellectual property and licenses</h3>
+<p>The source code and data are provided for hackathon evaluation purposes only, as stated in the README. Plotly.js is bundled under its own MIT license. The Dengue Protirodh name and logo may not be used to suggest endorsement without permission.</p>
+<h3>Changes</h3>
+<p>We may update these terms. Continued use after the date above means you accept the updated terms.</p>
+<h3>Contact</h3>
+<p>Questions about these terms: <a href="mailto:team@dengueguard.example">team@dengueguard.example</a> or the <a href="#contact">Contact section</a>. See also our <a href="#references" data-bn="তথ্যসূত্র">References</a> and <a href="#privacy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a>.</p>
+  </div>
+  </details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <a class="foot-brand" href="#top" aria-label="Dengue Protirodh, back to top"><img class="logo" src="logo.svg" alt="" width="36" height="36"><span>Dengue Protirodh</span></a>
+  <div class="foot-columns">
+    <div class="foot-links foot-col foot-main">
+      <a href="index.html" data-bn="হোম">Home</a>
+      <a href="#about" data-bn="আমাদের সম্পর্কে">About us</a>
+      <a href="news.html" data-bn="সংবাদ">News</a>
+      <a href="blogs.html" data-bn="ব্লগ">Blogs</a>
+      <a href="events.html" data-bn="ইভেন্টস">Events</a>
+      <a href="community.html" data-bn="কমিউনিটি">Community</a>
+      <a href="#contact" data-bn="যোগাযোগ">Contact</a>
+      <a href="app.html" data-bn="ড্যাশবোর্ড">Dashboard</a>
+      <a href="#privacy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a>
+      <a href="#terms" data-bn="ব্যবহারের শর্তাবলী">Terms</a>
+      <a href="#" data-cookie-settings data-bn="কুকি সেটিংস">Cookie settings</a>
+      <a href="README.md" data-bn="README">README</a>
+      <a href="ARCHITECTURE.pdf" download="ARCHITECTURE.pdf" data-bn="আর্কিটেকচার (PDF)">Architecture (PDF)</a>
+      <a href="ARCHITECTURE.md" data-bn="আর্কিটেকচার (MD)">Architecture (MD)</a>
+    </div>
+    <div class="foot-links foot-col">
+      <a href="#why" data-bn="কেন এটি জরুরি">Why it matters</a>
+      <a href="#features" data-bn="বৈশিষ্ট্যসমূহ">Features</a>
+      <a href="#how" data-bn="কীভাবে কাজ করে">How it works</a>
+      <a href="#prevention" data-bn="প্রতিরোধ">Prevention</a>
+      <a href="#proof" data-bn="যাচাইকরণ">Validation</a>
+      <a href="#faq" data-bn="প্রশ্নোত্তর">FAQ</a>
+      <a href="#subscribe" data-bn="সাবস্ক্রাইব">Subscribe</a>
+      <a href="#references" data-bn="তথ্যসূত্র">References</a>
+      <a href="#social-media" data-bn="গিটহাব রেপো">GitHub Repo</a>
+      <a href="videos.html" data-bn="ভিডিও">Videos</a>
+      <a href="webinars.html" data-bn="ওয়েবিনার">Webinars</a>
+      <a href="multimedia.html" data-bn="মাল্টিমিডিয়া">Multimedia</a>
+      <a href="story.html" data-bn="গল্প জমা দিন">Story submission</a>
+    </div>
+  </div>
+  <span class="social" id="social-media" aria-label="GitHub Repo"><a href="https://github.com/tamzidamahmud11/tensor-titans-ai-hackathon" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo" title="GitHub Repo"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.300.1-2.700 0 0 .8-.3 2.800 1a9.600 9.600 0 0 1 5 0c1.900-1.300 2.800-1 2.800-1 .5 1.400.2 2.400.1 2.700.6.7 1 1.600 1 2.700 0 3.900-2.400 4.700-4.600 5 .4.3.7.9.7 1.900v2.800c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a></span>
+  <p class="foot-dev" data-bn="টেনসরটাইটানস কর্তৃক নির্মিত। ইডিইউ এআই হ্যাকাথন দল">Developed by TensorTitans. EDU AI Hackathon Team</p>
+  <span>&copy; 2026 Dengue Protirodh. All rights reserved. &middot; Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+</div></footer>
+<script src="i18n-bn.js?v=7"></script>
+<script src="theme-lang.js?v=7"></script>
+<script src="chat.js?v=4"></script>
+<script src="subscribe.js?v=2"></script>
+<script src="cookies.js?v=4"></script>
+<script>
+(function() {
+  const btn = document.getElementById("how-voiceover-btn");
+  const vid = document.getElementById("how-tutorial-video");
+  if (!btn || !vid) return;
+
+  const scripts = {
+    en: "Welcome to Dengue Protirodh. Step one: we read weather history, extracting rainfall lags of zero to seven weeks, temperature variance, and humidity. Step two: gradient-boosted decision trees score every ward using weather and ward vulnerability. Step three: wards are ranked into Low, Medium, High, or Critical risk tiers so health teams can mobilize before outbreaks peak.",
+    bn: "ডেঙ্গু প্রতিরোধে স্বাগতম। প্রথম ধাপ: আমরা ০ থেকে ৭ সপ্তাহের বৃষ্টিপাত, তাপমাত্রা ও আর্দ্রতার ইতিহাস বিশ্লেষণ করি। দ্বিতীয় ধাপ: গ্র্যাডিয়েন্ট-বুস্টেড ডিসিশন ট্রি আবহাওয়া ও ওয়ার্ডের ঝুঁকি অনুযায়ী প্রতিটি ওয়ার্ডের স্কোর নির্ণয় করে। তৃতীয় ধাপ: ওয়ার্ডগুলোকে নিম্ন, মাঝারি, উচ্চ বা সংকটজনক ঝুঁকির স্তরে সাজানো হয়, যাতে প্রাদুর্ভাব তীব্র হওয়ার আগেই স্বাস্থ্য দলগুলো ব্যবস্থা নিতে পারে।"
+  };
+
+  function stopVoiceover() {
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    btn.textContent = (localStorage.getItem("dg_lang") === "bn") ? "🔊 ভয়েসওভারসহ চালান" : "🔊 Play with Voiceover";
+  }
+
+  btn.addEventListener("click", function() {
+    if ("speechSynthesis" in window && window.speechSynthesis.speaking) {
+      vid.pause();
+      stopVoiceover();
+      return;
+    }
+    vid.currentTime = 0;
+    vid.muted = true;
+    vid.play().catch(function() {});
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+      const lang = localStorage.getItem("dg_lang") === "bn" ? "bn" : "en";
+      const utter = new SpeechSynthesisUtterance(scripts[lang]);
+      utter.lang = lang === "bn" ? "bn-BD" : "en-US";
+      utter.rate = 0.98;
+      utter.onend = stopVoiceover;
+      utter.onerror = stopVoiceover;
+      window.speechSynthesis.speak(utter);
+      btn.textContent = (lang === "bn") ? "⏹ ভয়েসওভার বন্ধ করুন" : "⏹ Stop Voiceover";
+    }
+  });
+
+  vid.addEventListener("ended", stopVoiceover);
+})();
+</script>
+<script src="hero-overview.js?v=3"></script>
+</body>
+</html>

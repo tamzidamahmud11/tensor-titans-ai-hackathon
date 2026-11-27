@@ -1,0 +1,5 @@
+# Only needed to RE-TRAIN the models (python train.py). The dashboard itself needs no Python.
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+joblib>=1.3
