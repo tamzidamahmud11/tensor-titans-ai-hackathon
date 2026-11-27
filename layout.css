@@ -1,0 +1,34 @@
+/* Dashboard header: GitHub-style top bar + underlined tab strip + collapsible filter panel */
+#ghbar{position:sticky;top:0;z-index:30;background:var(--bg2,#fff);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(16,37,47,.06)}
+.gh-top{display:flex;align-items:center;gap:12px;padding:10px 24px}
+.gh-burger{flex:none;width:38px;height:36px;border:1px solid var(--line);border-radius:8px;background:var(--bg2,#fff);color:var(--tx);font-size:1.1rem;cursor:pointer;line-height:1}
+.gh-burger:hover{background:#e9eef2}.gh-burger[aria-expanded="true"]{background:#e8f1f6;border-color:var(--ac)}
+.gh-burger:focus-visible,.gh-tabs button:focus-visible{outline:2px solid #f59e0b;outline-offset:2px}
+.gh-brand{margin:0!important;font-size:1.25rem!important;white-space:nowrap}
+.gh-brand img{flex:none}
+.gh-sp{flex:1}
+.gh-back{margin:0!important;white-space:nowrap}.gh-back a{font-weight:600;font-size:.9rem}
+.gh-tools{display:flex!important;gap:8px!important;margin:0!important;flex-wrap:nowrap!important}
+
+/* tab strip: flat, underlined active tab (like GitHub's Code / Issues / Pull requests row) */
+#ghbar .gh-tabs{position:static;display:flex;flex-wrap:nowrap;gap:2px;margin:0;padding:0 20px;background:transparent;border:0;overflow-x:auto;scrollbar-width:thin}
+#ghbar .gh-tabs button{flex:none;display:inline-flex;align-items:center;gap:8px;border:0;border-bottom:2px solid transparent;border-radius:6px 6px 0 0;background:transparent;color:var(--mu);padding:10px 14px;font-size:.92rem;white-space:nowrap}
+#ghbar .gh-tabs button:hover{background:#eef3f6;color:var(--tx)}
+#ghbar .gh-tabs button.on{background:transparent;color:var(--tx);font-weight:600;border-bottom-color:#f97316}
+#ghbar .gh-tabs .ti{width:22px;height:22px}
+
+/* filters panel under the bar */
+#side.gh-filters{position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px;align-items:end;padding:14px 24px 16px;background:var(--bg2,#fff);border-bottom:1px solid var(--line);box-shadow:none}
+#side.gh-filters.closed{display:none}
+#side.gh-filters>*{margin:0;max-width:none;min-width:0}
+#side.gh-filters label{flex:none;max-width:none}
+#side.gh-filters .info,#side.gh-filters #netStat,#side.gh-filters #targetLbl{grid-column:1/-1}
+#side.gh-filters #targetLbl:empty{display:none}
+.opsctl{top:var(--ghh,104px)!important}
+@media(max-width:1000px){
+  #ghbar{position:sticky}.gh-top{padding:8px 12px;flex-wrap:wrap}.gh-back{display:none}.gh-tabs{padding:0 8px!important}
+  #side.gh-filters{padding:12px}
+}
+#side.gh-filters>p.small:not(#targetLbl),#side.gh-filters #dataLbl{display:none}
+#side.gh-filters #netStat{background:#e8f1f6!important;color:var(--tx)!important;border:1px solid #c6dbe7;border-radius:10px}
+#side.gh-filters #netStat.off{background:#fff4d6!important;border-color:#f3d48b}

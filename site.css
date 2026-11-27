@@ -457,3 +457,19 @@ ul.ilist.sm .bi svg{width:14px;height:14px}
 .brand,.foot-brand,.foot-brand span{color:#0b6e8a}
 .foot-brand:hover{color:#0b6e8a;opacity:.85}
 [data-theme="dark"] .brand,[data-theme="dark"] .foot-brand,[data-theme="dark"] .foot-brand span{color:#3fb6d4}
+
+/* v3: pages with the left Menu: use the free width, left-aligned next to the Menu (no big gutter) */
+body.has-left-sidebar main .wrap{max-width:1500px;margin:0;padding:0 44px}
+body.has-left-sidebar main .prose .wrap,body.has-left-sidebar main .prose.wrap{max-width:900px}
+@media(max-width:960px){body.has-left-sidebar main .wrap{padding:0 20px}}
+
+/* v4: homepage hero uses the same banner picture as the dashboard (instead of the animated canvas) */
+.hero.hero-pic{background-color:var(--bg);background-repeat:no-repeat;background-position:top,top,center top;background-size:100% 100%,100% 100%,100% auto;
+  background-image:linear-gradient(180deg,rgba(246,248,250,0) calc(100% - 140px),var(--bg) 100%),
+  linear-gradient(90deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.8) 42%,rgba(255,255,255,.1) 100%),url(hero-banner.jpg)}
+[data-theme="dark"] .hero.hero-pic{
+  background-image:linear-gradient(180deg,rgba(11,17,32,0) calc(100% - 140px),var(--bg) 100%),
+  linear-gradient(90deg,rgba(11,17,32,.92) 0%,rgba(11,17,32,.78) 42%,rgba(11,17,32,.25) 100%),url(hero-banner.jpg)}
+.hero.hero-pic #hero-overview-canvas,.hero.hero-pic .hero-bg-overlay{display:none}
+@media(max-width:860px){.hero.hero-pic{background-size:100% 100%,100% auto;background-position:top,center top;
+  background-image:linear-gradient(180deg,rgba(246,248,250,0) 0,rgba(246,248,250,0) 24vw,rgba(246,248,250,.94) 50vw,var(--bg) 100%),url(hero-banner.jpg)}}
