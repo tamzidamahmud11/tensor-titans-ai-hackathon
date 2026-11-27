@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Dengue Guard</title>
+<meta name="description" content="Contact the Dengue Guard team with questions, feedback or data requests.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="cookies.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Guard</a>
+  <nav>
+    <a href="index.html#why">Why it matters</a><a href="index.html#features">Features</a><a href="index.html#how">How it works</a><a href="index.html#proof">Validation</a><a href="news.html">News</a><a href="about.html">About us</a><a href="index.html#faq">FAQ</a><a href="contact.html" aria-current="page">Contact</a>
+    <a class="btn" href="app.html">Open dashboard</a>
+  </nav>
+</div></header>
+<main>
+<div class="page-hero"><div class="wrap"><h1>Contact us</h1><p>Questions, feedback or want to try Dengue Guard with your own ward data? We would like to hear from you.</p></div></div>
+<div class="prose"><div class="wrap">
+<h2>Email</h2>
+<p><a id="mail" href="mailto:team@dengueguard.example">team@dengueguard.example</a></p>
+<p>We aim to reply within a few working days.</p>
+<h2>Send a message</h2>
+<p>This form opens your email app with the message filled in. Nothing is sent from this page itself.</p>
+<form class="contact" id="cf">
+  <label>Your name<input name="name" required autocomplete="name"></label>
+  <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+  <label>Topic<select name="topic"><option>General question</option><option>Feedback</option><option>Using my own data</option><option>Report a problem</option><option>Collaboration</option></select></label>
+  <label>Message<textarea name="msg" required></textarea></label>
+  <button class="btn" type="submit">Open in my email app</button>
+</form>
+<div class="callout"><b>Please do not send patient names or other personal health details.</b> Dengue Guard works with ward-level counts, and we do not need to know about individuals. For a medical emergency, contact a hospital or your local health authority.</div>
+<script>
+document.getElementById("cf").addEventListener("submit",function(e){
+  e.preventDefault();var f=e.target;
+  var body="Name: "+f.name.value+"\nEmail: "+f.email.value+"\n\n"+f.msg.value;
+  location.href="mailto:team@dengueguard.example?subject="+encodeURIComponent("[Dengue Guard] "+f.topic.value)+"&body="+encodeURIComponent(body);
+});
+</script>
+</div></div>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Dengue Guard · Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+  <span class="foot-links"><a href="app.html">Dashboard</a><a href="news.html">News</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="index.html#privacy">Privacy Policy</a><a href="index.html#terms">Terms</a><a href="#" data-cookie-settings>Cookie settings</a><a href="README.md">README</a><a href="ARCHITECTURE.md">Architecture</a></span>
+</div></footer>
+<script src="cookies.js"></script>
+</body>
+</html>

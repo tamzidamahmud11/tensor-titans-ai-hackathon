@@ -1,0 +1,6 @@
+city,from_ward,to_ward,patients,receiver_tier
+Dhaka North,DNCC_Ward_18,DNCC_Ward_04,1,Medium
+Dhaka North,DNCC_Ward_19,DNCC_Ward_16,1,Medium
+Dhaka North,DNCC_Ward_10,DNCC_Ward_05,1,High
+Dhaka South,DSCC_Ward_10,DSCC_Ward_07,1,Medium
+Narayanganj,NCC_Ward_05,NCC_Ward_04,1,Medium

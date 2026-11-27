@@ -1,0 +1,14 @@
+{
+  "name": "dengue-guard",
+  "version": "1.0.0",
+  "description": "Ward-level dengue early-warning dashboard (offline, in-browser gradient-boosted tree inference)",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node scripts/selftest.js",
+    "exports": "node scripts/generate_exports.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

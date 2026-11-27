@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us — Dengue Protirodh</title>
+<meta name="description" content="What Dengue Protirodh is, who it is for and how it was built.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css?v=2">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="cookies.css">
+</head>
+<body class="has-left-sidebar">
+<header class="nav"><div class="wrap">
+  <button class="sidebar-toggle" type="button" aria-label="Toggle menu" aria-expanded="true">&#9776;</button>
+  <a class="brand" href="index.html"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Protirodh</a>
+  <nav>
+    <a href="index.html" data-bn="হোম">Home</a><a href="about.html" aria-current="page" data-bn="আমাদের সম্পর্কে">About us</a><a href="news.html" data-bn="সংবাদ">News</a><a href="blogs.html" data-bn="ব্লগ">Blogs</a><a href="events.html" data-bn="ইভেন্টস">Events</a><a href="community.html" data-bn="কমিউনিটি">Community</a><a href="contact.html" data-bn="যোগাযোগ">Contact</a>
+    <a class="btn" href="app.html" data-bn="ড্যাশবোর্ড">Dashboard</a>
+  </nav>
+</div></header>
+<main>
+<div class="page-hero"><div class="wrap"><h1 data-bn="ডেঙ্গু প্রতিরোধ সম্পর্কে">About Dengue Protirodh</h1><p data-bn="একটি ওয়ার্ড-স্তরের আগাম সতর্কতা ও কমিউনিটি প্রতিক্রিয়া ইকোসিস্টেম যা বাংলাদেশের স্বাস্থ্য দল ও নাগরিকদের ডেঙ্গুতে ২-৪ সপ্তাহ আগে প্রস্তুতির সুযোগ দেয়।">A ward-level early-warning and community response ecosystem giving Bangladesh health teams and citizens a 2–4 week head start on dengue.</p></div></div>
+<div class="prose"><div class="wrap">
+<h2 data-bn="কেন আমরা এটি তৈরি করেছি">Why we built it</h2>
+<p data-bn="বাংলাদেশে ডেঙ্গু কেস ভারী বর্ষণের ২-৪ সপ্তাহ পরে সর্বোচ্চে পৌঁছায়, কিন্তু পৌরসভার স্প্রে ও ভেক্টর নিয়ন্ত্রণ সাধারণত হাসপাতাল পূর্ণ হওয়ার পরেই হয়। ডেঙ্গু প্রতিরোধ এই জরুরি পরিচালনাগত ফাঁক পূরণ করতে তৈরি: ৬০টি ওয়ার্ডের জন্য ২-৪ সপ্তাহ আগে ঝুঁকি পূর্বাভাস দিয়ে লার্ভাসাইড দল, ড্রেন পরিষ্কার এবং হাসপাতাল লজিস্টিক্স সংক্রমণ বাড়ার আগেই সচল করা যায়।">Dengue cases in Bangladesh consistently peak 2 to 4 weeks after heavy monsoon rains, yet municipal spraying and vector-control interventions traditionally deploy only after hospital wards overflow. Dengue Protirodh was created to bridge this critical operational gap: by forecasting risk for 60 wards across Bangladesh city corporations 2–4 weeks in advance, larvicide squads, drain clearing teams, and hospital saline logistics can be mobilized before the infection surge hits.</p>
+<div class="facts">
+  <div class="card"><b>60</b><span data-bn="৫টি সিটি কর্পোরেশনে ওয়ার্ড">wards in 5 city corporations</span></div>
+  <div class="card"><b>2–4 wk</b><span>forecast horizon</span></div>
+  <div class="card"><b>2016–2025</b><span data-bn="৩১,৩২০টি সাপ্তাহিক রেকর্ড বিশ্লেষণ করা হয়েছে">31,320 weekly records analyzed</span></div>
+</div>
+<h2 data-bn="মূল সক্ষমতা এবং সিস্টেম বৈশিষ্ট্য">Core Capabilities &amp; System Features</h2>
+<ul class="ilist">
+<li><span class="bi" style="--bc:#3b82f6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16.5A4.5 4.5 0 0 0 17.5 8h-1A6 6 0 1 0 4 14.5"/><path d="M8 19v2M12 18v3M16 19v2"/></svg></span><b data-bn="বহু-সপ্তাহ বিলম্ব আবহাওয়া বিশ্লেষণ:">Multi-Week Lag Weather Intelligence:</b> Analyzes rainfall lags of 0–7 weeks, rolling 2/4/8-week precipitation sums, diurnal temperature swings, and relative humidity against historical transmission curves.</li>
+<li><span class="bi" style="--bc:#8b5cf6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><b data-bn="মেশিন লার্নিং ট্রি এনসেম্বল:">Machine Learning Tree Ensembles:</b> Evaluates gradient-boosted trees for expected counts alongside 10% and 90% quantile pinball loss models to deliver honest 80% prediction intervals.</li>
+<li><span class="bi" style="--bc:#f43f5e"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v3H9z"/><path d="M15 4.5h2a2 2 0 0 1 2 2V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2"/><path d="M9 13l2 2 4-4"/></svg></span><b data-bn="কার্যকর ট্রাইয়াজ প্রোটোকল:">Actionable Triage Protocol:</b> Categorizes every ward into Low, Medium, High, or Critical risk tiers with clear field action recommendations and full CSV data export capabilities.</li>
+<li><span class="bi" style="--bc:#f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span><b data-bn="ইন্টারেক্টিভ কী-যদি জলবায়ু সিমুলেশন:">Interactive What-If Climate Simulation:</b> Allows epidemiologists to test abnormal rainfall spikes (+150%) or heatwave shifts and see forecast adjustments instantaneously.</li>
+<li><span class="bi" style="--bc:#ec4899"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.3"/><path d="M17 14c2.5 0 4 2 4 5"/></svg></span><b data-bn="কমিউনিটি কার্যক্রম এবং নাগরিক বিজ্ঞান:">Community Action &amp; Citizen Science:</b> Connects early warnings with boots-on-the-ground volunteer cleanup drives, free fever screening clinics, educational webinars, and neighborhood discussion forums.</li>
+</ul>
+<h2 data-bn="আমাদের ইঞ্জিনিয়ারিং দর্শন">Our Engineering Philosophy</h2>
+<p><b data-bn="সৎ, তথ্য-ফাঁস মুক্ত যাচাইকরণ।">Honest, Leakage-Free Validation.</b> Data is divided chronologically (Train 2016–2022, Validate 2023, Test 2024–2025). No random k-fold shuffling is used, preventing future information from artificially inflating validation scores.</p>
+<p><b data-bn="ক্লায়েন্ট-সাইড এজ গোপনীয়তা।">Client-Side Edge Privacy.</b> Prediction inference runs entirely on the user's hardware via lightweight JavaScript. No user data, custom uploaded CSVs, or session parameters are ever uploaded to remote servers.</p>
+<p><b data-bn="সিদ্ধান্ত সহায়তা, ক্লিনিক্যাল রোগ নির্ণয় নয়।">Decision Support, Not Clinical Diagnosis.</b> Dengue Protirodh is designed to guide vector control squads and municipal health planning. It is not an individual diagnostic tool. See our <a href="index.html#terms" data-bn="ব্যবহারের শর্তাবলী">Terms</a> and <a href="index.html#privacy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a>.</p>
+<h2 data-bn="যা দিয়ে তৈরি">Built with</h2>
+<p>scikit-learn (offline gradient-boosted tree modeling), vanilla JavaScript (client-side inference engine), Plotly.js (interactive data visualizations), and pure CSS (supporting instant Dark/Light mode and English/Bengali localization). Full technical architecture is detailed in <a href="ARCHITECTURE.md">ARCHITECTURE.md</a>.</p>
+<h2 data-bn="দল">The Team</h2>
+<p data-bn="ডেঙ্গু প্রতিরোধ <b>ইস্ট ডেল্টা বিশ্ববিদ্যালয় (ইডিইউ)</b>-র কম্পিউটার বিজ্ঞান ও প্রকৌশল শিক্ষার্থীদের দ্বারা তৈরি:">Dengue Protirodh is engineered by Computer Science and Engineering students from <b>East Delta University (EDU)</b>:</p>
+<div class="facts" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+  <div class="card" style="display:flex;flex-direction:column;gap:6px">
+    <h3 style="margin:0;font-size:1.15rem">Tamzida Mahmud</h3>
+    <span style="color:var(--mu);font-size:0.88rem" data-bn="CSE শিক্ষার্থী — ইস্ট ডেল্টা বিশ্ববিদ্যালয়">CSE Student — East Delta University</span>
+  </div>
+  <div class="card" style="display:flex;flex-direction:column;gap:6px">
+    <h3 style="margin:0;font-size:1.15rem">Zafnun Hosney Uddin</h3>
+    <span style="color:var(--mu);font-size:0.88rem" data-bn="CSE শিক্ষার্থী — ইস্ট ডেল্টা বিশ্ববিদ্যালয়">CSE Student — East Delta University</span>
+  </div>
+  <div class="card" style="display:flex;flex-direction:column;gap:6px">
+    <h3 style="margin:0;font-size:1.15rem">Zoya Zubairi Fiza</h3>
+    <span style="color:var(--mu);font-size:0.88rem" data-bn="CSE শিক্ষার্থী — ইস্ট ডেল্টা বিশ্ববিদ্যালয়">CSE Student — East Delta University</span>
+  </div>
+</div>
+<h2 data-bn="যোগাযোগ করুন">Get in touch</h2>
+<p data-bn="প্রশ্ন, মতামত বা নিজের ডেটা দিয়ে ব্যবহার করতে চান? <a href=&quot;contact.html&quot;>যোগাযোগের পাতা</a> দেখুন।">Questions, feedback or want to try it with your own data? Visit the <a href="contact.html">Contact page</a>.</p>
+</div></div>
+</main>
+<footer><div class="wrap">
+  <a class="foot-brand" href="#top" aria-label="Dengue Protirodh, back to top"><img class="logo" src="logo.svg" alt="" width="36" height="36"><span>Dengue Protirodh</span></a>
+  <div class="foot-columns">
+    <div class="foot-links foot-col foot-main">
+      <a href="index.html" data-bn="হোম">Home</a>
+      <a href="index.html#about" data-bn="আমাদের সম্পর্কে">About us</a>
+      <a href="news.html" data-bn="সংবাদ">News</a>
+      <a href="blogs.html" data-bn="ব্লগ">Blogs</a>
+      <a href="events.html" data-bn="ইভেন্টস">Events</a>
+      <a href="community.html" data-bn="কমিউনিটি">Community</a>
+      <a href="index.html#contact" data-bn="যোগাযোগ">Contact</a>
+      <a href="app.html" data-bn="ড্যাশবোর্ড">Dashboard</a>
+      <a href="index.html#privacy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a>
+      <a href="index.html#terms" data-bn="ব্যবহারের শর্তাবলী">Terms</a>
+      <a href="#" data-cookie-settings data-bn="কুকি সেটিংস">Cookie settings</a>
+      <a href="README.md" data-bn="README">README</a>
+      <a href="ARCHITECTURE.pdf" download="ARCHITECTURE.pdf" data-bn="আর্কিটেকচার (PDF)">Architecture (PDF)</a>
+      <a href="ARCHITECTURE.md" data-bn="আর্কিটেকচার (MD)">Architecture (MD)</a>
+    </div>
+    <div class="foot-links foot-col">
+      <a href="index.html#why" data-bn="কেন এটি জরুরি">Why it matters</a>
+      <a href="index.html#features" data-bn="বৈশিষ্ট্যসমূহ">Features</a>
+      <a href="index.html#how" data-bn="কীভাবে কাজ করে">How it works</a>
+      <a href="index.html#prevention" data-bn="প্রতিরোধ">Prevention</a>
+      <a href="index.html#proof" data-bn="যাচাইকরণ">Validation</a>
+      <a href="index.html#faq" data-bn="প্রশ্নোত্তর">FAQ</a>
+      <a href="index.html#subscribe" data-bn="সাবস্ক্রাইব">Subscribe</a>
+      <a href="index.html#references" data-bn="তথ্যসূত্র">References</a>
+      <a href="#social-media" data-bn="গিটহাব রেপো">GitHub Repo</a>
+      <a href="videos.html" data-bn="ভিডিও">Videos</a>
+      <a href="webinars.html" data-bn="ওয়েবিনার">Webinars</a>
+      <a href="multimedia.html" data-bn="মাল্টিমিডিয়া">Multimedia</a>
+      <a href="story.html" data-bn="গল্প জমা দিন">Story submission</a>
+    </div>
+  </div>
+  <span class="social" id="social-media" aria-label="GitHub Repo"><a href="https://github.com/tamzidamahmud11/tensor-titans-ai-hackathon" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo" title="GitHub Repo"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.300.1-2.700 0 0 .8-.3 2.800 1a9.600 9.600 0 0 1 5 0c1.900-1.300 2.800-1 2.800-1 .5 1.400.2 2.400.1 2.700.6.7 1 1.600 1 2.700 0 3.900-2.400 4.700-4.600 5 .4.3.7.9.7 1.900v2.800c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a></span>
+  <p class="foot-dev" data-bn="টেনসরটাইটানস কর্তৃক নির্মিত। ইডিইউ এআই হ্যাকাথন দল">Developed by TensorTitans. EDU AI Hackathon Team</p>
+  <span>&copy; 2026 Dengue Protirodh. All rights reserved. &middot; Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+</div></footer>
+<script src="i18n-bn.js?v=7"></script>
+<script src="theme-lang.js?v=7"></script>
+<script src="subscribe.js?v=2"></script>
+<script src="cookies.js?v=4"></script>
+</body>
+</html>
