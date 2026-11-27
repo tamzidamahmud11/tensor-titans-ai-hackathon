@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Events & Action Drives — Dengue Guard</title>
+<meta name="description" content="Join local dengue cleanup drives, fever screening camps, school workshops, and larvicide sweeps across Bangladesh city corporations.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css?v=2">
+<link rel="stylesheet" href="events.css?v=2">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="cookies.css">
+</head>
+<body class="has-left-sidebar">
+<header class="nav"><div class="wrap">
+  <button class="sidebar-toggle" type="button" aria-label="Toggle menu" aria-expanded="true">&#9776;</button>
+  <a class="brand" href="index.html"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Guard</a>
+  <nav>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="index.html#why">Why it matters</a><a href="index.html#features">Features</a><a href="index.html#how">How it works</a><a href="index.html#prevention">Prevention</a><a href="index.html#proof">Validation</a><a href="news.html">News</a><a href="videos.html">Videos</a><a href="blogs.html">Blogs</a><a href="events.html" aria-current="page">Events</a><a href="webinars.html">Webinars</a><a href="community.html">Community</a><a href="about.html">About us</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a>
+    <a class="btn" href="app.html">Open the dashboard</a>
+  </nav>
+</div></header>
+
+<main>
+<div class="page-hero">
+  <div class="wrap">
+    <h1>Community Events &amp; Action Drives</h1>
+    <p>Predicting outbreaks is only half the battle — boots on the ground stop mosquitoes before hospital beds fill up. Find and volunteer for community cleanup operations, free platelet screening clinics, student workshops, and mosquito source reduction sweeps across Dhaka, Chattogram, Khulna, Gazipur, and Rajshahi.</p>
+  </div>
+</div>
+
+<div class="wrap events-wrap" id="eventsSection">
+  <!-- Toolbar: Filters & Search -->
+  <div class="events-toolbar">
+    <div class="events-filters">
+      <span style="font-size:0.85rem;font-weight:700;color:var(--mu);margin-right:4px">Category:</span>
+      <button type="button" class="filter-btn active" data-type="all">All Events</button>
+      <button type="button" class="filter-btn" data-type="cleanup">🧹 Cleanups</button>
+      <button type="button" class="filter-btn" data-type="clinic">🩺 Health Camps</button>
+      <button type="button" class="filter-btn" data-type="workshop">🎓 Workshops</button>
+      <button type="button" class="filter-btn" data-type="inspection">🔍 Inspections</button>
+      <button type="button" class="filter-btn" data-type="campaign">📢 Campaigns</button>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+      <label style="font-size:0.85rem;color:var(--mu);font-weight:600;display:flex;align-items:center;gap:6px">
+        City:
+        <select id="cityFilterSelect" style="padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--tx);font-size:0.88rem;outline:none">
+          <option value="all">All Cities</option>
+          <option value="DNCC">Dhaka North (DNCC)</option>
+          <option value="DSCC">Dhaka South (DSCC)</option>
+          <option value="CCC">Chattogram (CCC)</option>
+          <option value="KCC">Khulna (KCC)</option>
+          <option value="GCC">Gazipur (GCC)</option>
+          <option value="RCC">Rajshahi (RCC)</option>
+        </select>
+      </label>
+
+      <div class="events-search-box">
+        <input type="search" id="eventSearchInput" placeholder="Search by area, ward, or topic…" autocomplete="off" aria-autocomplete="list" aria-controls="eventSearchDropdown">
+        <div class="events-search-dropdown" id="eventSearchDropdown" role="listbox" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="events-count" id="eventsCount">Loading events…</div>
+
+  <!-- Events Grid -->
+  <div class="events-grid" id="eventsGrid"></div>
+
+  <!-- Organize / Propose an Event Section -->
+  <section class="propose-banner" id="organize">
+    <div>
+      <span class="chip" style="margin-left:0;margin-bottom:8px">Community Led</span>
+      <h2>Organizing an event in your ward?</h2>
+      <p>Whether you're organizing a residential rooftop cleanup, a school education rally, or a localized drain inspection with your ward commissioner, list it on Dengue Guard to rally local volunteers and notify vulnerable neighbors.</p>
+    </div>
+
+    <form class="card" id="proposeEventForm" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#fff" novalidate>
+      <label style="grid-column:1/-1">Event Title *
+        <input name="title" required maxlength="120" placeholder="e.g. Ward 14 Dhanmondi Rooftop Larvae Hunt & Drain Cleanup">
+      </label>
+
+      <label>Category *
+        <select name="type" required>
+          <option value="cleanup">Cleanup Drive & Source Reduction</option>
+          <option value="clinic">Health Screening & Fever Camp</option>
+          <option value="workshop">Educational Workshop / Training</option>
+          <option value="inspection">Larvicide Application / Larvae Inspection</option>
+          <option value="campaign">Neighborhood Awareness Campaign</option>
+        </select>
+      </label>
+
+      <label>City Corporation *
+        <select name="city" required>
+          <option value="DNCC">Dhaka North City Corporation (DNCC)</option>
+          <option value="DSCC">Dhaka South City Corporation (DSCC)</option>
+          <option value="CCC">Chattogram City Corporation (CCC)</option>
+          <option value="KCC">Khulna City Corporation (KCC)</option>
+          <option value="GCC">Gazipur City Corporation (GCC)</option>
+          <option value="RCC">Rajshahi City Corporation (RCC)</option>
+        </select>
+      </label>
+
+      <label>Event Date *
+        <input name="date" type="date" required>
+      </label>
+
+      <label>Time Window *
+        <input name="time" required placeholder="e.g. 09:00 AM – 12:30 PM BST">
+      </label>
+
+      <label style="grid-column:1/-1">Meeting Location &amp; Address *
+        <input name="location" required maxlength="150" placeholder="e.g. Ward 14 Council Office / Dhanmondi Lake Park Entrance">
+      </label>
+
+      <label>Organizing Body / Group Name *
+        <input name="organizer" required maxlength="100" placeholder="e.g. Dhanmondi Citizens Forum & Red Crescent">
+      </label>
+
+      <label>Contact Email or Phone *
+        <input name="contact" required maxlength="100" placeholder="e.g. action@dengueguard.example">
+      </label>
+
+      <label style="grid-column:1/-1">Description &amp; Volunteer Instructions *
+        <textarea name="desc" required minlength="20" maxlength="1000" rows="4" placeholder="What will volunteers do? What supplies should they bring (gloves, boots, mosquito repellent)?"></textarea>
+      </label>
+
+      <div style="grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <button class="btn" type="submit">Publish Community Event</button>
+        <span style="font-size:0.82rem;color:var(--mu)">Submissions appear immediately in the public registry for this device.</span>
+      </div>
+      <div id="proposeMsg" hidden style="grid-column:1/-1"></div>
+    </form>
+  </section>
+
+</div>
+
+<!-- Stay in the Know Subscription Section -->
+</main>
+
+<footer><div class="wrap">
+  <a class="foot-brand" href="#top" aria-label="Dengue Protirodh, back to top"><img class="logo" src="logo.svg" alt="" width="36" height="36"><span>Dengue Protirodh</span></a>
+  <div class="foot-columns">
+    <div class="foot-links foot-col foot-main">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About us</a>
+      <a href="news.html">News</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="events.html">Events</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="app.html">Dashboard</a>
+      <a href="index.html#privacy">Privacy Policy</a>
+      <a href="index.html#terms">Terms</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
+      <a href="README.md">README</a>
+      <a href="ARCHITECTURE.pdf" download="ARCHITECTURE.pdf">Architecture (PDF)</a>
+      <a href="ARCHITECTURE.md">Architecture (MD)</a>
+    </div>
+    <div class="foot-links foot-col">
+      <a href="index.html#why">Why it matters</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#prevention">Prevention</a>
+      <a href="index.html#proof">Validation</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#subscribe">Subscribe</a>
+      <a href="index.html#references">References</a>
+      <a href="#social-media">GitHub Repo</a>
+      <a href="videos.html">Videos</a>
+      <a href="webinars.html">Webinars</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="story.html">Story submission</a>
+    </div>
+  </div>
+  <span class="social" id="social-media" aria-label="GitHub Repo"><a href="https://github.com/tamzidamahmud11/tensor-titans-ai-hackathon" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo" title="GitHub Repo"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.300.1-2.700 0 0 .8-.3 2.800 1a9.600 9.600 0 0 1 5 0c1.900-1.300 2.800-1 2.800-1 .5 1.400.2 2.400.1 2.700.6.7 1 1.600 1 2.700 0 3.900-2.400 4.700-4.600 5 .4.3.7.9.7 1.900v2.800c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a></span>
+  <p class="foot-dev">Developed by TensorTitans. EDU AI Hackathon Team</p>
+  <span>&copy; 2026 Dengue Protirodh. All rights reserved. &middot; Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+</div></footer>
+
+<script src="events.js?v=6"></script>
+<script src="i18n-bn.js?v=7"></script>
+<script src="theme-lang.js?v=7"></script>
+<script src="subscribe.js?v=2"></script>
+<script src="cookies.js?v=4"></script>
+</body>
+</html>
