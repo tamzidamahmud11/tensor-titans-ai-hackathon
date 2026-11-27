@@ -1,272 +1,343 @@
-# 🦟 Dengue Protirodh
+# 🦟 Dengue Guard
 
-**Ward-level dengue early-warning dashboard for Bangladesh city corporations.**  
-Predicts outbreak risk 2–4 weeks ahead using weather lags, ward vulnerability, and gradient-boosted tree models. Everything runs fully offline in your browser — no server, no Python, no internet required after the first load. (Only the optional help chatbot needs a free API key and internet.)
+**An AI-powered, ward-level dengue early-warning and public-health operations platform for Bangladesh.**
 
-### 👥 Development Team
-- **Tamzida Mahmud** — CSE Student, East Delta University
-- **Zafnun Hosney Uddin** — CSE Student, East Delta University
-- **Zoya Zubairi Fiza** — CSE Student, East Delta University
+Dengue Guard forecasts dengue cases **2–4 weeks ahead** across 60 urban wards, translates forecasts into practical resource plans, simulates vector-control interventions, and prepares ward-specific dispatch notices for public-health teams.
+
+> **BLUEPINE**
 
 ---
 
-## Quick Start (≤ 3 minutes)
+## 👥 Team Tensor Titans
 
-### Option A — Open directly (no install needed; the landing page links to the dashboard)
-
-```
-# Windows
-start index.html
-
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
-```
-
-### Option B — Local static server with Node.js
-
-**Prerequisites:** Node.js ≥ 18 (https://nodejs.org)
-
-```bash
-# 1. Get the code and enter the project folder (the folder that contains package.json)
-git clone <your-repo-url> dengue-guard
-cd dengue-guard
-#    (or unzip the submission zip and cd into the extracted folder)
-
-# 2. Start the server (no npm install needed — zero dependencies)
-npm start
-
-# 3. Open your browser at
-#    http://localhost:8080
-```
-
-The server opens the browser automatically on Windows / macOS / Linux.
-
-> ⚠️ **No `npm install` is required.** The app has zero runtime dependencies — `package.json` only defines the `start` script.
-
----
-
-## Optional: enable the AI help chatbot
-
-The dashboard runs without any key (the chatbot then answers from its built-in FAQ and guided tour). To enable the Gemini-powered answers use Option B (needs Node.js >= 18):
-
-```bash
-cp .env.example .env        # Windows: copy .env.example .env
-# edit .env (in the project root, next to package.json) and paste a free key from https://aistudio.google.com/apikey
-npm start
-```
-`.env` is git-ignored; never commit it.
-
----
-
-## Stay in the Know (email sign-up)
-
-The landing page has a *Stay in the Know* email form at `#subscribe` (linked from the **Subscribe** option in the Menu bar). With `npm start`, it posts to `POST /api/subscribe`, which validates the address, requires the consent box, ignores honeypot bots, allows 5 sign-ups per IP per hour and appends `{at, email, token, status}` to `submissions/subscribers.jsonl` (git-ignored, never served over HTTP). The latest line per email wins, and re-subscribing the same address is harmless. Each subscriber has a private random `token`; `GET /api/unsubscribe?t=<token>` marks them `unsubscribed`, so put that link in every email you send. **The app does not send email itself**: export the `active` addresses and use your own mail tool. Without the server (static hosting or `file://`) the form opens the visitor's email app instead.
-
-## Submit your story (moderated)
-
-The **Story submission** page (`story.html`, linked from the Menu bar) has a *Submit your story* form. With `npm start`, submissions are posted to `POST /api/story`, validated (length limits, consent box, honeypot, 3 per hour per IP) and appended to `submissions/pending.jsonl`. **Nothing is published automatically.** To publish a story, copy it from `pending.jsonl` into `submissions/approved.json` as `[{"name": "...", "place": "...", "role": "patient", "story": "..."}]`; it then appears under *Community stories* (`GET /api/stories`). The `submissions/` folder is git-ignored and never served over HTTP. Without the server (static hosting or `file://`) the form opens the visitor's email app instead.
-
-## Phase 2 — Operations command system (onsite final)
-
-Four new dashboard tabs turn the forecast into orders. All of them share one control bar with **Available regional stock (30–100%)**, **Total spraying crews** and **Hospital bed capacity ×**. Everything runs locally, with no network and no LLM.
-
-| Module | Tab | What it does |
+| Name | Role | Student ID |
 |---|---|---|
-| 1. Constrained resource allocation | **Supply allocation** | Converts forecast cases into `saline_bags_needed`, `diagnostic_kits_needed`, `hospital_beds_required` and suggested crews. Scarce stock is shared by priority = risk tier × `population_density_sqkm` (weighted water-filling). Wards that cannot be 100% supplied are flagged `DEFICIT` / `CRITICAL DEFICIT`. |
-| 2. Hospital overflow routing | **Bed overflow** | Wards over bed capacity send patients to lower-burden wards **in the same city** (Dhaka North, Dhaka South, Chattogram, Gazipur, Narayanganj). Shows a transfer Sankey, transfer orders, net ward deficits, and city utilisation and headroom. |
-| 3. Vector-control simulator | **Vector simulator** | Deploys larvicide/fogging crews (auto-optimised or entered by hand), re-runs the GBT models for +2/+3/+4 weeks, and reports cases prevented, beds freed, saline saved and an ROI ranking (cases prevented per crew). |
-| 4. Multi-channel dispatch | **Dispatch** | Ward notices as SMS (≤160 chars), WhatsApp text and a printable commissioner brief (HTML → PDF), with CSV/JSON downloads. |
-| 5. Offline resilience | sidebar badge, `sw.js`, `npm test` | All engines are local JS. A service worker keeps the deployed site working with Wi-Fi off. `npm test` re-runs every module with networking disabled (2,392 checks). |
+| **Tamzida Mahmud** | Team Leader | `242014912` |
+| **Zafnun Hosney Uddin** | Member 2 | `242010912` |
+| **Zoya Zubairi Fiza** | Member 3 | `242011712` |
+
+---
+
+## 🎯 Project Overview
+
+Dengue Guard is designed to help ward commissioners and health-centre managers make earlier, data-informed decisions. Instead of only showing predicted dengue risk, the platform connects forecasts to operational actions: supply allocation, hospital-bed planning, spraying-team deployment, and public-health dispatch.
+
+The project covers **60 wards** across five city corporations:
+
+- Dhaka North
+- Dhaka South
+- Chattogram
+- Gazipur
+- Narayanganj
+
+The bundled historical dataset contains **31,320 ward-week records** spanning 2016–2025.
+
+## ✨ Key Features
+
+### 1. Dengue Forecasting & Risk Dashboard
+- Forecasts expected weekly dengue cases **2, 3, and 4 weeks ahead**.
+- Uses weather history, recent case trends, and ward vulnerability indicators.
+- Classifies wards into **Low, Medium, High, and Critical** risk tiers.
+- Includes a ranked risk board, ward-level detail, charts, and risk visualizations.
+
+### 2. Constrained Resource Allocation
+- Converts predicted cases into estimated requirements for:
+  - `saline_bags_needed`
+  - `diagnostic_kits_needed`
+  - `hospital_beds_required`
+- Allocates limited regional stock across wards.
+- Provides controls for available stock (**30%–100%**) and spraying-team availability.
+- Prioritizes wards using risk and population density.
+- Flags wards with supply shortages using deficit warnings.
+
+### 3. Hospital Surge & Cross-Ward Overflow Routing
+- Identifies wards where projected bed demand exceeds local capacity.
+- Routes overflow patients to lower-burden wards **within the same city**.
+- Displays ward-level deficits, transfer information, city-wide bed utilization, and remaining capacity.
+
+### 4. What-If Vector-Control Simulator
+- Simulates larvicide/fogging crew deployment to selected wards.
+- Re-evaluates forecasts for the +2, +3, and +4 week horizons.
+- Estimates changes in projected cases, hospital-bed demand, and saline requirements.
+- Ranks interventions by estimated return on investment (cases prevented per crew).
+
+### 5. Multi-Channel Dispatch
+Creates operational notices for public-health response teams:
+- **SMS** alerts (designed for a 160-character limit)
+- **WhatsApp** dispatch messages
+- **Printable commissioner briefs** in HTML, suitable for printing or saving as PDF
+- Downloadable CSV and JSON outputs
+
+### 6. Offline-First Operation
+- Forecasting and Phase 2 operations run locally in JavaScript.
+- Core prediction and operational calculations do not require an external AI API.
+- A service worker supports offline use after the site has been loaded and cached.
+- Includes an offline self-test for key operational calculations.
+
+### 7. Public Awareness & Community Features
+The wider website also includes:
+- Dengue prevention and awareness information
+- News and educational content
+- Blogs and multimedia resources
+- Community activities and events
+- Webinars
+- Community story submission
+- Optional email subscription
+- English and Bengali interface support
+- Dark and light themes
+
+---
+
+## 🧠 How the Prediction System Works
+
+1. **Historical data:** The application loads weekly dengue, weather, and ward information.
+2. **Feature engineering:** It builds rainfall lags, rolling rainfall totals, temperature and humidity lags, case-trend features, and ward-vulnerability features.
+3. **Machine-learning inference:** Pre-trained gradient-boosted tree models estimate dengue cases for the selected forecast horizon.
+4. **Risk classification:** Forecasts are mapped to Low, Medium, High, or Critical risk levels.
+5. **Operational planning:** Phase 2 modules use the forecast output to calculate supply needs, route bed overflow, simulate interventions, and prepare dispatch messages.
+
+The browser uses pre-trained model data bundled with the project. **Python is not required to run the website.**
+
+## 📊 Model & Validation
+
+The project uses Histogram Gradient-Boosted Tree models with Poisson loss for expected case counts and quantile models for lower and upper prediction estimates. Separate models are used for the +2, +3, and +4 week forecast horizons.
+
+The project documentation reports the following held-out test results:
+
+| Forecast horizon | MAE | RMSE | R² | Risk-tier accuracy | 80% band coverage |
+|---|---:|---:|---:|---:|---:|
+| +2 weeks | 1.004 | 2.016 | 0.727 | 91.0% | 93.5% |
+| +3 weeks | 1.024 | 2.001 | 0.732 | 91.0% | 93.2% |
+| +4 weeks | 1.230 | 2.410 | 0.610 | 90.1% | 94.1% |
+
+The chronological split documented in `ARCHITECTURE.md` is:
+- **Training:** 2016–2022
+- **Validation:** 2023
+- **Held-out testing:** 2024–2025
+
+These are the metrics recorded in the supplied project documentation.
+
+---
+
+## 🚀 Getting Started
+
+### Requirements
+
+- Node.js **18 or later** (only if you want to run the local server)
+- A modern web browser
+
+No `npm install` is required for the supplied application: the runtime server uses Node.js built-in modules and the project bundles its browser-side dependencies.
+
+### Option A — Open the website directly
+
+1. Extract the ZIP file.
+2. Open the `Dengue` project folder.
+3. Double-click `index.html` to open the landing page.
+4. Open the dashboard using the website's dashboard link.
+
+Some server-backed features, such as API-based form submissions and the optional Gemini chatbot, require the local server.
+
+### Option B — Run with the local Node.js server
+
+Open a terminal in the folder containing `package.json`, then run:
 
 ```bash
-npm test          # offline self-test of allocation, routing, simulator and dispatch math
-npm run exports   # regenerate the sample dispatch pack in /exports
-# optional: node scripts/generate_exports.js 2025-08-04 3 50 25   (origin week, horizon, stock %, crews)
+npm start
 ```
 
-**Sample exports** (`/exports`): `sms_alerts.txt`, `whatsapp_alerts.txt`, `commissioner_brief_*.html` (all cities + one per city), `allocation_plan.csv`, `overflow_transfers.csv`, `dispatch.json`. They were generated for warning week 2025-06-09 (+3 wk), 60% stock and 20 crews.
+Open this address in your browser:
 
-Design, formulas and assumptions are in [ARCHITECTURE.md §8](ARCHITECTURE.md).
+```text
+http://localhost:8080
+```
+
+**Important:** Run the command from the project root — the folder that contains `package.json` and `server.js`.
 
 ---
 
-## What It Does
+## 🧪 Run the Offline Tests
 
-| Feature | Detail |
-|---|---|
-| **Multi-week weather lag pipeline** | Rainfall lags 0–7 weeks, temperature & humidity lags, 2/4/8-week rolling sums |
-| **ML risk prediction engine** | Poisson gradient-boosted trees (+10%/90% quantile bands); 3 direct-horizon models (+2w/+3w/+4w) |
-| **Risk tiers** | Low / Medium / High / Critical — calibrated on 2023 validation data |
-| **Interactive dashboard** | 6 tabs: Risk board, Ward deep-dive, What-if scenarios, Model validation, How it works, Architecture |
-| **Ward coverage** | 60 wards across Dhaka North/South (DNCC/DSCC), Chattogram (CCC), Gazipur (GCC), Narayanganj (NCC) |
-| **Dataset** | 31,320 ward-weeks, 2016–2025 |
-| **Weather drivers** | Temperature range (max/min) + humidity chart, and a rain-to-cases delay chart for high vs low water-logging wards (Ward deep-dive tab) |
-| **Response planner** | Enter how many spraying teams are available; the app assigns them to the highest expected-case wards and shows the share of expected cases covered (Risk board) |
-| **Help chatbot** | Floating "Ask for help" button with a guided tour that switches tabs for you, "Open this tab" buttons, built-in FAQ answers (no API call), and Gemini only for other on-topic questions (cached, rate limited). Off-topic questions are refused without an API call |
-| **Offline inference** | < 50 ms per full 60-ward forecast in the browser, with no API calls for forecasting |
+To run the project's operational-engine self-tests:
+
+```bash
+npm test
+```
+
+The test script is `scripts/selftest.js`. It checks the project's allocation, overflow-routing, vector-simulation, and dispatch logic.
+
+## 📦 Generate Dispatch Exports
+
+To regenerate the sample dispatch files:
+
+```bash
+npm run exports
+```
+
+The generated files are saved in the `exports/` directory.
+
+An optional example with explicit parameters:
+
+```bash
+node scripts/generate_exports.js 2025-08-04 3 50 25
+```
+
+The arguments represent the origin week, forecast horizon, stock percentage, and available spraying crews.
+
+### Included Sample Exports
+
+The repository includes:
+- `exports/sms_alerts.txt`
+- `exports/whatsapp_alerts.txt`
+- `exports/dispatch.json`
+- `exports/allocation_plan.csv`
+- `exports/overflow_transfers.csv`
+- `exports/commissioner_brief_all_cities.html`
+- City-specific commissioner brief HTML files
+
+These are sample generated outputs, not live dispatches.
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
-```
-.
-├── index.html          # Landing page (static, loads instantly)
-├── about.html          # About us
-├── news.html / news.js / news.css  # Dengue news and prevention page
-├── blogs.html / blogs.css          # Dengue Insights & Scientific Blog
-├── events.html / events.js / events.css  # Community events & action drives
-├── community.html / community.js / community.css  # Community hub
-├── videos.html         # Educational & report videos
-├── webinars.html / webinars.js / webinars.css  # Webinars
-├── multimedia.html     # Multimedia gallery & dashboard screenshots
-├── story.html          # Story submission page
-├── cookies.js / cookies.css  # cookie banner and settings (choice saved in the dg_consent cookie)
-├── contact.html        # Contact page (mailto form)
-├── site.css            # Shared styles for the landing + info pages
-├── logo.svg            # Mosquito logo / favicon
-├── hero-banner.jpg, chatbot-avatar.png, media/   # Images and the prevention video used on the site
-├── app.html            # Dashboard app shell (tabs, charts)
-├── app.js              # Dashboard UI (tabs, charts, table, download)
-├── engine.js           # Feature engineering + GBT tree inference (JS)
-├── ops.js              # Phase 2: allocation, overflow routing, crew simulator, dispatch templates (pure JS)
-├── ops-ui.js / ops.css # Phase 2: Supply allocation, Bed overflow, Vector simulator, Dispatch tabs
-├── sw.js               # Service worker: offline cache for the deployed dashboard
-├── scripts/            # selftest.js (npm test), generate_exports.js (npm run exports), _load.js
-├── exports/            # Sample SMS / WhatsApp / commissioner-brief dispatch pack
-├── style.css           # Dark-theme responsive layout
-├── server.js           # Zero-dependency Node.js static server + /api/chat route
-├── chat-api.js         # Server-side chatbot proxy (key, cache, rate limit, timeout)
-
-├── story-api.js        # "Submit your story" API: validates and stores stories for review (submissions/)
-
-├── story.js            # Story form + approved-stories list on story.html
-├── subscribe-api.js    # "Stay in the Know" email sign-up API (submissions/subscribers.jsonl)
-├── subscribe.js        # Email sign-up form on index.html#subscribe
-├── chat.js             # Chat widget in the browser (tour and FAQ first, API second)
-├── .env.example        # Template for the optional Gemini key (copy to .env)
-├── package.json        # { "start": "node server.js" }
-├── train.py            # Offline training pipeline (Python): lags -> split -> GBT -> export
-├── predict.py          # Fast Python inference from the serialized joblib model (CLI)
-├── models/
-│   └── dengue_gbt.joblib   # Serialized scikit-learn models (3 horizons x mean/10%/90%)
-├── requirements.txt    # Python deps, only needed for train.py
-├── README.md           # This file
-├── ARCHITECTURE.md     # Data flow diagram, model rationale, validation split
+```text
+Dengue/
+├── index.html                 # Main landing page
+├── about.html                 # About the project
+├── app.html                   # Forecasting dashboard
+├── app.js                     # Dashboard interface and interactions
+├── engine.js                  # Browser-side prediction engine
+├── ops.js                     # Phase 2 operational calculations
+├── ops-ui.js                  # Phase 2 operations interface
+├── ops.css                    # Phase 2 operations styles
 ├── data/
-│   ├── dataset.js      # Embedded CSV (31,320 rows)
-│   ├── model.js        # Serialised gradient-boosted tree models (JSON)
-│   └── metrics.js      # Test-set metrics, confusion matrices, monthly actuals
-└── lib/
-    └── plotly.min.js   # Bundled Plotly.js (offline charts, no CDN)
+│   ├── dataset.js             # Bundled historical dataset
+│   ├── model.js               # Serialized browser prediction models
+│   └── metrics.js             # Model validation metrics
+├── models/
+│   └── dengue_gbt.joblib      # Serialized Python model
+├── exports/                   # Sample dispatch and allocation outputs
+├── scripts/
+│   ├── selftest.js            # Offline operational self-tests
+│   ├── generate_exports.js    # Dispatch export generator
+│   └── _load.js               # Shared script loader
+├── media/                     # Images, videos, and dashboard visuals
+├── lib/
+│   └── plotly.min.js          # Bundled chart library
+├── server.js                  # Local Node.js server
+├── chat.js                    # Browser help chatbot
+├── chat-api.js                # Optional chatbot API handler
+├── sw.js                      # Service worker for offline caching
+├── train.py                   # Optional model-training pipeline
+├── predict.py                 # Optional Python prediction CLI
+├── requirements.txt            # Python training dependencies
+├── package.json               # Project scripts
+├── README.md                  # Project documentation
+└── ARCHITECTURE.md             # Technical architecture
 ```
+
+The website also contains additional pages and scripts for news, blogs, events, community, webinars, multimedia, stories, subscriptions, and localization.
 
 ---
 
-## Using Your Own Data
+## 📁 Use Your Own Weekly Dataset
 
-Click **"Use my own weekly data (CSV)"** in the sidebar and upload a CSV with these required columns:
+The dashboard provides a CSV upload option. The documented required columns are:
 
+```csv
+date,city,ward_id,population_density_sqkm,water_logging_risk_index,sanitation_score,avg_temp_c,rainfall_mm,relative_humidity_pct,dengue_cases
 ```
-date, city, ward_id, population_density_sqkm, water_logging_risk_index,
-sanitation_score, avg_temp_c, rainfall_mm, relative_humidity_pct, dengue_cases
-```
 
-- Dates must be weekly (any day-of-week), ISO format (`YYYY-MM-DD`)
-- At least **8 weeks** of data per ward required (for lag features)
-- The same trained model is applied instantly — no retraining
+- Use weekly dates in `YYYY-MM-DD` format.
+- Provide at least **8 weeks of data per ward** for lag-based features.
+- The existing trained model is applied to the uploaded data; uploading a CSV does not retrain the model.
 
 ---
 
-## Re-training the model (optional)
+## 🐍 Optional: Retrain the Machine-Learning Model
 
-The dashboard ships with trained models in `data/model.js`, so you do **not** need Python to run it.
-To rebuild the lag features and retrain from scratch:
+This step is **not required** to run the website. It is only needed if you want to train the model again.
+
+Install the Python dependencies:
 
 ```bash
 pip install -r requirements.txt
-python train.py                # under a minute; writes model.js, metrics.js and dengue_gbt.joblib to ./training_output
-python train.py --write-app    # same, and also overwrites data/model.js, data/metrics.js + models/dengue_gbt.joblib
 ```
 
-`train.py` is deterministic (fixed seed): re-running it on the shipped dataset reproduces the shipped metrics exactly. It builds the per-ward lag features, splits chronologically, trains the mean/low/high models for
-+2/+3/+4 weeks, reports test metrics once, and saves both a joblib file (sklearn models) and the JSON tree
-export that the browser reads. Without `--write-app` the shipped model is left untouched. The shipped `data/model.js` and `data/metrics.js` come from a `--write-app` run, so the numbers below match the model you are running. A fresh
-run can differ slightly (library version, tier-threshold calibration).
-
----
-
-## Fast inference from the serialized model (Python)
-
-`models/dengue_gbt.joblib` is the same trained model the browser runs, saved with joblib. `predict.py` loads it and ranks all 60 wards for a chosen week and window, with no retraining and no API calls:
+Train the model:
 
 ```bash
-python predict.py                          # latest week, +3 week window, top 10 wards
-python predict.py --origin 2025-09-01 --horizon 4 --top 15
+python train.py
 ```
 
-A full 60-ward forecast takes roughly 20 ms in scikit-learn (about 10 ms in the browser), and the two paths give identical forecasts for the same week and window.
+To write the newly trained model and metrics into the application files:
+
+```bash
+python train.py --write-app
+```
+
+See `ARCHITECTURE.md` for the training pipeline, feature engineering, validation approach, and model design.
 
 ---
 
-## Model & Validation
+## 🤖 Optional AI Chatbot
 
-See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full data flow diagram, chronological train/validation/test split details, and model selection rationale.
+The help chatbot can provide its built-in guided tour and FAQ responses without an API key. Additional Gemini-powered answers are optional and require internet access and a Gemini API key.
 
-**Chronological split (never shuffled):**
+1. Copy `.env.example` to `.env`.
+2. Add your Gemini API key to `.env` using the variable name shown in `.env.example`.
+3. Start the local server:
 
-| Split | Period | Purpose |
-|---|---|---|
-| Train | 2016-01 → 2022-12 | GBT model fitting |
-| Validation | 2023 | Early stopping, tier threshold calibration |
-| **Test (held-out)** | **2024-01 → 2025-12** | **Final reported metrics — model never saw this** |
+```bash
+npm start
+```
 
-**Test-set results (+3-week horizon):**  
-MAE 1.02 · RMSE 2.00 · R² 0.732 · Tier accuracy 91.0% · 80% coverage 93.2%
+Keep `.env` private. **Never commit API keys or secrets to GitHub.** The forecasting and resource-allocation calculations do not depend on Gemini.
 
 ---
 
-## AI Assistants & External APIs Used
+## 🏗️ Technical Architecture
 
-In compliance with the hackathon disclosure requirement, the following AI tools were used during development:
+For detailed diagrams, data flow, model rationale, feature engineering, validation, offline execution, and Phase 2 operational formulas, see:
 
-| Tool | Usage |
+- [`ARCHITECTURE.md`](ARCHITECTURE.md)
+
+## 🛠️ Main Technologies
+
+- **HTML, CSS, JavaScript** — website and browser interface
+- **Node.js** — optional local server and API routes
+- **Python** — offline model training and optional command-line prediction
+- **scikit-learn** — gradient-boosted tree model training
+- **Plotly.js** — interactive charts
+- **Service Worker** — offline caching
+
+## 🔐 Privacy & Runtime Notes
+
+- Core forecasting and Phase 2 operational calculations run locally in the browser.
+- The optional chatbot is a separate feature and may contact the Gemini API when configured.
+- Story and subscription submissions use the optional local server endpoints when available.
+- Do not place private credentials, API keys, or personal information in public repository files.
+
+## 🏆 Hackathon Phase 2 Deliverables
+
+The project is organized around the five Phase 2 functional requirements:
+
+| Requirement | Project module |
 |---|---|
-| **Google Gemini / Antigravity** | Code generation assistance, debugging, documentation drafting |
-| **Claude (Anthropic)** | Reviewing the submission against the rubric, writing `train.py`, editing README / ARCHITECTURE; helped write the Response planner, the help chatbot (`chat.js`, `chat-api.js`) and the demo-video script. **Phase 2:** helped write the operations engine and tabs (`ops.js`, `ops-ui.js`, `ops.css`), `sw.js`, `scripts/selftest.js`, `scripts/generate_exports.js` and ARCHITECTURE.md §8 |
-| **Google Gemini API (free tier, `gemini-3.5-flash-lite`)** | Runtime help chatbot only (answers questions about using the dashboard). Called from the Node server, never the browser. Optional: the app works without a key |
-| **scikit-learn** (`HistGradientBoostingRegressor`) | Training the gradient-boosted tree models in Python (offline, pre-training) |
-| **Plotly.js** (bundled, `lib/plotly.min.js`) | Client-side interactive charts |
+| Constrained resource allocation | Supply allocation |
+| Hospital surge and cross-ward overflow routing | Bed overflow |
+| What-if vector-control impact simulation | Vector simulator |
+| Multi-channel dispatch notifications | Dispatch |
+| Offline resilience and deterministic fallback | Local JavaScript engines, service worker, and offline tests |
 
-**Runtime AI and API usage:** the forecasting never calls an API. The prediction engine, dataset, and charts run offline in the browser, and no LLM is used to make predictions.  
-The only runtime API is the optional help chatbot (Gemini free tier), called from the Node server with the key in a git-ignored `.env`. Built-in answers handle common questions with zero API calls, other on-topic questions are cached, rate limited and token capped, off-topic questions are refused locally, and if there is no key or no network the chatbot falls back to the built-in answers.
+The Phase 2 brief also calls for a continuous Phase 1 repository history, a deployed live URL, sample exports, updated architecture documentation and AI disclosure, plus an uncut seven-minute system walkthrough. Add the team's final deployed URL and walkthrough link below when available.
 
----
+**Live Website:** https://tensor-titans-ai-hackathon-1.onrender.com/
 
-## Scoring Checklist (Hackathon Submission)
-
-| # | Criterion | Status |
-|---|---|---|
-| 1 | Reproducible local setup (README + package.json, launches ≤ 3 min) | ✅ |
-| 2 | Multi-week weather lag pipeline (rain lags 0–7w, temp/hum lags, sums) | ✅ |
-| 3 | Dengue risk prediction engine (ML GBT, dynamic inference, risk tiers; training code in `train.py`) | ✅ |
-| 4 | Interactive web dashboard (6-tab UI, driver breakdown, heatmap, download) | ✅ |
-| 5 | ARCHITECTURE.md (data flow diagram, validation split, model rationale) | ✅ |
-| 6 | Compute & API cost efficiency (zero API calls for forecasting, serialized joblib + JSON models, fast inference; optional chatbot is cached, rate limited and token capped) | ✅ |
-| 7 | 3-minute uncut video demo (live localhost, voiceover, no slides) | ⏳ Record & add the link here |
-| 8 | Git history + AI disclosure | ⏳ AI disclosure done above; push to GitHub with commits from every team member |
-| P2-1 | Constrained resource allocation + scarcity sliders + deficit alerts | ✅ |
-| P2-2 | Intra-city hospital overflow routing | ✅ |
-| P2-3 | Vector-control what-if simulator (GBT counterfactual, ROI ranking) | ✅ |
-| P2-4 | SMS / WhatsApp / printable brief dispatch + `/exports` | ✅ |
-| P2-5 | Offline resilience (`npm test` with networking disabled, service worker) | ✅ |
-| Bonus | Ward risk heatmap, confidence intervals, MAE/RMSE validation dashboard | ✅ |
+**System Walkthrough Video:** `Add your video URL here`
 
 ---
 
-## License
+## 📜 License
 
-For hackathon evaluation purposes only.
+For hackathon evaluation and educational purposes.
