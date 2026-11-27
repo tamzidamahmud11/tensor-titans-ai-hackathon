@@ -111,7 +111,9 @@
       : `Weather lags + ward vulnerability → outbreak risk ${S.h} weeks ahead · ${uniqueCities}`;
     const wardOpts = rows.map(r => `<option value="${r.ward_id}">${wardLabel(r.ward_id)}</option>`).join("");
     for (const id of ["w2", "w3"]) { const cur = $(id).value; $(id).innerHTML = wardOpts; if (rows.some(r => r.ward_id === cur)) $(id).value = cur; }
+    window.DG_STATE = { origin, h: S.h, city: S.city, rows, allRows, wards: S.wards };   // Phase 2 operations tabs read this
     renderAll();
+    window.dispatchEvent(new Event("dg:recompute"));
   }
   function activeTab() {
     const btn = document.querySelector("#tabs button.on");
