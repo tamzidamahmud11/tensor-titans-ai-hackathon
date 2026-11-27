@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#07192f"/><stop offset="100%" stop-color="#0f2942"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <g stroke="rgba(148,163,184,0.18)" stroke-width="1"><line x1="60" y1="90" x2="580" y2="90"/><line x1="60" y1="150" x2="580" y2="150"/><line x1="60" y1="210" x2="580" y2="210"/><line x1="60" y1="270" x2="580" y2="270"/></g>
+  <path d="M60 255 Q170 230 250 175 T440 120 T580 75" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M60 265 Q180 250 280 225 T460 195 T580 185" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="40" y="42" width="150" height="28" rx="14" fill="rgba(56,189,248,0.18)" stroke="#38bdf8"/>
+  <text x="115" y="61" text-anchor="middle" fill="#bae6fd" font-family="system-ui,sans-serif" font-size="13" font-weight="700">R² = 0.73 FORECAST</text>
+  <text x="40" y="318" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Gradient-Boosted Trees</text>
+</svg>

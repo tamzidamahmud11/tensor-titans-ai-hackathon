@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Hub & Support Forum — Dengue Protirodh</title>
+<meta name="description" content="Exchange dengue recovery experiences, report ward hotspots, ask medical care questions, and access emergency helpline numbers.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css?v=2">
+<link rel="stylesheet" href="events.css">
+<link rel="stylesheet" href="community.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="cookies.css">
+</head>
+<body class="has-left-sidebar">
+<header class="nav"><div class="wrap">
+  <button class="sidebar-toggle" type="button" aria-label="Toggle menu" aria-expanded="true">&#9776;</button>
+  <a class="brand" href="index.html"><img class="logo" src="logo.svg" alt="" width="30" height="30">Dengue Protirodh</a>
+  <nav>
+    <a href="index.html">Home</a><a href="about.html">About us</a><a href="news.html">News</a><a href="blogs.html">Blogs</a><a href="events.html">Events</a><a href="community.html" aria-current="page">Community</a><a href="contact.html">Contact</a>
+    <a class="btn" href="app.html">Dashboard</a>
+  </nav>
+</div></header>
+
+<main>
+<div class="page-hero">
+  <div class="wrap">
+    <h1>Community Hub &amp; Support Forum</h1>
+    <p>A collaborative space for Bangladesh residents, dengue survivors, caregivers, and community organizers. Share recovery stories, warn neighbors about local standing water hotspots, and learn verified prevention practices.</p>
+  </div>
+</div>
+
+<div class="wrap community-wrap">
+  <div class="community-toolbar">
+    <div class="events-filters">
+      <span style="font-size:0.85rem;font-weight:700;color:var(--mu);margin-right:4px">Topic:</span>
+      <button type="button" class="filter-btn community-filter-btn active" data-tag="all">All Discussions</button>
+      <button type="button" class="filter-btn community-filter-btn" data-tag="alert">🚨 Hotspot Alerts</button>
+      <button type="button" class="filter-btn community-filter-btn" data-tag="recovery">💚 Survivor Stories</button>
+      <button type="button" class="filter-btn community-filter-btn" data-tag="tip">📋 Field Guides</button>
+      <button type="button" class="filter-btn community-filter-btn" data-tag="question">❓ Medical Q&amp;A</button>
+    </div>
+    <a href="#newPost" class="btn" style="padding:7px 16px;font-size:0.88rem;color:#fff">✍️ Share Story or Question</a>
+  </div>
+
+  <div class="community-grid">
+    <!-- Main Discussion Feed -->
+    <div>
+      <div class="discussion-list" id="discussionList"></div>
+
+      <!-- Submit a new post form -->
+      <section class="propose-banner" id="newPost" style="margin-top:36px">
+        <div>
+          <span class="chip" style="margin-left:0;margin-bottom:8px">Peer Support</span>
+          <h2>Start a Discussion or Share Your Experience</h2>
+          <p>Help other families recognize critical dengue symptoms early or alert your local ward about stagnant water buildup.</p>
+        </div>
+
+        <form class="card" id="newPostForm" style="display:flex;flex-direction:column;gap:14px;background:#fff" novalidate>
+          <label>Topic / Title *
+            <input name="title" required maxlength="120" placeholder="e.g. Platelet monitoring tips during Day 4-6 recovery">
+          </label>
+
+          <div class="form-2col">
+            <label>Category *
+              <select name="tag">
+                <option value="recovery">Survivor Story & Recovery</option>
+                <option value="alert">Hotspot Alert / Waterlogging</option>
+                <option value="tip">Prevention Tip & Field Guide</option>
+                <option value="question">Medical Care Question</option>
+              </select>
+            </label>
+
+            <label>Your Area / Ward *
+              <input name="area" required maxlength="80" placeholder="e.g. Ward 11, Mirpur, Dhaka">
+            </label>
+          </div>
+
+          <label>Your Name or Initials (Optional)
+            <input name="author" maxlength="60" placeholder="e.g. Farhan (leave empty for Anonymous)">
+          </label>
+
+          <label>Your Story or Advice *
+            <textarea name="content" required minlength="20" maxlength="1500" rows="4" placeholder="Share what you observed, what helped recovery, or questions for other community members..."></textarea>
+          </label>
+
+          <button class="btn" type="submit" style="align-self:flex-start">Post to Community Forum</button>
+          <div id="newPostMsg" hidden></div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Sidebar: Helplines & Fast Guidance -->
+    <aside class="community-sidebar">
+      <div class="sidebar-widget">
+        <h3>📞 Emergency Dengue Helplines</h3>
+        <p style="font-size:0.85rem;color:var(--mu);margin:0 0 12px">Official government emergency numbers across Bangladesh for fever triage and blood donor assistance.</p>
+        <div class="hotline-item">
+          <span>DGHS Health Call Centre</span>
+          <span class="hotline-num">16263</span>
+        </div>
+        <div class="hotline-item">
+          <span>National Emergency Service</span>
+          <span class="hotline-num">999</span>
+        </div>
+        <div class="hotline-item">
+          <span>IEDCR Disease Control</span>
+          <span class="hotline-num">10655</span>
+        </div>
+        <div class="hotline-item">
+          <span>Red Crescent Blood Centre</span>
+          <span class="hotline-num">02-9352226</span>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>⚠️ Critical Warning Signs</h3>
+        <p style="font-size:0.86rem;color:#33485a;line-height:1.5;margin:0 0 10px">
+          Seek emergency hospital care immediately if a patient shows:
+        </p>
+        <ul style="font-size:0.84rem;color:var(--mu);margin:0;display:flex;flex-direction:column;gap:6px" class="ilist sm">
+          <li><span class="bi" style="--bc:#ef4444"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5L2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.5v.01"/></svg></span>Severe abdominal pain or tenderness</li>
+          <li><span class="bi" style="--bc:#f97316"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span>Persistent vomiting (&gt;3 times in 24 hrs)</li>
+          <li><span class="bi" style="--bc:#dc2626"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>Bleeding from gums or nose</li>
+          <li><span class="bi" style="--bc:#8b5cf6"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="8" width="16" height="8" rx="2"/><path d="M21.5 11v2M6 12h3"/></svg></span>Lethargy, extreme restlessness, confusion</li>
+          <li><span class="bi" style="--bc:#0ea5e9"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14.5V5a2 2 0 0 1 4 0v9.5a4 4 0 1 1-4 0z"/><path d="M12 9v7"/></svg></span>Sudden drop in body temperature accompanied by clammy skin</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- Stay in the Know Subscription Section -->
+</main>
+
+<footer><div class="wrap">
+  <a class="foot-brand" href="#top" aria-label="Dengue Protirodh, back to top"><img class="logo" src="logo.svg" alt="" width="36" height="36"><span>Dengue Protirodh</span></a>
+  <div class="foot-columns">
+    <div class="foot-links foot-col foot-main">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About us</a>
+      <a href="news.html">News</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="events.html">Events</a>
+      <a href="community.html">Community</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="app.html">Dashboard</a>
+      <a href="index.html#privacy">Privacy Policy</a>
+      <a href="index.html#terms">Terms</a>
+      <a href="#" data-cookie-settings>Cookie settings</a>
+      <a href="README.md">README</a>
+      <a href="ARCHITECTURE.pdf" download="ARCHITECTURE.pdf">Architecture (PDF)</a>
+      <a href="ARCHITECTURE.md">Architecture (MD)</a>
+    </div>
+    <div class="foot-links foot-col">
+      <a href="index.html#why">Why it matters</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#prevention">Prevention</a>
+      <a href="index.html#proof">Validation</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#subscribe">Subscribe</a>
+      <a href="index.html#references">References</a>
+      <a href="#social-media">GitHub Repo</a>
+      <a href="videos.html">Videos</a>
+      <a href="webinars.html">Webinars</a>
+      <a href="multimedia.html">Multimedia</a>
+      <a href="story.html">Story submission</a>
+    </div>
+  </div>
+  <span class="social" id="social-media" aria-label="GitHub Repo"><a href="https://github.com/tamzidamahmud11/tensor-titans-ai-hackathon" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo" title="GitHub Repo"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.300.1-2.700 0 0 .8-.3 2.800 1a9.600 9.600 0 0 1 5 0c1.900-1.300 2.800-1 2.800-1 .5 1.400.2 2.400.1 2.700.6.7 1 1.600 1 2.700 0 3.900-2.400 4.700-4.600 5 .4.3.7.9.7 1.900v2.800c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a></span>
+  <p class="foot-dev">Developed by TensorTitans. EDU AI Hackathon Team</p>
+  <span>&copy; 2026 Dengue Protirodh. All rights reserved. &middot; Ward-level dengue early warning<br>Decision-support tool for hackathon evaluation, not medical advice.</span>
+</div></footer>
+
+<script src="community.js?v=2"></script>
+<script src="i18n-bn.js?v=7"></script>
+<script src="theme-lang.js?v=7"></script>
+<script src="subscribe.js?v=2"></script>
+<script src="cookies.js?v=4"></script>
+</body>
+</html>

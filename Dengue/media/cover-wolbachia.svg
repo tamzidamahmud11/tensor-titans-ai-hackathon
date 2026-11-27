@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e1b4b"/><stop offset="100%" stop-color="#064e3b"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <circle cx="320" cy="165" r="78" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="2.5"/>
+  <circle cx="320" cy="165" r="44" fill="rgba(16,185,129,0.25)" stroke="#34d399" stroke-width="2"/>
+  <circle cx="320" cy="165" r="14" fill="#6ee7b7"/>
+  <rect x="40" y="42" width="150" height="28" rx="14" fill="rgba(16,185,129,0.2)" stroke="#10b981"/>
+  <text x="115" y="61" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">BIO-CONTROL</text>
+  <text x="40" y="318" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Wolbachia Mosquito Releases</text>
+</svg>

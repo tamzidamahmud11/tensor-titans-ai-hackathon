@@ -1,0 +1,1364 @@
+{
+  "generated_offline": true,
+  "origin": "2025-06-09",
+  "target": "2025-06-30",
+  "horizon_weeks": 3,
+  "stock_pct": 60,
+  "crews_total": 20,
+  "stock": {
+    "saline_bags_needed": {
+      "required": 3682,
+      "available": 2209,
+      "allocated": 2209,
+      "unmet": 1473
+    },
+    "diagnostic_kits_needed": {
+      "required": 2388,
+      "available": 1432,
+      "allocated": 1432,
+      "unmet": 956
+    }
+  },
+  "cities": {
+    "Chattogram": {
+      "city": "Chattogram",
+      "wards": 10,
+      "bedCap": 36,
+      "bedsReq": 38,
+      "occupied": 34,
+      "utilization": 0.9444444444444444,
+      "demandRatio": 1.0555555555555556,
+      "headroom": 2,
+      "overflow": 4,
+      "routed": 0,
+      "unmet": 4,
+      "overflowWards": 3
+    },
+    "Dhaka North": {
+      "city": "Dhaka North",
+      "wards": 20,
+      "bedCap": 76,
+      "bedsReq": 78,
+      "occupied": 69,
+      "utilization": 0.9078947368421053,
+      "demandRatio": 1.0263157894736843,
+      "headroom": 7,
+      "overflow": 12,
+      "routed": 3,
+      "unmet": 9,
+      "overflowWards": 9
+    },
+    "Dhaka South": {
+      "city": "Dhaka South",
+      "wards": 20,
+      "bedCap": 74,
+      "bedsReq": 81,
+      "occupied": 70,
+      "utilization": 0.9459459459459459,
+      "demandRatio": 1.0945945945945945,
+      "headroom": 4,
+      "overflow": 12,
+      "routed": 1,
+      "unmet": 11,
+      "overflowWards": 8
+    },
+    "Gazipur": {
+      "city": "Gazipur",
+      "wards": 5,
+      "bedCap": 22,
+      "bedsReq": 25,
+      "occupied": 21,
+      "utilization": 0.9545454545454546,
+      "demandRatio": 1.1363636363636365,
+      "headroom": 1,
+      "overflow": 4,
+      "routed": 0,
+      "unmet": 4,
+      "overflowWards": 3
+    },
+    "Narayanganj": {
+      "city": "Narayanganj",
+      "wards": 5,
+      "bedCap": 18,
+      "bedsReq": 20,
+      "occupied": 16,
+      "utilization": 0.8888888888888888,
+      "demandRatio": 1.1111111111111112,
+      "headroom": 2,
+      "overflow": 5,
+      "routed": 1,
+      "unmet": 4,
+      "overflowWards": 3
+    }
+  },
+  "transfers": [
+    {
+      "city": "Dhaka North",
+      "from": "DNCC_Ward_18",
+      "to": "DNCC_Ward_04",
+      "patients": 1,
+      "toTier": "Medium"
+    },
+    {
+      "city": "Dhaka North",
+      "from": "DNCC_Ward_19",
+      "to": "DNCC_Ward_16",
+      "patients": 1,
+      "toTier": "Medium"
+    },
+    {
+      "city": "Dhaka North",
+      "from": "DNCC_Ward_10",
+      "to": "DNCC_Ward_05",
+      "patients": 1,
+      "toTier": "High"
+    },
+    {
+      "city": "Dhaka South",
+      "from": "DSCC_Ward_10",
+      "to": "DSCC_Ward_07",
+      "patients": 1,
+      "toTier": "Medium"
+    },
+    {
+      "city": "Narayanganj",
+      "from": "NCC_Ward_05",
+      "to": "NCC_Ward_04",
+      "patients": 1,
+      "toTier": "Medium"
+    }
+  ],
+  "wards": [
+    {
+      "ward_id": "DSCC_Ward_04",
+      "city": "Dhaka South",
+      "tier": "Critical",
+      "predicted_cases": 20.5,
+      "saline_bags_needed": 103,
+      "saline_bags_allocated": 103,
+      "diagnostic_kits_needed": 67,
+      "diagnostic_kits_allocated": 67,
+      "hospital_beds_required": 7,
+      "local_beds": 7,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 6.68,
+      "status": "DEFICIT",
+      "alerts": [
+        "crews 1/4"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_12",
+      "city": "Dhaka North",
+      "tier": "Critical",
+      "predicted_cases": 19.02,
+      "saline_bags_needed": 95,
+      "saline_bags_allocated": 95,
+      "diagnostic_kits_needed": 61,
+      "diagnostic_kits_allocated": 61,
+      "hospital_beds_required": 6,
+      "local_beds": 6,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 8.14,
+      "status": "DEFICIT",
+      "alerts": [
+        "crews 1/4"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_03",
+      "city": "Chattogram",
+      "tier": "Critical",
+      "predicted_cases": 18.84,
+      "saline_bags_needed": 89,
+      "saline_bags_allocated": 89,
+      "diagnostic_kits_needed": 58,
+      "diagnostic_kits_allocated": 58,
+      "hospital_beds_required": 6,
+      "local_beds": 6,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 4.91,
+      "status": "DEFICIT",
+      "alerts": [
+        "crews 1/4"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_01",
+      "city": "Chattogram",
+      "tier": "Critical",
+      "predicted_cases": 19.3,
+      "saline_bags_needed": 93,
+      "saline_bags_allocated": 93,
+      "diagnostic_kits_needed": 60,
+      "diagnostic_kits_allocated": 60,
+      "hospital_beds_required": 6,
+      "local_beds": 6,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 7.01,
+      "status": "DEFICIT",
+      "alerts": [
+        "crews 1/4"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_18",
+      "city": "Dhaka North",
+      "tier": "Critical",
+      "predicted_cases": 18.94,
+      "saline_bags_needed": 91,
+      "saline_bags_allocated": 91,
+      "diagnostic_kits_needed": 59,
+      "diagnostic_kits_allocated": 59,
+      "hospital_beds_required": 6,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 9.9,
+      "status": "DEFICIT",
+      "alerts": [
+        "crews 1/4"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_06",
+      "city": "Dhaka South",
+      "tier": "Critical",
+      "predicted_cases": 20.03,
+      "saline_bags_needed": 96,
+      "saline_bags_allocated": 96,
+      "diagnostic_kits_needed": 62,
+      "diagnostic_kits_allocated": 62,
+      "hospital_beds_required": 6,
+      "local_beds": 6,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 8.23,
+      "status": "DEFICIT",
+      "alerts": [
+        "crews 1/3"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_10",
+      "city": "Dhaka South",
+      "tier": "Critical",
+      "predicted_cases": 18.5,
+      "saline_bags_needed": 94,
+      "saline_bags_allocated": 94,
+      "diagnostic_kits_needed": 61,
+      "diagnostic_kits_allocated": 61,
+      "hospital_beds_required": 6,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 8.14,
+      "status": "DEFICIT",
+      "alerts": [
+        "crews 1/3"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_19",
+      "city": "Dhaka South",
+      "tier": "Critical",
+      "predicted_cases": 18.29,
+      "saline_bags_needed": 90,
+      "saline_bags_allocated": 90,
+      "diagnostic_kits_needed": 58,
+      "diagnostic_kits_allocated": 58,
+      "hospital_beds_required": 6,
+      "local_beds": 5,
+      "net_bed_deficit": 1,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 8.34,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "1 bed(s) unplaced",
+        "crews 1/3"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_12",
+      "city": "Dhaka South",
+      "tier": "Critical",
+      "predicted_cases": 20.19,
+      "saline_bags_needed": 90,
+      "saline_bags_allocated": 90,
+      "diagnostic_kits_needed": 58,
+      "diagnostic_kits_allocated": 58,
+      "hospital_beds_required": 6,
+      "local_beds": 5,
+      "net_bed_deficit": 1,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 12.46,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "1 bed(s) unplaced",
+        "crews 1/3"
+      ]
+    },
+    {
+      "ward_id": "GCC_Ward_02",
+      "city": "Gazipur",
+      "tier": "Critical",
+      "predicted_cases": 18.39,
+      "saline_bags_needed": 94,
+      "saline_bags_allocated": 89,
+      "diagnostic_kits_needed": 61,
+      "diagnostic_kits_allocated": 58,
+      "hospital_beds_required": 6,
+      "local_beds": 4,
+      "net_bed_deficit": 2,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 5",
+        "kits short 3",
+        "2 bed(s) unplaced",
+        "crews 0/3"
+      ]
+    },
+    {
+      "ward_id": "NCC_Ward_05",
+      "city": "Narayanganj",
+      "tier": "Critical",
+      "predicted_cases": 19.62,
+      "saline_bags_needed": 86,
+      "saline_bags_allocated": 74,
+      "diagnostic_kits_needed": 56,
+      "diagnostic_kits_allocated": 48,
+      "hospital_beds_required": 6,
+      "local_beds": 3,
+      "net_bed_deficit": 2,
+      "spraying_crews": 2,
+      "cases_prevented_2_4wk": 13.34,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 12",
+        "kits short 8",
+        "2 bed(s) unplaced",
+        "crews 2/3"
+      ]
+    },
+    {
+      "ward_id": "GCC_Ward_01",
+      "city": "Gazipur",
+      "tier": "High",
+      "predicted_cases": 15.99,
+      "saline_bags_needed": 69,
+      "saline_bags_allocated": 57,
+      "diagnostic_kits_needed": 45,
+      "diagnostic_kits_allocated": 37,
+      "hospital_beds_required": 5,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 4.28,
+      "status": "DEFICIT",
+      "alerts": [
+        "saline short 12",
+        "kits short 8",
+        "crews 1/3"
+      ]
+    },
+    {
+      "ward_id": "NCC_Ward_01",
+      "city": "Narayanganj",
+      "tier": "High",
+      "predicted_cases": 15.44,
+      "saline_bags_needed": 68,
+      "saline_bags_allocated": 54,
+      "diagnostic_kits_needed": 44,
+      "diagnostic_kits_allocated": 35,
+      "hospital_beds_required": 5,
+      "local_beds": 6,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 14",
+        "kits short 9",
+        "crews 0/3"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_05",
+      "city": "Dhaka North",
+      "tier": "High",
+      "predicted_cases": 13.87,
+      "saline_bags_needed": 63,
+      "saline_bags_allocated": 50,
+      "diagnostic_kits_needed": 41,
+      "diagnostic_kits_allocated": 32,
+      "hospital_beds_required": 4,
+      "local_beds": 6,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 13",
+        "kits short 9",
+        "crews 0/3"
+      ]
+    },
+    {
+      "ward_id": "GCC_Ward_03",
+      "city": "Gazipur",
+      "tier": "High",
+      "predicted_cases": 17.78,
+      "saline_bags_needed": 80,
+      "saline_bags_allocated": 56,
+      "diagnostic_kits_needed": 52,
+      "diagnostic_kits_allocated": 37,
+      "hospital_beds_required": 5,
+      "local_beds": 4,
+      "net_bed_deficit": 1,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 6.54,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 24",
+        "kits short 15",
+        "1 bed(s) unplaced",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "GCC_Ward_05",
+      "city": "Gazipur",
+      "tier": "High",
+      "predicted_cases": 16.66,
+      "saline_bags_needed": 75,
+      "saline_bags_allocated": 51,
+      "diagnostic_kits_needed": 49,
+      "diagnostic_kits_allocated": 34,
+      "hospital_beds_required": 5,
+      "local_beds": 4,
+      "net_bed_deficit": 1,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 4.91,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 24",
+        "kits short 15",
+        "1 bed(s) unplaced",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_08",
+      "city": "Dhaka South",
+      "tier": "High",
+      "predicted_cases": 14.94,
+      "saline_bags_needed": 67,
+      "saline_bags_allocated": 46,
+      "diagnostic_kits_needed": 43,
+      "diagnostic_kits_allocated": 29,
+      "hospital_beds_required": 4,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 21",
+        "kits short 14",
+        "crews 0/2"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_19",
+      "city": "Dhaka North",
+      "tier": "High",
+      "predicted_cases": 17.87,
+      "saline_bags_needed": 83,
+      "saline_bags_allocated": 55,
+      "diagnostic_kits_needed": 54,
+      "diagnostic_kits_allocated": 36,
+      "hospital_beds_required": 5,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 6.54,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 28",
+        "kits short 18",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_13",
+      "city": "Dhaka South",
+      "tier": "High",
+      "predicted_cases": 13.13,
+      "saline_bags_needed": 61,
+      "saline_bags_allocated": 38,
+      "diagnostic_kits_needed": 40,
+      "diagnostic_kits_allocated": 25,
+      "hospital_beds_required": 4,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 23",
+        "kits short 15",
+        "crews 0/2"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_10",
+      "city": "Dhaka North",
+      "tier": "High",
+      "predicted_cases": 17,
+      "saline_bags_needed": 77,
+      "saline_bags_allocated": 48,
+      "diagnostic_kits_needed": 50,
+      "diagnostic_kits_allocated": 31,
+      "hospital_beds_required": 5,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 4.96,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 29",
+        "kits short 19",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_04",
+      "city": "Chattogram",
+      "tier": "High",
+      "predicted_cases": 14.78,
+      "saline_bags_needed": 66,
+      "saline_bags_allocated": 41,
+      "diagnostic_kits_needed": 43,
+      "diagnostic_kits_allocated": 27,
+      "hospital_beds_required": 4,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 25",
+        "kits short 16",
+        "crews 0/2"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_09",
+      "city": "Dhaka North",
+      "tier": "High",
+      "predicted_cases": 15.03,
+      "saline_bags_needed": 68,
+      "saline_bags_allocated": 41,
+      "diagnostic_kits_needed": 44,
+      "diagnostic_kits_allocated": 26,
+      "hospital_beds_required": 5,
+      "local_beds": 4,
+      "net_bed_deficit": 1,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 6.71,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 27",
+        "kits short 18",
+        "1 bed(s) unplaced",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_01",
+      "city": "Dhaka North",
+      "tier": "High",
+      "predicted_cases": 13.46,
+      "saline_bags_needed": 66,
+      "saline_bags_allocated": 37,
+      "diagnostic_kits_needed": 43,
+      "diagnostic_kits_allocated": 24,
+      "hospital_beds_required": 4,
+      "local_beds": 3,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 29",
+        "kits short 19",
+        "1 bed(s) unplaced",
+        "crews 0/2"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_07",
+      "city": "Chattogram",
+      "tier": "High",
+      "predicted_cases": 17.03,
+      "saline_bags_needed": 76,
+      "saline_bags_allocated": 42,
+      "diagnostic_kits_needed": 49,
+      "diagnostic_kits_allocated": 27,
+      "hospital_beds_required": 5,
+      "local_beds": 3,
+      "net_bed_deficit": 2,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 8.3,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 34",
+        "kits short 22",
+        "2 bed(s) unplaced",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_20",
+      "city": "Dhaka South",
+      "tier": "High",
+      "predicted_cases": 14.78,
+      "saline_bags_needed": 67,
+      "saline_bags_allocated": 31,
+      "diagnostic_kits_needed": 43,
+      "diagnostic_kits_allocated": 20,
+      "hospital_beds_required": 4,
+      "local_beds": 3,
+      "net_bed_deficit": 1,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 7.42,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 36",
+        "kits short 23",
+        "1 bed(s) unplaced",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "GCC_Ward_04",
+      "city": "Gazipur",
+      "tier": "Medium",
+      "predicted_cases": 12.68,
+      "saline_bags_needed": 55,
+      "saline_bags_allocated": 25,
+      "diagnostic_kits_needed": 36,
+      "diagnostic_kits_allocated": 16,
+      "hospital_beds_required": 4,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 30",
+        "kits short 20"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_04",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 9.92,
+      "saline_bags_needed": 43,
+      "saline_bags_allocated": 19,
+      "diagnostic_kits_needed": 28,
+      "diagnostic_kits_allocated": 12,
+      "hospital_beds_required": 3,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 24",
+        "kits short 16"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_03",
+      "city": "Dhaka South",
+      "tier": "High",
+      "predicted_cases": 16.99,
+      "saline_bags_needed": 73,
+      "saline_bags_allocated": 32,
+      "diagnostic_kits_needed": 47,
+      "diagnostic_kits_allocated": 21,
+      "hospital_beds_required": 5,
+      "local_beds": 2,
+      "net_bed_deficit": 3,
+      "spraying_crews": 1,
+      "cases_prevented_2_4wk": 8.34,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 41",
+        "kits short 26",
+        "3 bed(s) unplaced",
+        "crews 1/2"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_16",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 12.38,
+      "saline_bags_needed": 52,
+      "saline_bags_allocated": 22,
+      "diagnostic_kits_needed": 34,
+      "diagnostic_kits_allocated": 15,
+      "hospital_beds_required": 3,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 30",
+        "kits short 19"
+      ]
+    },
+    {
+      "ward_id": "NCC_Ward_04",
+      "city": "Narayanganj",
+      "tier": "Medium",
+      "predicted_cases": 9.59,
+      "saline_bags_needed": 43,
+      "saline_bags_allocated": 18,
+      "diagnostic_kits_needed": 28,
+      "diagnostic_kits_allocated": 12,
+      "hospital_beds_required": 3,
+      "local_beds": 5,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 25",
+        "kits short 16"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_11",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 11.59,
+      "saline_bags_needed": 51,
+      "saline_bags_allocated": 21,
+      "diagnostic_kits_needed": 33,
+      "diagnostic_kits_allocated": 14,
+      "hospital_beds_required": 3,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 30",
+        "kits short 19"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_02",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 12.29,
+      "saline_bags_needed": 54,
+      "saline_bags_allocated": 22,
+      "diagnostic_kits_needed": 35,
+      "diagnostic_kits_allocated": 14,
+      "hospital_beds_required": 4,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 32",
+        "kits short 21"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_17",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 9.72,
+      "saline_bags_needed": 44,
+      "saline_bags_allocated": 17,
+      "diagnostic_kits_needed": 29,
+      "diagnostic_kits_allocated": 11,
+      "hospital_beds_required": 3,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 27",
+        "kits short 18"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_15",
+      "city": "Dhaka North",
+      "tier": "High",
+      "predicted_cases": 16.62,
+      "saline_bags_needed": 77,
+      "saline_bags_allocated": 30,
+      "diagnostic_kits_needed": 50,
+      "diagnostic_kits_allocated": 19,
+      "hospital_beds_required": 5,
+      "local_beds": 2,
+      "net_bed_deficit": 3,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 47",
+        "kits short 31",
+        "3 bed(s) unplaced",
+        "crews 0/2"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_10",
+      "city": "Chattogram",
+      "tier": "Medium",
+      "predicted_cases": 10.47,
+      "saline_bags_needed": 47,
+      "saline_bags_allocated": 18,
+      "diagnostic_kits_needed": 30,
+      "diagnostic_kits_allocated": 11,
+      "hospital_beds_required": 3,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 29",
+        "kits short 19"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_14",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 9.9,
+      "saline_bags_needed": 43,
+      "saline_bags_allocated": 16,
+      "diagnostic_kits_needed": 28,
+      "diagnostic_kits_allocated": 10,
+      "hospital_beds_required": 3,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 27",
+        "kits short 18"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_07",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 10.37,
+      "saline_bags_needed": 46,
+      "saline_bags_allocated": 17,
+      "diagnostic_kits_needed": 30,
+      "diagnostic_kits_allocated": 11,
+      "hospital_beds_required": 3,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 29",
+        "kits short 19"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_01",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 10.87,
+      "saline_bags_needed": 47,
+      "saline_bags_allocated": 16,
+      "diagnostic_kits_needed": 31,
+      "diagnostic_kits_allocated": 11,
+      "hospital_beds_required": 3,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 31",
+        "kits short 20"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_07",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 8.71,
+      "saline_bags_needed": 37,
+      "saline_bags_allocated": 12,
+      "diagnostic_kits_needed": 24,
+      "diagnostic_kits_allocated": 8,
+      "hospital_beds_required": 2,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 25",
+        "kits short 16"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_02",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 10.82,
+      "saline_bags_needed": 45,
+      "saline_bags_allocated": 15,
+      "diagnostic_kits_needed": 29,
+      "diagnostic_kits_allocated": 10,
+      "hospital_beds_required": 3,
+      "local_beds": 4,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 30",
+        "kits short 19"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_06",
+      "city": "Chattogram",
+      "tier": "Medium",
+      "predicted_cases": 12.2,
+      "saline_bags_needed": 53,
+      "saline_bags_allocated": 17,
+      "diagnostic_kits_needed": 34,
+      "diagnostic_kits_allocated": 11,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 36",
+        "kits short 23"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_15",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 10.21,
+      "saline_bags_needed": 46,
+      "saline_bags_allocated": 15,
+      "diagnostic_kits_needed": 30,
+      "diagnostic_kits_allocated": 10,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 31",
+        "kits short 20"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_09",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 10.52,
+      "saline_bags_needed": 46,
+      "saline_bags_allocated": 15,
+      "diagnostic_kits_needed": 30,
+      "diagnostic_kits_allocated": 10,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 31",
+        "kits short 20"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_13",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 8.93,
+      "saline_bags_needed": 38,
+      "saline_bags_allocated": 12,
+      "diagnostic_kits_needed": 25,
+      "diagnostic_kits_allocated": 8,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 26",
+        "kits short 17"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_09",
+      "city": "Chattogram",
+      "tier": "Medium",
+      "predicted_cases": 8.74,
+      "saline_bags_needed": 37,
+      "saline_bags_allocated": 12,
+      "diagnostic_kits_needed": 24,
+      "diagnostic_kits_allocated": 7,
+      "hospital_beds_required": 2,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 25",
+        "kits short 17"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_08",
+      "city": "Chattogram",
+      "tier": "Medium",
+      "predicted_cases": 11.73,
+      "saline_bags_needed": 51,
+      "saline_bags_allocated": 16,
+      "diagnostic_kits_needed": 33,
+      "diagnostic_kits_allocated": 10,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 35",
+        "kits short 23"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_16",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 10.77,
+      "saline_bags_needed": 47,
+      "saline_bags_allocated": 14,
+      "diagnostic_kits_needed": 31,
+      "diagnostic_kits_allocated": 9,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 33",
+        "kits short 22"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_17",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 9.12,
+      "saline_bags_needed": 40,
+      "saline_bags_allocated": 12,
+      "diagnostic_kits_needed": 26,
+      "diagnostic_kits_allocated": 8,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 28",
+        "kits short 18"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_20",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 9.2,
+      "saline_bags_needed": 40,
+      "saline_bags_allocated": 11,
+      "diagnostic_kits_needed": 26,
+      "diagnostic_kits_allocated": 7,
+      "hospital_beds_required": 3,
+      "local_beds": 3,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 29",
+        "kits short 19"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_06",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 9.69,
+      "saline_bags_needed": 42,
+      "saline_bags_allocated": 12,
+      "diagnostic_kits_needed": 27,
+      "diagnostic_kits_allocated": 8,
+      "hospital_beds_required": 3,
+      "local_beds": 2,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 30",
+        "kits short 19",
+        "1 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_18",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 12.75,
+      "saline_bags_needed": 58,
+      "saline_bags_allocated": 16,
+      "diagnostic_kits_needed": 37,
+      "diagnostic_kits_allocated": 10,
+      "hospital_beds_required": 4,
+      "local_beds": 2,
+      "net_bed_deficit": 2,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 42",
+        "kits short 27",
+        "2 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_08",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 10.78,
+      "saline_bags_needed": 47,
+      "saline_bags_allocated": 13,
+      "diagnostic_kits_needed": 30,
+      "diagnostic_kits_allocated": 8,
+      "hospital_beds_required": 3,
+      "local_beds": 2,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 34",
+        "kits short 22",
+        "1 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_05",
+      "city": "Chattogram",
+      "tier": "Medium",
+      "predicted_cases": 9.06,
+      "saline_bags_needed": 40,
+      "saline_bags_allocated": 11,
+      "diagnostic_kits_needed": 26,
+      "diagnostic_kits_allocated": 7,
+      "hospital_beds_required": 3,
+      "local_beds": 2,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 29",
+        "kits short 19",
+        "1 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_11",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 12.86,
+      "saline_bags_needed": 57,
+      "saline_bags_allocated": 15,
+      "diagnostic_kits_needed": 37,
+      "diagnostic_kits_allocated": 10,
+      "hospital_beds_required": 4,
+      "local_beds": 2,
+      "net_bed_deficit": 2,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 42",
+        "kits short 27",
+        "2 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "CCC_Ward_02",
+      "city": "Chattogram",
+      "tier": "Medium",
+      "predicted_cases": 9.53,
+      "saline_bags_needed": 42,
+      "saline_bags_allocated": 11,
+      "diagnostic_kits_needed": 28,
+      "diagnostic_kits_allocated": 7,
+      "hospital_beds_required": 3,
+      "local_beds": 2,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 31",
+        "kits short 21",
+        "1 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_14",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 7.48,
+      "saline_bags_needed": 35,
+      "saline_bags_allocated": 9,
+      "diagnostic_kits_needed": 22,
+      "diagnostic_kits_allocated": 6,
+      "hospital_beds_required": 2,
+      "local_beds": 2,
+      "net_bed_deficit": 0,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 26",
+        "kits short 16"
+      ]
+    },
+    {
+      "ward_id": "DNCC_Ward_03",
+      "city": "Dhaka North",
+      "tier": "Medium",
+      "predicted_cases": 12.98,
+      "saline_bags_needed": 56,
+      "saline_bags_allocated": 14,
+      "diagnostic_kits_needed": 36,
+      "diagnostic_kits_allocated": 9,
+      "hospital_beds_required": 4,
+      "local_beds": 2,
+      "net_bed_deficit": 2,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 42",
+        "kits short 27",
+        "2 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "NCC_Ward_02",
+      "city": "Narayanganj",
+      "tier": "Medium",
+      "predicted_cases": 9.75,
+      "saline_bags_needed": 43,
+      "saline_bags_allocated": 10,
+      "diagnostic_kits_needed": 28,
+      "diagnostic_kits_allocated": 7,
+      "hospital_beds_required": 3,
+      "local_beds": 2,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 33",
+        "kits short 21",
+        "1 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "NCC_Ward_03",
+      "city": "Narayanganj",
+      "tier": "Medium",
+      "predicted_cases": 10.85,
+      "saline_bags_needed": 48,
+      "saline_bags_allocated": 11,
+      "diagnostic_kits_needed": 31,
+      "diagnostic_kits_allocated": 7,
+      "hospital_beds_required": 3,
+      "local_beds": 2,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 37",
+        "kits short 24",
+        "1 bed(s) unplaced"
+      ]
+    },
+    {
+      "ward_id": "DSCC_Ward_05",
+      "city": "Dhaka South",
+      "tier": "Medium",
+      "predicted_cases": 11.93,
+      "saline_bags_needed": 52,
+      "saline_bags_allocated": 12,
+      "diagnostic_kits_needed": 34,
+      "diagnostic_kits_allocated": 8,
+      "hospital_beds_required": 3,
+      "local_beds": 2,
+      "net_bed_deficit": 1,
+      "spraying_crews": 0,
+      "cases_prevented_2_4wk": 0,
+      "status": "CRITICAL DEFICIT",
+      "alerts": [
+        "saline short 40",
+        "kits short 26",
+        "1 bed(s) unplaced"
+      ]
+    }
+  ]
+}
