@@ -1,0 +1,61 @@
+# SMS dispatch (one 160-char segment each) - warning 2025-06-09, target 2025-06-30, stock 60%, 20 crews
+DSCC_Ward_04	DENGUE CRITICAL DSCC-W04 wk 30 Jun: 20 cases expected. Saline 103/103 Kits 67/67 Beds need 7 have 7. Crews 1. DEFICIT: crews 1/4
+DNCC_Ward_12	DENGUE CRITICAL DNCC-W12 wk 30 Jun: 19 cases expected. Saline 95/95 Kits 61/61 Beds need 6 have 6. Crews 1. DEFICIT: crews 1/4
+CCC_Ward_03	DENGUE CRITICAL CCC-W03 wk 30 Jun: 19 cases expected. Saline 89/89 Kits 58/58 Beds need 6 have 6. Crews 1. DEFICIT: crews 1/4
+CCC_Ward_01	DENGUE CRITICAL CCC-W01 wk 30 Jun: 19 cases expected. Saline 93/93 Kits 60/60 Beds need 6 have 6. Crews 1. DEFICIT: crews 1/4
+DNCC_Ward_18	DENGUE CRITICAL DNCC-W18 wk 30 Jun: 19 cases expected. Saline 91/91 Kits 59/59 Beds need 6 have 5. Send 1pt to DNCC-W04. Crews 1. DEFICIT: crews 1/4
+DSCC_Ward_06	DENGUE CRITICAL DSCC-W06 wk 30 Jun: 20 cases expected. Saline 96/96 Kits 62/62 Beds need 6 have 6. Crews 1. DEFICIT: crews 1/3
+DSCC_Ward_10	DENGUE CRITICAL DSCC-W10 wk 30 Jun: 18 cases expected. Saline 94/94 Kits 61/61 Beds need 6 have 5. Send 1pt to DSCC-W07. Crews 1. DEFICIT: crews 1/3
+DSCC_Ward_19	DENGUE CRITICAL DSCC-W19 wk 30 Jun: 18 cases expected. Saline 90/90 Kits 58/58 Beds need 6 have 5. Crews 1. CRIT DEFICIT: 1 bed(s) unplaced, crews 1/3
+DSCC_Ward_12	DENGUE CRITICAL DSCC-W12 wk 30 Jun: 20 cases expected. Saline 90/90 Kits 58/58 Beds need 6 have 5. Crews 1. CRIT DEFICIT: 1 bed(s) unplaced, crews 1/3
+GCC_Ward_02	DENGUE CRITICAL GCC-W02 wk 30 Jun: 18 cases expected. Saline 89/94 Kits 58/61 Beds need 6 have 4. Crews 0. CRIT DEFICIT: saline short 5
+NCC_Ward_05	DENGUE CRITICAL NCC-W05 wk 30 Jun: 20 cases expected. Saline 74/86 Kits 48/56 Beds need 6 have 3. Send 1pt to NCC-W04. Crews 2. CRIT DEFICIT: saline short 12
+GCC_Ward_01	DENGUE HIGH GCC-W01 wk 30 Jun: 16 cases expected. Saline 57/69 Kits 37/45 Beds need 5 have 5. Crews 1. DEFICIT: saline short 12, kits short 8, crews 1/3
+NCC_Ward_01	DENGUE HIGH NCC-W01 wk 30 Jun: 15 cases expected. Saline 54/68 Kits 35/44 Beds need 5 have 6. Crews 0. CRIT DEFICIT: saline short 14, kits short 9, crews 0/3
+DNCC_Ward_05	DENGUE HIGH DNCC-W05 wk 30 Jun: 14 cases expected. Saline 50/63 Kits 32/41 Beds need 4 have 6. Recv 1pt. Crews 0. CRIT DEFICIT: saline short 13
+GCC_Ward_03	DENGUE HIGH GCC-W03 wk 30 Jun: 18 cases expected. Saline 56/80 Kits 37/52 Beds need 5 have 4. Crews 1. CRIT DEFICIT: saline short 24
+GCC_Ward_05	DENGUE HIGH GCC-W05 wk 30 Jun: 17 cases expected. Saline 51/75 Kits 34/49 Beds need 5 have 4. Crews 1. CRIT DEFICIT: saline short 24
+DSCC_Ward_08	DENGUE HIGH DSCC-W08 wk 30 Jun: 15 cases expected. Saline 46/67 Kits 29/43 Beds need 4 have 5. Crews 0. CRIT DEFICIT: saline short 21, kits short 14, crews 0/2
+DNCC_Ward_19	DENGUE HIGH DNCC-W19 wk 30 Jun: 18 cases expected. Saline 55/83 Kits 36/54 Beds need 5 have 4. Send 1pt to DNCC-W16. Crews 1. CRIT DEFICIT: saline short 28
+DSCC_Ward_13	DENGUE HIGH DSCC-W13 wk 30 Jun: 13 cases expected. Saline 38/61 Kits 25/40 Beds need 4 have 4. Crews 0. CRIT DEFICIT: saline short 23, kits short 15, crews 0/2
+DNCC_Ward_10	DENGUE HIGH DNCC-W10 wk 30 Jun: 17 cases expected. Saline 48/77 Kits 31/50 Beds need 5 have 4. Send 1pt to DNCC-W05. Crews 1. CRIT DEFICIT: saline short 29
+CCC_Ward_04	DENGUE HIGH CCC-W04 wk 30 Jun: 15 cases expected. Saline 41/66 Kits 27/43 Beds need 4 have 4. Crews 0. CRIT DEFICIT: saline short 25, kits short 16, crews 0/2
+DNCC_Ward_09	DENGUE HIGH DNCC-W09 wk 30 Jun: 15 cases expected. Saline 41/68 Kits 26/44 Beds need 5 have 4. Crews 1. CRIT DEFICIT: saline short 27
+DNCC_Ward_01	DENGUE HIGH DNCC-W01 wk 30 Jun: 13 cases expected. Saline 37/66 Kits 24/43 Beds need 4 have 3. Crews 0. CRIT DEFICIT: saline short 29
+CCC_Ward_07	DENGUE HIGH CCC-W07 wk 30 Jun: 17 cases expected. Saline 42/76 Kits 27/49 Beds need 5 have 3. Crews 1. CRIT DEFICIT: saline short 34
+DSCC_Ward_20	DENGUE HIGH DSCC-W20 wk 30 Jun: 15 cases expected. Saline 31/67 Kits 20/43 Beds need 4 have 3. Crews 1. CRIT DEFICIT: saline short 36
+GCC_Ward_04	DENGUE MEDIUM GCC-W04 wk 30 Jun: 13 cases expected. Saline 25/55 Kits 16/36 Beds need 4 have 5. Crews 0. CRIT DEFICIT: saline short 30, kits short 20
+DNCC_Ward_04	DENGUE MEDIUM DNCC-W04 wk 30 Jun: 10 cases expected. Saline 19/43 Kits 12/28 Beds need 3 have 5. Recv 1pt. Crews 0. CRIT DEFICIT: saline short 24, kits short 16
+DSCC_Ward_03	DENGUE HIGH DSCC-W03 wk 30 Jun: 17 cases expected. Saline 32/73 Kits 21/47 Beds need 5 have 2. Crews 1. CRIT DEFICIT: saline short 41
+DNCC_Ward_16	DENGUE MEDIUM DNCC-W16 wk 30 Jun: 12 cases expected. Saline 22/52 Kits 15/34 Beds need 3 have 5. Recv 1pt. Crews 0. CRIT DEFICIT: saline short 30, kits short 19
+NCC_Ward_04	DENGUE MEDIUM NCC-W04 wk 30 Jun: 10 cases expected. Saline 18/43 Kits 12/28 Beds need 3 have 5. Recv 1pt. Crews 0. CRIT DEFICIT: saline short 25, kits short 16
+DNCC_Ward_11	DENGUE MEDIUM DNCC-W11 wk 30 Jun: 12 cases expected. Saline 21/51 Kits 14/33 Beds need 3 have 4. Crews 0. CRIT DEFICIT: saline short 30, kits short 19
+DNCC_Ward_02	DENGUE MEDIUM DNCC-W02 wk 30 Jun: 12 cases expected. Saline 22/54 Kits 14/35 Beds need 4 have 4. Crews 0. CRIT DEFICIT: saline short 32, kits short 21
+DNCC_Ward_17	DENGUE MEDIUM DNCC-W17 wk 30 Jun: 10 cases expected. Saline 17/44 Kits 11/29 Beds need 3 have 4. Crews 0. CRIT DEFICIT: saline short 27, kits short 18
+DNCC_Ward_15	DENGUE HIGH DNCC-W15 wk 30 Jun: 17 cases expected. Saline 30/77 Kits 19/50 Beds need 5 have 2. Crews 0. CRIT DEFICIT: saline short 47
+CCC_Ward_10	DENGUE MEDIUM CCC-W10 wk 30 Jun: 10 cases expected. Saline 18/47 Kits 11/30 Beds need 3 have 4. Crews 0. CRIT DEFICIT: saline short 29, kits short 19
+DNCC_Ward_14	DENGUE MEDIUM DNCC-W14 wk 30 Jun: 10 cases expected. Saline 16/43 Kits 10/28 Beds need 3 have 4. Crews 0. CRIT DEFICIT: saline short 27, kits short 18
+DNCC_Ward_07	DENGUE MEDIUM DNCC-W07 wk 30 Jun: 10 cases expected. Saline 17/46 Kits 11/30 Beds need 3 have 4. Crews 0. CRIT DEFICIT: saline short 29, kits short 19
+DSCC_Ward_01	DENGUE MEDIUM DSCC-W01 wk 30 Jun: 11 cases expected. Saline 16/47 Kits 11/31 Beds need 3 have 4. Crews 0. CRIT DEFICIT: saline short 31, kits short 20
+DSCC_Ward_07	DENGUE MEDIUM DSCC-W07 wk 30 Jun: 9 cases expected. Saline 12/37 Kits 8/24 Beds need 2 have 4. Recv 1pt. Crews 0. CRIT DEFICIT: saline short 25, kits short 16
+DSCC_Ward_02	DENGUE MEDIUM DSCC-W02 wk 30 Jun: 11 cases expected. Saline 15/45 Kits 10/29 Beds need 3 have 4. Crews 0. CRIT DEFICIT: saline short 30, kits short 19
+CCC_Ward_06	DENGUE MEDIUM CCC-W06 wk 30 Jun: 12 cases expected. Saline 17/53 Kits 11/34 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 36, kits short 23
+DSCC_Ward_15	DENGUE MEDIUM DSCC-W15 wk 30 Jun: 10 cases expected. Saline 15/46 Kits 10/30 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 31, kits short 20
+DSCC_Ward_09	DENGUE MEDIUM DSCC-W09 wk 30 Jun: 11 cases expected. Saline 15/46 Kits 10/30 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 31, kits short 20
+DNCC_Ward_13	DENGUE MEDIUM DNCC-W13 wk 30 Jun: 9 cases expected. Saline 12/38 Kits 8/25 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 26, kits short 17
+CCC_Ward_09	DENGUE MEDIUM CCC-W09 wk 30 Jun: 9 cases expected. Saline 12/37 Kits 7/24 Beds need 2 have 3. Crews 0. CRIT DEFICIT: saline short 25, kits short 17
+CCC_Ward_08	DENGUE MEDIUM CCC-W08 wk 30 Jun: 12 cases expected. Saline 16/51 Kits 10/33 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 35, kits short 23
+DSCC_Ward_16	DENGUE MEDIUM DSCC-W16 wk 30 Jun: 11 cases expected. Saline 14/47 Kits 9/31 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 33, kits short 22
+DSCC_Ward_17	DENGUE MEDIUM DSCC-W17 wk 30 Jun: 9 cases expected. Saline 12/40 Kits 8/26 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 28, kits short 18
+DNCC_Ward_20	DENGUE MEDIUM DNCC-W20 wk 30 Jun: 9 cases expected. Saline 11/40 Kits 7/26 Beds need 3 have 3. Crews 0. CRIT DEFICIT: saline short 29, kits short 19
+DNCC_Ward_06	DENGUE MEDIUM DNCC-W06 wk 30 Jun: 10 cases expected. Saline 12/42 Kits 8/27 Beds need 3 have 2. Crews 0. CRIT DEFICIT: saline short 30
+DSCC_Ward_18	DENGUE MEDIUM DSCC-W18 wk 30 Jun: 13 cases expected. Saline 16/58 Kits 10/37 Beds need 4 have 2. Crews 0. CRIT DEFICIT: saline short 42
+DNCC_Ward_08	DENGUE MEDIUM DNCC-W08 wk 30 Jun: 11 cases expected. Saline 13/47 Kits 8/30 Beds need 3 have 2. Crews 0. CRIT DEFICIT: saline short 34
+CCC_Ward_05	DENGUE MEDIUM CCC-W05 wk 30 Jun: 9 cases expected. Saline 11/40 Kits 7/26 Beds need 3 have 2. Crews 0. CRIT DEFICIT: saline short 29
+DSCC_Ward_11	DENGUE MEDIUM DSCC-W11 wk 30 Jun: 13 cases expected. Saline 15/57 Kits 10/37 Beds need 4 have 2. Crews 0. CRIT DEFICIT: saline short 42
+CCC_Ward_02	DENGUE MEDIUM CCC-W02 wk 30 Jun: 10 cases expected. Saline 11/42 Kits 7/28 Beds need 3 have 2. Crews 0. CRIT DEFICIT: saline short 31
+DSCC_Ward_14	DENGUE MEDIUM DSCC-W14 wk 30 Jun: 7 cases expected. Saline 9/35 Kits 6/22 Beds need 2 have 2. Crews 0. CRIT DEFICIT: saline short 26, kits short 16
+DNCC_Ward_03	DENGUE MEDIUM DNCC-W03 wk 30 Jun: 13 cases expected. Saline 14/56 Kits 9/36 Beds need 4 have 2. Crews 0. CRIT DEFICIT: saline short 42
+NCC_Ward_02	DENGUE MEDIUM NCC-W02 wk 30 Jun: 10 cases expected. Saline 10/43 Kits 7/28 Beds need 3 have 2. Crews 0. CRIT DEFICIT: saline short 33
+NCC_Ward_03	DENGUE MEDIUM NCC-W03 wk 30 Jun: 11 cases expected. Saline 11/48 Kits 7/31 Beds need 3 have 2. Crews 0. CRIT DEFICIT: saline short 37
+DSCC_Ward_05	DENGUE MEDIUM DSCC-W05 wk 30 Jun: 12 cases expected. Saline 12/52 Kits 8/34 Beds need 3 have 2. Crews 0. CRIT DEFICIT: saline short 40
