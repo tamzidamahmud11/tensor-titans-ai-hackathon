@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#052e16"/><stop offset="100%" stop-color="#14532d"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <g font-family="system-ui,sans-serif" font-weight="800" font-size="34" text-anchor="middle">
+    <rect x="70" y="120" width="76" height="76" rx="14" fill="#16a34a"/><text x="108" y="170" fill="#fff">B</text>
+    <rect x="174" y="120" width="76" height="76" rx="14" fill="#16a34a"/><text x="212" y="170" fill="#fff">L</text>
+    <rect x="278" y="120" width="76" height="76" rx="14" fill="#16a34a"/><text x="316" y="170" fill="#fff">O</text>
+    <rect x="382" y="120" width="76" height="76" rx="14" fill="#16a34a"/><text x="420" y="170" fill="#fff">C</text>
+    <rect x="486" y="120" width="76" height="76" rx="14" fill="#16a34a"/><text x="524" y="170" fill="#fff">K</text>
+  </g>
+  <text x="40" y="318" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="22" font-weight="700">10-Minute Weekly Household Routine</text>
+</svg>

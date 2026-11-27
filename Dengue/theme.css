@@ -1,0 +1,122 @@
+/* Dark and Light theme overrides, and Language switcher styling */
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --bg2: #111a2e;
+  --line: #1e2b45;
+  --tx: #e6edf7;
+  --mu: #9fb3cc;
+  --ac: #22d3a5;
+  --card-bg: #111a2e;
+  --text-dim: #9fb3cc;
+}
+
+[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--tx);
+}
+
+[data-theme="dark"] header.nav {
+  background: rgba(11, 18, 32, 0.88);
+  border-bottom-color: var(--line);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .panel,
+[data-theme="dark"] .event-card,
+[data-theme="dark"] .news,
+[data-theme="dark"] .community-card,
+[data-theme="dark"] .webinar-card,
+[data-theme="dark"] details {
+  background: var(--bg2);
+  border-color: var(--line);
+  color: var(--tx);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .event-body .event-desc,
+[data-theme="dark"] .news p,
+[data-theme="dark"] .prose p,
+[data-theme="dark"] .prose li,
+[data-theme="dark"] .event-desc,
+[data-theme="dark"] .webinar-desc {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .page-hero {
+  background: radial-gradient(900px 400px at 75% 0, #0e3b3b55, transparent), radial-gradient(700px 360px at 10% 10%, #12304f66, transparent), #0b1220;
+  border-bottom-color: var(--line);
+}
+
+[data-theme="dark"] .events-toolbar,
+[data-theme="dark"] .community-toolbar,
+[data-theme="dark"] .webinar-toolbar {
+  background: var(--bg2);
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .filter-btn,
+[data-theme="dark"] .btn-event-secondary,
+[data-theme="dark"] .share a,
+[data-theme="dark"] .share button {
+  background: var(--bg);
+  border-color: var(--line);
+  color: var(--tx);
+}
+
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .btn-event-secondary:hover,
+[data-theme="dark"] .share a:hover,
+[data-theme="dark"] .share button:hover {
+  border-color: var(--ac);
+  color: var(--ac);
+}
+
+[data-theme="dark"] .propose-banner {
+  background: linear-gradient(135deg, #0f2438, #0e3b2e);
+  border-color: #1e3a5f;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background: #090f1b !important;
+  color: #e6edf7 !important;
+  border-color: #1e2b45 !important;
+}
+
+[data-theme="dark"] .event-modal {
+  background: #111a2e;
+  border: 1px solid var(--line);
+  color: var(--tx);
+}
+
+[data-theme="dark"] .type-cleanup { background: #064e3b; color: #a7f3d0; border-bottom: 1px solid #047857; }
+[data-theme="dark"] .type-clinic { background: #78350f; color: #fde68a; border-bottom: 1px solid #b45309; }
+[data-theme="dark"] .type-workshop { background: #0c4a6e; color: #bae6fd; border-bottom: 1px solid #0284c7; }
+[data-theme="dark"] .type-campaign { background: #4c1d95; color: #ddd6fe; border-bottom: 1px solid #6d28d9; }
+[data-theme="dark"] .type-inspection { background: #7f1d1d; color: #fecaca; border-bottom: 1px solid #b91c1c; }
+
+/* Control buttons in header */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.theme-toggle-btn, .lang-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--tx);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+.theme-toggle-btn:hover, .lang-toggle-btn:hover {
+  border-color: var(--ac);
+  color: var(--ac);
+}
